@@ -1,1 +1,2 @@
-My journey at Fontys
+My journey at Fontys - HBO Associate Degree
+
