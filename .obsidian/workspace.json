@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "21285114ec48a3a2",
+    "id": "cc9d610f3631efb0",
     "type": "split",
     "children": [
       {
-        "id": "46671b4608fe599f",
+        "id": "1d855b84f2679242",
         "type": "tabs",
         "children": [
           {
-            "id": "fed71c71b490a2df",
+            "id": "d4caf9e6b4f6c13c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -27,45 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "bff4f4ed92e702ca",
+    "id": "4c7d6a247425bb59",
     "type": "split",
     "children": [
       {
-        "id": "6e000307828d05dc",
+        "id": "1490487cd531a12d",
         "type": "tabs",
         "children": [
           {
-            "id": "a91c0f054d8956cf",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Buscar"
-            }
-          },
-          {
-            "id": "8924f208dbb1bce9",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-bookmark",
-              "title": "Marcadores"
-            }
-          },
-          {
-            "id": "d35c469143a36a5a",
+            "id": "731d64e3c6ad4f86",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -78,107 +48,138 @@
               "icon": "lucide-folder-closed",
               "title": "Files"
             }
+          },
+          {
+            "id": "2f794ee4fede8a3c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "761fd934b2d1c683",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      },
+      {
+        "id": "d96e03f0026e3a49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ef54502ede1670f1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "TryHackMe/Pre-Security Path/Subnotes/What is a Router.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of What is a Router"
+            }
+          },
+          {
+            "id": "e9003d25e8a4ece6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1bec05b4618c9b61",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "How Subnetting Works.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for How Subnetting Works"
+            }
+          },
+          {
+            "id": "f505a9300629520d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "First Semester/Challenge 1/Explanation/Analysis.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
     "width": 300
   },
   "right": {
-    "id": "4de444de29a34625",
+    "id": "2052ffd6f92e6e44",
     "type": "split",
     "children": [
       {
-        "id": "ad66f18983e38a6c",
+        "id": "a6ae03b88497ce93",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
-            "id": "687d18f5552604b3",
+            "id": "e3e2342fb8838920",
             "type": "leaf",
             "state": {
-              "type": "backlink",
-              "state": {
-                "file": "First Semester/Challenge 1/Explanation/Analysis.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks"
-            }
-          },
-          {
-            "id": "4bc1eb7abfd56b0c",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Cibersecurity/Assets/Star-topology-diagram.png",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Enlaces salientes"
-            }
-          },
-          {
-            "id": "d05a4c491148c045",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Etiquetas"
-            }
-          },
-          {
-            "id": "a3c502d79ea5a636",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "Todas las propiedades"
-            }
-          },
-          {
-            "id": "8aa92e125db330a3",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Cibersecurity/Assets/Star-topology-diagram.png",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Esquema"
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
       },
       {
-        "id": "aa2531f220ad9ec0",
+        "id": "c62c22b059b9f98a",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
-            "id": "6ce25bfc13d2dc2d",
+            "id": "84a88137c01a13bd",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -196,56 +197,64 @@
   "left-ribbon": {
     "hiddenItems": {
       "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "custom-sort:Toggle custom sorting": false,
+      "graph:Open graph view": false,
+      "realclaudian:Open Claudian": false
     }
   },
-  "active": "fed71c71b490a2df",
+  "active": "d4caf9e6b4f6c13c",
   "lastOpenFiles": [
-    "First Semester/Challenge 1/Explanation/Design.md",
+    "First Semester/Challenge 1/Explanation/Analysis.md.tmp.956.0b52654992bd",
     "First Semester/Challenge 1/Explanation/Challenge 1 - Orientation Doc.md",
+    "First Semester/Challenge 1/Evidences/Devlog.md",
+    "2026-09-06.md",
     "First Semester/Challenge 1/Explanation/Analysis.md",
-    "First Semester/Challenge 1/Game Develop Applying Qlearning/Assets/top_down_game.py",
-    "First Semester/Challenge 1/Game Develop Applying Qlearning",
-    "First Semester/Challenge 1/Explanation",
-    "First Semester/Challenge 1/Nueva carpeta",
-    "First Semester/Challenge 1/Game Develop Applying Qlearning/Assets/3DS - Regular Show_ Mordecai and Rigby in 8-Bit Land - Playable Characters - Top-Down Shooter Rigby.png",
-    "First Semester/Challenge 1/Assets/Sin confirmar 647235.crdownload",
-    "First Semester/Challenge 1/Game Develop Applying Qlearning/Assets",
     "First Semester/Challenge 1/Explanation/Implementation.md",
     "First Semester/Challenge 1/Explanation/Validation.md",
-    "Sin título.canvas",
-    "Datos Log In.png",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/How Subnetting Works.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Network Fundamentals/Extending Your Network.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Network Fundamentals/Index Network Fundamentals.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Network Fundamentals/OSI Model.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Network Fundamentals/What is Networking.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Network Fundamentals/Packets & Frames.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Network Fundamentals/Intro to LAN.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/What is a Switch.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/What is a Router.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/Subnet Mask.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/Star Topology.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/Round-Trip Time (RRT).md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/Ring (Token) Topology.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/Ping (ICMP).md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/MAC Spoofing.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/MAC Address (Media Access Control).md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/IP Address (Internet Protocol).md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/Bus Topology.md",
-    "Cibersecurity/Assets/Bus_Network_Topology.png",
-    "Cibersecurity/Assets/Ring-topology.png",
-    "Sin título.base",
-    "2026-09-01.md",
-    "Cibersecurity/TryHackMe/Pre-Security Path/How The Web Works/Index How The Web Works.md",
-    "Cibersecurity/Assets/IP.png",
-    "Cibersecurity/Pasted image 20251217141635.png",
-    "Cibersecurity/TryHackMe/Pre-Security Path/Subnotes/Subnet Mask.md~RF7c4e05.TMP",
-    "Cibersecurity/Assets/Star-topology-diagram.png"
+    "First Semester/Challenge 1/Explanation/Design.md",
+    "Pasted image 20260907103111.png",
+    "Pasted image 20260907103041.png",
+    "First Semester/Challenge 1/Creating a game - RL/Godot/making-a-clock/project.godot4276919.tmp",
+    "First Semester/Challenge 1/Creating a game - RL/Godot/making-a-clock/icon.svg",
+    "First Semester/Challenge 1/Explanation/Assets/Pasted image 20260906135231.png",
+    "First Semester/Challenge 1/Explanation/Assets/Pasted image 20260906134740.png",
+    "First Semester/Challenge 1/Explanation/Assets/Pasted image 20260906135115.png",
+    "First Semester/Challenge 1/Explanation/Assets/Pasted image 20260906134814.png",
+    "Pasted image 20260906134716.png",
+    "Pasted image 20260906134903.png",
+    "First Semester/Challenge 1/Explanation/Assets",
+    "Web Developer Bootcamp/Subnotes/Hypertext Transfer Protocol (HTTP).md",
+    "Web Developer Bootcamp/Intro/And Introduction to Web Development.md",
+    "Pasted image 20251217141635.png",
+    "TryHackMe/Pre-Security Path/Network Fundamentals/What is Networking.md",
+    "Web Developer Bootcamp/Subnotes",
+    "HTTP.md",
+    "TryHackMe/Future Notes (decide)/Firewall.md",
+    "TryHackMe/Pre-Security Path/Network Fundamentals/Intro to LAN.md",
+    "TryHackMe/Pre-Security Path/Network Fundamentals/Index Network Fundamentals.md",
+    "TryHackMe/Pre-Security Path/Network Fundamentals/OSI Model.md",
+    "TryHackMe/Pre-Security Path/How The Web Works/Index How The Web Works.md",
+    "Web Developer Bootcamp/Introduction to Web Development/Untitled.md",
+    "Untitled.canvas",
+    "Web Developer Bootcamp/Intro",
+    "Web Developer Bootcamp",
+    "TryHackMe/Pre-Security Path/Subnotes/How Subnetting Works.md",
+    "TryHackMe/Pre-Security Path/Subnotes/What is a Switch.md",
+    "TryHackMe/Pre-Security Path/Subnotes/What is a Router.md",
+    "TryHackMe/Pre-Security Path/Network Fundamentals/Extending Your Network.md",
+    "TryHackMe/Future Notes (decide)/IP Addressing & Subnetting.md",
+    "TryHackMe/Pre-Security Path/Network Fundamentals/Packets & Frames.md",
+    "TryHackMe/Pre-Security Path/Subnotes/IP Address (Internet Protocol).md",
+    "TryHackMe/Pre-Security Path/Subnotes/Star Topology.md",
+    "Assets/Unconfirmed 767471.crdownload",
+    "Assets/Unconfirmed 733199.crdownload",
+    "Assets/Unconfirmed 818447.crdownload",
+    "Assets/Unconfirmed 37193.crdownload",
+    "Assets"
   ]
 }
