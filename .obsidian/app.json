@@ -1,1 +1,5 @@
-{}
+{
+  "showInlineTitle": true,
+  "alwaysUpdateLinks": true,
+  "promptDelete": false
+}

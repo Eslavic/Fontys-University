@@ -1,5 +1,16 @@
 {
   "cssTheme": "AnuPpuccin",
-  "interfaceFontFamily": "Overpass",
-  "textFontFamily": "Rubik"
+  "enabledCssSnippets": [
+    "custom-rainbow-colors",
+    "extended-colorschemes",
+    "floating-search-bar",
+    "its-frontmatter",
+    "floating-status-bar",
+    "minimal-cards",
+    "notion-cards",
+    "custom-background"
+  ],
+  "showRibbon": true,
+  "showViewHeader": true,
+  "nativeMenus": false
 }
