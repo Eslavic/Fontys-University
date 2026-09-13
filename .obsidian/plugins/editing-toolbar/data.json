@@ -1,6 +1,6 @@
 {
   "lastVersion": "3.1.18",
-  "aestheticStyle": "default",
+  "aestheticStyle": "custom",
   "positionStyle": "top",
   "menuCommands": [
     {
@@ -302,8 +302,8 @@
   "cMenuBottomValue": 4.25,
   "cMenuNumRows": 12,
   "cMenuWidth": 610,
-  "cMenuFontColor": "#c4bd97",
-  "cMenuBackgroundColor": "#d3f8b6",
+  "cMenuFontColor": "#ffffff",
+  "cMenuBackgroundColor": "#d4b106",
   "autohide": false,
   "Iscentered": false,
   "custom_bg1": "#FFB78B8C",

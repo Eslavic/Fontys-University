@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1d855b84f2679242",
+        "id": "aee3d16dc7161bd4",
         "type": "tabs",
         "children": [
           {
-            "id": "d4caf9e6b4f6c13c",
+            "id": "00f47e70d097359e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "First Semester/Challenge 1/Explanation/Analysis.md",
+                "file": "First Semester/Challenge 1/Explanation/Design.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Analysis"
+              "title": "Design"
             }
           }
         ]
@@ -88,13 +88,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TryHackMe/Pre-Security Path/Subnotes/What is a Router.md",
+                "file": "First Semester/Challenge 1/Evidences/Devlog.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of What is a Router"
+              "title": "Outline"
             }
           },
           {
@@ -137,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "First Semester/Challenge 1/Explanation/Analysis.md",
+                "file": "First Semester/Challenge 1/Explanation/Design.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               },
@@ -170,8 +170,29 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "f9b68a7aa9868655",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
+          },
+          {
+            "id": "235f871236a648a1",
+            "type": "leaf",
+            "state": {
+              "type": "system3-sync-status",
+              "state": {},
+              "icon": "satellite",
+              "title": "Sync status"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "c62c22b059b9f98a",
@@ -202,59 +223,60 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "custom-sort:Toggle custom sorting": false,
       "graph:Open graph view": false,
-      "realclaudian:Open Claudian": false
+      "realclaudian:Open Claudian": false,
+      "system3-relay:Relay": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "d4caf9e6b4f6c13c",
+  "active": "00f47e70d097359e",
   "lastOpenFiles": [
-    "README.md",
-    "First Semester/Challenge 1/Explanation/Analysis.md.tmp.956.0b52654992bd",
-    "First Semester/Challenge 1/Explanation/Challenge 1 - Orientation Doc.md",
-    "First Semester/Challenge 1/Evidences/Devlog.md",
-    "2026-09-06.md",
-    "First Semester/Challenge 1/Explanation/Analysis.md",
-    "First Semester/Challenge 1/Explanation/Implementation.md",
-    "First Semester/Challenge 1/Explanation/Validation.md",
+    "First Semester/Challenge 1/Explanation/GameFlow.drawio",
+    "First Semester/Challenge 1/Explanation/GameFlow.drawio.tmp.2956.4a690cd5e768",
     "First Semester/Challenge 1/Explanation/Design.md",
-    "Pasted image 20260907103111.png",
-    "Pasted image 20260907103041.png",
-    "First Semester/Challenge 1/Creating a game - RL/Godot/making-a-clock/project.godot4276919.tmp",
-    "First Semester/Challenge 1/Creating a game - RL/Godot/making-a-clock/icon.svg",
-    "First Semester/Challenge 1/Explanation/Assets/Pasted image 20260906135231.png",
-    "First Semester/Challenge 1/Explanation/Assets/Pasted image 20260906134740.png",
-    "First Semester/Challenge 1/Explanation/Assets/Pasted image 20260906135115.png",
-    "First Semester/Challenge 1/Explanation/Assets/Pasted image 20260906134814.png",
-    "Pasted image 20260906134716.png",
-    "Pasted image 20260906134903.png",
-    "First Semester/Challenge 1/Explanation/Assets",
+    "First Semester/Challenge 1/Explanation/Analysis.md",
+    "First Semester/Challenge 1/Evidences/Devlog.md",
+    "Untitled/Untitled.md",
+    "First Semester/Challenge 1/Evidences/Learning Godot Basics 1.png",
+    "Untitled/Q learning links.md",
+    "First Semester/Challenge 1/Creating a game - RL/Creating Everything/Blender 3D/mob-suit-downtown-1930s-mafia.zip",
+    "First Semester/Challenge 1/Creating a game - RL/Creating Everything/Blender 3D/Sin confirmar 835168.crdownload",
+    "First Semester/Challenge 1/Creating a game - RL/Creating Everything/Blender 3D/Boss.fbx",
+    "First Semester/Challenge 1/Creating a game - RL/Creating Everything/Blender 3D/Boss.blend",
+    "First Semester/Challenge 1/Creating a game - RL/Creating Everything/Blender 3D/Boss.blend@",
+    "First Semester/Challenge 1/Creating a game - RL/Creating Everything/Blender 3D/First Model.blend@",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/First Model.blend@",
+    "Pasted image 20260910113456.png",
+    "Untitled/AISpritePrompts.md",
+    "Untitled",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/Pressets/Running/0025.png",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/Pressets/Running/0021.png",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/Pressets/Running/0017.png",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/Pressets/Running/0013.png",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/Pressets/Running/0009.png",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/Pressets/Running/0005.png",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/Pressets/Running/0001.png",
+    "First Semester/Challenge 1/Creating a game - RL/Assets/Blender 3D/Pressets/Running",
+    "AISpritePrompts.md",
+    "First Semester/Challenge 1/Creating a game - RL/Pressets/Running/0025.png",
+    "First Semester/Challenge 1/Explanation/Implementation.md",
+    "First Semester/Challenge 1/Explanation/Challenge 1 - Orientation Doc.md",
+    "First Semester/Challenge 1/Explanation/Notes/2026-09-06.md",
+    "First Semester/Challenge 1/Explanation/2026-09-06.md",
+    "First Semester/Challenge 1/2026-09-06.md",
+    "First Semester/2026-09-06.md",
+    "().md",
+    "First Semester/Challenge 1/Explanation/Validation.md",
+    "README.md",
+    "2026-09-06.md",
     "Web Developer Bootcamp/Subnotes/Hypertext Transfer Protocol (HTTP).md",
     "Web Developer Bootcamp/Intro/And Introduction to Web Development.md",
-    "Pasted image 20251217141635.png",
     "TryHackMe/Pre-Security Path/Network Fundamentals/What is Networking.md",
-    "Web Developer Bootcamp/Subnotes",
     "HTTP.md",
     "TryHackMe/Future Notes (decide)/Firewall.md",
     "TryHackMe/Pre-Security Path/Network Fundamentals/Intro to LAN.md",
     "TryHackMe/Pre-Security Path/Network Fundamentals/Index Network Fundamentals.md",
     "TryHackMe/Pre-Security Path/Network Fundamentals/OSI Model.md",
-    "TryHackMe/Pre-Security Path/How The Web Works/Index How The Web Works.md",
-    "Web Developer Bootcamp/Introduction to Web Development/Untitled.md",
-    "Untitled.canvas",
-    "Web Developer Bootcamp/Intro",
-    "Web Developer Bootcamp",
-    "TryHackMe/Pre-Security Path/Subnotes/How Subnetting Works.md",
-    "TryHackMe/Pre-Security Path/Subnotes/What is a Switch.md",
-    "TryHackMe/Pre-Security Path/Subnotes/What is a Router.md",
-    "TryHackMe/Pre-Security Path/Network Fundamentals/Extending Your Network.md",
-    "TryHackMe/Future Notes (decide)/IP Addressing & Subnetting.md",
-    "TryHackMe/Pre-Security Path/Network Fundamentals/Packets & Frames.md",
-    "TryHackMe/Pre-Security Path/Subnotes/IP Address (Internet Protocol).md",
-    "TryHackMe/Pre-Security Path/Subnotes/Star Topology.md",
-    "Assets/Unconfirmed 767471.crdownload",
-    "Assets/Unconfirmed 733199.crdownload",
-    "Assets/Unconfirmed 818447.crdownload",
-    "Assets/Unconfirmed 37193.crdownload"
+    "Untitled.canvas"
   ]
 }

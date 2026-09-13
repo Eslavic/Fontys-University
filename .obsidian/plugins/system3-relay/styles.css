@@ -1,0 +1,513 @@
+.invalid-link {
+	--icon-size: 16px;
+	--icon-stroke-width: 2px;
+	display: inline-flex;
+	color: var(--link-external-color);
+	width: 0.8em;
+	margin-left: 1px;
+}
+
+.relay-hidden-modal-wrapper {
+	display: none;
+}
+
+.user-awareness-positioning-parent {
+	position: relative;
+}
+
+.remote-caret {
+	position: absolute;
+	border-left: #000;
+	border-left-style: solid;
+	border-left-width: 2px;
+	height: 1em;
+}
+
+.remote-caret > div {
+	position: relative;
+	top: -1.05em;
+	font-size: 13px;
+	background-color: rgb(0, 129, 0);
+	font-family: serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	user-select: none;
+	color: #fff;
+	padding-left: 2px;
+	padding-right: 2px;
+	z-index: 3;
+}
+
+/* Matches the specificity of Obsidian's collapsible tree-item padding. */
+.tree-item-self.system3-pill {
+	padding-inline-end: 0px;
+}
+
+.system3-pill:hover > .system3-folder-icons {
+	background-color: var(--color-base-05);
+	width: auto;
+}
+
+.system3-pill:hover > .system3-folder-icons > .system3-icon {
+	display: flex;
+}
+
+.nav-file-tag .nav-file-title:not(:first-child) .system3-pill {
+	margin-inline-start: 1em;
+}
+
+.nav-file-title,
+.nav-folder-title {
+	display: flex;
+	align-items: center;
+}
+.nav-folder-title-content {
+	margin-inline-end: auto;
+}
+.workspace-split > .system3-metadata-health-slot {
+	order: 1;
+	flex: 0 0 auto;
+	height: auto;
+	min-height: 0;
+	overflow: visible;
+}
+.tree-item-self.system3-sync-status-folder {
+	position: relative;
+	cursor: pointer;
+	margin-inline-start: 0px;
+	padding-inline-start: 24px;
+}
+
+.system3-sync-status-folder .nav-folder-title-content {
+	flex: 1 1 auto;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.relay-folder-create-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 20px;
+}
+
+.inline-icon {
+	display: inline-block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 1.3em;
+	max-height: 1.3em;
+	vertical-align: middle;
+}
+
+.connection-status-icon {
+	opacity: 0.5;
+	color: var(--color-gray);
+}
+
+.connection-status-icon-unknown {
+	color: var(--color-gray);
+}
+
+.connection-status-icon-connected {
+	color: var(--color-green);
+}
+
+.connection-status-icon-disconnected {
+	color: var(--color-red);
+}
+
+.workspace-split.mod-root
+	.workspace-leaf:nth-child(n)
+	.workspace-leaf-content[data-type="markdown"].system3-has-banner::before {
+	top: 4em;
+}
+
+.obsidian-live-banner {
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+	border-width: var(--modal-border-width);
+	border: var(--modal-border-width) solid;
+	border-color: var(--modal-border-color);
+	border-radius: var(--modal-radius);
+	padding: 10px;
+	background: var(--modal-background);
+	margin: 10px -10px 10px -10px;
+}
+
+.form-live {
+	display: grid;
+	grid-auto-flow: column;
+}
+
+#shareLink-guid {
+	width: 32em;
+}
+
+.system3-banner {
+	border-color: var(--pill-border-color-hover);
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
+	border-width: var(--modal-border-width);
+	padding: 5px 20px 5px 20px;
+	background: var(--interactive-accent);
+}
+
+.system3-banner > span {
+	display: flex;
+	flex-grow: 1;
+	font-size: var(--font-ui-medium);
+	color: var(--text-on-accent);
+	font: var(--font-interface-theme);
+}
+
+/* Element-qualified to outrank Obsidian's button:not(.clickable-icon) styling. */
+button.system3-header-button,
+button.system3-login-button {
+	background: var(--interactive-accent);
+	color: var(--text-on-accent);
+	border: var(--modal-border-width) solid var(--pill-border-color-hover);
+	cursor: pointer;
+	font-weight: bold;
+	font-size: var(--font-ui-medium);
+	font: var(--font-interface-theme);
+	text-shadow: var(--input-shadow);
+}
+
+.nav-file-title.system3-conflict::after {
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: var(--text-warning, var(--color-orange));
+	box-shadow: 0 0 0 1px var(--background-primary);
+	margin-inline-start: auto;
+	margin-inline-end: 6px;
+	align-self: center;
+	flex-shrink: 0;
+}
+
+.system3-syncing:not(.is-active) {
+	animation: system3-glow-sync 1.5s ease-in-out;
+	transition: background-color 2s ease-in-out;
+}
+
+.system3-downloading:not(.is-active) {
+	animation: system3-glow-download 1.5s ease-in-out;
+	transition: background-color 2s ease-in-out;
+}
+@keyframes system3-glow-sync {
+	0% {
+		background-color: transparent;
+	}
+	20% {
+		background-color: hsla(var(--color-accent-hsl), 0.1);
+	}
+	80% {
+		background-color: hsla(var(--color-accent-hsl), 0.1);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+@keyframes system3-glow-download {
+	0% {
+		background-color: transparent;
+	}
+	20% {
+		background-color: hsla(var(--color-accent-hsl), 0.1);
+	}
+	80% {
+		background-color: hsla(var(--color-accent-hsl), 0.1);
+	}
+	100% {
+		background-color: transparent;
+	}
+}
+
+.nav-folder > .nav-folder-children.system3-live {
+	border-inline-start: var(--nav-indentation-guide-width) solid
+		var(--color-accent);
+}
+
+.nav-file.system3-connected {
+	border-inline-start: 1px solid var(--color-accent);
+}
+
+.nav-file.system3-connecting {
+	border-inline-start: 1px solid var(--color-base-40);
+}
+
+.file-diff__container {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: scroll;
+	padding: 1rem;
+}
+
+.file-diff__line {
+	padding: 0.1rem 0;
+}
+
+.file-diff__link {
+	border-radius: 0.1875rem;
+	color: var(--link-color);
+	text-decoration: underline;
+	text-underline-offset: 0.125em;
+}
+
+.file-diff__link--resolved {
+	background-color: color-mix(in srgb, var(--link-color) 8%, transparent);
+}
+
+.file-diff__link--unresolved {
+	background-color: color-mix(in srgb, var(--text-error) 10%, transparent);
+	color: var(--link-unresolved-color, var(--text-error));
+}
+
+.file-diff__link-warning {
+	--icon-size: 16px;
+	--icon-stroke-width: 2px;
+	display: inline-flex;
+	vertical-align: text-bottom;
+}
+
+.file-diff__button-container {
+	text-align: right;
+}
+
+.file-diff__top-line__bg {
+	background-color: color-mix(in srgb, var(--color-green) 15%, transparent);
+	border-radius: 0.25rem; /* 4px */
+}
+
+.file-diff_top-line__character {
+	background-color: color-mix(in srgb, var(--color-green) 30%, transparent);
+	border-radius: 0.25rem; /* 4px */
+}
+
+.file-diff__bottom-line__bg {
+	background-color: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+	border-radius: 0.25rem; /* 4px */
+}
+
+.file-diff_bottom-line__character {
+	background-color: color-mix(in srgb, var(--interactive-accent) 25%, transparent);
+	border-radius: 0.25rem; /* 4px */
+}
+
+.file-diff__no-bottom-border {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.file-diff__no-top-border {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.file-diff__action-line {
+	color: #919191;
+}
+
+/* Tailwind CSS */
+.flex {
+	display: flex;
+}
+
+.flex-row {
+	flex-direction: row;
+}
+
+.gap-1 {
+	gap: 0.25rem; /* 4px */
+}
+
+.no-decoration {
+	text-decoration: none;
+}
+
+.no-decoration:hover {
+	text-decoration: none;
+}
+
+.text-xxs {
+	font-size: 0.65rem;
+}
+
+/* Rename from py-0.5 to py-0-5, as dots aren't allowed in selector names */
+.py-0-5 {
+	padding-top: 0.125rem; /* 2px */
+	padding-bottom: 0.125rem; /* 2px */
+}
+
+.mr-2 {
+	margin-right: 0.5rem; /* 8px */
+}
+
+.mb-20 {
+	margin-bottom: 5rem; /* 80px */
+}
+
+/* Fix button width on mobile in setting items for our components */
+.is-phone .modal .setting-item-control button.system3-button {
+	width: auto;
+}
+
+/* Held-deletion decision modal: a fixed-width confirmation dialog whose
+   size does not depend on the burst — the path list sits behind a
+   collapsed disclosure and scrolls within a fixed cap. */
+.system3-gated-deletions-modal {
+	width: min(30rem, 90vw);
+}
+
+/* The title must clear the modal's absolutely-positioned close control,
+   and a folder name with no break points must still wrap. */
+.system3-gated-deletions-modal .modal-title {
+	padding-inline-end: var(--size-4-8);
+	overflow-wrap: anywhere;
+}
+
+.system3-gated-deletions-consequences {
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+}
+
+.system3-gated-deletions-details {
+	margin: var(--size-4-3) 0 0;
+}
+
+.system3-gated-deletions-details > summary {
+	cursor: pointer;
+	color: var(--text-muted);
+	font-size: var(--font-ui-small);
+	user-select: none;
+}
+
+.system3-gated-deletions-details > summary:focus-visible {
+	outline: 2px solid var(--interactive-accent);
+	outline-offset: 2px;
+	border-radius: var(--radius-s);
+}
+
+.system3-gated-deletions-list {
+	max-height: 10em;
+	overflow-y: auto;
+	margin: var(--size-4-2) 0 0;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-s);
+	background: var(--background-primary);
+}
+
+/* Rows read as a table: zebra striping, cell padding, and full vault
+   paths with the directory muted so the filename stays scannable. */
+.system3-gated-deletions-path {
+	display: flex;
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+	line-height: 1.5;
+	padding: var(--size-2-2) var(--size-4-2);
+	white-space: nowrap;
+}
+
+.system3-gated-deletions-path:nth-child(even) {
+	background: var(--background-secondary);
+}
+
+.system3-gated-deletions-path-dir {
+	color: var(--text-faint);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	flex: 0 1 auto;
+}
+
+.system3-gated-deletions-path-name {
+	color: var(--text-normal);
+	flex: none;
+}
+
+/* Note state inspector — debugging strip in the sync-status sidebar showing
+   per-note merge state: HSM state path, disk write/ingest lanes, and store
+   convergence. */
+.system3-note-state {
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+	padding: var(--size-2-3) var(--size-4-2);
+	margin: var(--size-4-2) 0;
+	font-size: var(--font-ui-small);
+	background: var(--background-secondary);
+}
+
+.system3-note-state-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: var(--size-4-2);
+	margin-bottom: var(--size-2-2);
+}
+
+.system3-note-state-title {
+	font-size: var(--font-ui-smaller);
+	font-weight: var(--font-semibold);
+	color: var(--text-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.system3-note-state-pill {
+	flex: none;
+	padding: 0 var(--size-4-1);
+	border-radius: var(--radius-l);
+	border: 1px solid var(--background-modifier-border);
+	font-size: var(--font-ui-smaller);
+	white-space: nowrap;
+}
+
+.system3-note-state-row {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--size-4-2);
+	padding: 1px 0;
+	line-height: 1.4;
+}
+
+.system3-note-state-label {
+	color: var(--text-muted);
+	flex: none;
+}
+
+.system3-note-state-value {
+	text-align: right;
+	overflow-wrap: anywhere;
+}
+
+.system3-note-state-mono {
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+}
+
+.system3-note-state-ok {
+	color: var(--color-green);
+}
+
+.system3-note-state-warn {
+	color: var(--color-yellow);
+}
+
+.system3-note-state-bad {
+	color: var(--color-red);
+}
+
+.system3-note-state-muted {
+	color: var(--text-faint);
+}

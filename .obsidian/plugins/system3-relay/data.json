@@ -1,0 +1,30 @@
+{
+  "release": {
+    "channel": "stable"
+  },
+  "sharedFolders": [],
+  "endpoints": {},
+  "enableDocumentStatus": false,
+  "enableNewLinkFormat": false,
+  "enableDiffLinkStatus": false,
+  "enableDiscordLogin": false,
+  "enableDeviceManagement": true,
+  "enableResourceMeter": false,
+  "enableDeltaLogging": false,
+  "enableNetworkLogging": false,
+  "enableVerifyUploads": false,
+  "enableHSMRecording": false,
+  "enableHSMResourceContracts": false,
+  "enableDraftMode": false,
+  "enableFolderIdbMigration": false,
+  "enableMetadataHealthNotice": true,
+  "enableNoteStateInspector": false,
+  "enableSavingFlagPolyfill": true,
+  "enableFrontmatterDuplicateRecovery": false,
+  "enableSingleUserHistory": true,
+  "enableStreamerMode": false,
+  "debugging": false,
+  "login": {
+    "provider": "github"
+  }
+}
