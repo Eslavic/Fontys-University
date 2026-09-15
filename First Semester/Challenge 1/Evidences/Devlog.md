@@ -28,4 +28,4 @@ Today I am watching and starting to learn Godot for apply all this in my game. T
 
 I am learning that eveythinbg in Godot is made by Nodes, so Nodes are the fundamental building blocks of your game, they come in many types, some display an image, others sound or add physics. In Godot you use Scences this allow us to bundle together nodes into reusable packages and this can be a  character, weapon, menu, etc.
 
-
+By following this tutorial I am gonna learn the basics, and even that I am using sprites that they are not Top-Down I am learning how to use every section of Godot, the animations, and the interface and how I should organize every folder.
