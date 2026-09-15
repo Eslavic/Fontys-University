@@ -23,4 +23,7 @@
 2. Second week: I still investigating about Qlearning  and pusllishing the Analisys for sending to get feedback
 
 
-Prueba 15/09
+#### Tuesday 15 of September 
+Today I am watching and starting to learn Godot for apply all this in my game. The tutorial I am gonna use is this [How to make a Video Game - Godot Beginner Tutorial](https://www.youtube.com/watch?v=LOhfqjmasi0)
+
+In everything in Godot we use Nodes, nodes are the fundamentals, 
