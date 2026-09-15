@@ -22,3 +22,5 @@
 - Hice reserca y investigue para saber cual engine era el mejor para mi caso, comparando la curva de aprendizaje y teniendo en cuenta las limitaciones del tiempo en que tengo que hacerlo, adenas de sobre 
 2. Second week: I still investigating about Qlearning  and pusllishing the Analisys for sending to get feedback
 
+
+Prueba 15/09
