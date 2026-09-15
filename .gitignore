@@ -1,0 +1,17 @@
+# Obsidian - per-device state that should not be shared
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/cache
+
+# Obsidian trash
+.trash/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor junk
+*.swp
+*~
