@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+# We can change this atributes just changing the numbers
+const SPEED = 130.0 
+const JUMP_VELOCITY = -300.0 
 
 
 func _physics_process(delta: float) -> void:
