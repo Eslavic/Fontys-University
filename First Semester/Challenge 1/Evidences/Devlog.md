@@ -30,4 +30,4 @@ I am learning that eveythinbg in Godot is made by Nodes, so Nodes are the fundam
 
 By following this tutorial I am gonna learn the basics, and even that I am using sprites that they are not Top-Down I am learning how to use every section of Godot, the animations, and the interface and how I should organize every folder.
 
-I am learning how to create the map using Tiles for a 2D game, 
+I am learning how to create the map using Tiles for a 2D game,  
