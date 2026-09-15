@@ -26,4 +26,6 @@
 #### Tuesday 15 of September 
 Today I am watching and starting to learn Godot for apply all this in my game. The tutorial I am gonna use is this [How to make a Video Game - Godot Beginner Tutorial](https://www.youtube.com/watch?v=LOhfqjmasi0)
 
-In everything in Godot we use Nodes, nodes are the fundamentals, 
+I am learning that eveythinbg in Godot is made by Nodes, so Nodes are the fundamental building blocks of your game, they come in many types, some display an image, others sound or add physics. In Godot you use Scences this allow us to bundle together nodes into reusable packages.
+
+
