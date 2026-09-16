@@ -449,14 +449,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ok35x"]
-radius = 265.91165
+radius = 212.39821
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1487116230]
+motion_mode = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1311725804]
 sprite_frames = SubResource("SpriteFrames_k45x7")
-animation = &"Sneaking_Right"
-frame_progress = 0.6341402
+animation = &"Running_Down"
+frame_progress = 0.54404473
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928035977]
 position = Vector2(-3, 25)
