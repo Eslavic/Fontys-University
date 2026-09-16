@@ -1,0 +1,488 @@
+{
+	"textures": [
+		{
+			"image": "Running Witness.png",
+			"size": {
+				"w": 7184,
+				"h": 4104
+			},
+			"sprites": [
+				{
+					"filename": "Down/Running_Down_1.png",
+					"region": {
+						"x": 1,
+						"y": 1,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Down/Running_Down_2.png",
+					"region": {
+						"x": 1027,
+						"y": 1,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Down/Running_Down_3.png",
+					"region": {
+						"x": 2053,
+						"y": 1,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Down/Running_Down_4.png",
+					"region": {
+						"x": 3079,
+						"y": 1,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Down/Running_Down_5.png",
+					"region": {
+						"x": 4105,
+						"y": 1,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Down/Running_Down_6.png",
+					"region": {
+						"x": 5131,
+						"y": 1,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Down/Running_Down_7.png",
+					"region": {
+						"x": 6157,
+						"y": 1,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Left/Running_Left_1.png",
+					"region": {
+						"x": 1,
+						"y": 1027,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Left/Running_Left_2.png",
+					"region": {
+						"x": 1027,
+						"y": 1027,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Left/Running_Left_3.png",
+					"region": {
+						"x": 2053,
+						"y": 1027,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Left/Running_Left_4.png",
+					"region": {
+						"x": 3079,
+						"y": 1027,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Left/Running_Left_5.png",
+					"region": {
+						"x": 4105,
+						"y": 1027,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Left/Running_Left_6.png",
+					"region": {
+						"x": 5131,
+						"y": 1027,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Left/Running_Left_7.png",
+					"region": {
+						"x": 6157,
+						"y": 1027,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Right/Running_Right_1.png",
+					"region": {
+						"x": 1,
+						"y": 2053,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Right/Running_Right_2.png",
+					"region": {
+						"x": 1027,
+						"y": 2053,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Right/Running_Right_3.png",
+					"region": {
+						"x": 2053,
+						"y": 2053,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Right/Running_Right_4.png",
+					"region": {
+						"x": 3079,
+						"y": 2053,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Right/Running_Right_5.png",
+					"region": {
+						"x": 4105,
+						"y": 2053,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Right/Running_Right_6.png",
+					"region": {
+						"x": 5131,
+						"y": 2053,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Right/Running_Right_7.png",
+					"region": {
+						"x": 6157,
+						"y": 2053,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Up/Running_Up_1.png",
+					"region": {
+						"x": 1,
+						"y": 3079,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Up/Running_Up_2.png",
+					"region": {
+						"x": 1027,
+						"y": 3079,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Up/Running_Up_3.png",
+					"region": {
+						"x": 2053,
+						"y": 3079,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Up/Running_Up_4.png",
+					"region": {
+						"x": 3079,
+						"y": 3079,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Up/Running_Up_5.png",
+					"region": {
+						"x": 4105,
+						"y": 3079,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Up/Running_Up_6.png",
+					"region": {
+						"x": 5131,
+						"y": 3079,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Up/Running_Up_7.png",
+					"region": {
+						"x": 6157,
+						"y": 3079,
+						"w": 1024,
+						"h": 1024
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"animations": [
+		{
+			"name": "Down-Running_Down",
+			"frames": [
+				"Down/Running_Down_1.png",
+				"Down/Running_Down_2.png",
+				"Down/Running_Down_3.png",
+				"Down/Running_Down_4.png",
+				"Down/Running_Down_5.png",
+				"Down/Running_Down_6.png",
+				"Down/Running_Down_7.png"
+			]
+		},
+		{
+			"name": "Left-Running_Left",
+			"frames": [
+				"Left/Running_Left_1.png",
+				"Left/Running_Left_2.png",
+				"Left/Running_Left_3.png",
+				"Left/Running_Left_4.png",
+				"Left/Running_Left_5.png",
+				"Left/Running_Left_6.png",
+				"Left/Running_Left_7.png"
+			]
+		},
+		{
+			"name": "Right-Running_Right",
+			"frames": [
+				"Right/Running_Right_1.png",
+				"Right/Running_Right_2.png",
+				"Right/Running_Right_3.png",
+				"Right/Running_Right_4.png",
+				"Right/Running_Right_5.png",
+				"Right/Running_Right_6.png",
+				"Right/Running_Right_7.png"
+			]
+		},
+		{
+			"name": "Up-Running_Up",
+			"frames": [
+				"Up/Running_Up_1.png",
+				"Up/Running_Up_2.png",
+				"Up/Running_Up_3.png",
+				"Up/Running_Up_4.png",
+				"Up/Running_Up_5.png",
+				"Up/Running_Up_6.png",
+				"Up/Running_Up_7.png"
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.1",
+		"smartupdate": "$TexturePacker:SmartUpdate:80b774007643616520400de37f08e483:bc1fe5e995532e4fb605ef921d37623d:7b85a3da9f4fd86edeca2ee9e57edf78$"
+	}
+}
