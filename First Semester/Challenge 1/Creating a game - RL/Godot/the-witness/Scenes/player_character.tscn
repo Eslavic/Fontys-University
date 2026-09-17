@@ -903,10 +903,11 @@ script = ExtResource("1_n7cuq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1311725804]
 sprite_frames = SubResource("SpriteFrames_k45x7")
-animation = &"Idle_Down"
+animation = &"Crouch_Walking_Right"
 autoplay = "Idle_Down"
-frame_progress = 0.0070878067
+frame_progress = 0.99811405
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928035977]
+visible = false
 position = Vector2(-3, 25)
 shape = SubResource("CircleShape2D_ok35x")
