@@ -12,7 +12,6 @@ func _physics_process(delta: float) -> void:
 	#if input != Vector2.ZERO:
 		#lastinput = input.angle()
 		#print(input.angle())
-		#velocity = velocity.move_toward(input * speed, accel * delta)
 		#sprite.play("Walking_Up")
 	#else:
 		#if lastinput:
@@ -34,8 +33,14 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("up") && Input.is_action_pressed("right"):
 		sprite.play("Walking_Up_R")
 		lastinput = "Idle_Up_Right"
+
 	else:
+			velocity = velocity.move_toward(Input * speed, accel * delta)
+
 		sprite.play(lastinput)
+		
+		
+		
 	
 	velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	move_and_slide()
