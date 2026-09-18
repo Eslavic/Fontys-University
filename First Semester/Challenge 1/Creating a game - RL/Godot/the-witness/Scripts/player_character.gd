@@ -14,17 +14,17 @@ func _physics_process(delta: float) -> void:
 		print(input.angle())
 		velocity = velocity.move_toward(input * speed, accel * delta)
 		sprite.play("Walking_Up")
-	##else:
-		#if lastinput == -0.78539818525314:
-		#	print("A")
-		#elif lastinput == -0.78539818525314:
-		#	print("D")
-		#elif lastinput == -0.78539818525314:
-		#	print("S")
-		#elif lastinput == -0.78539818525314:
-		#	print("W")
-		#elif lastinput == -0.78539818525314:
-		#	print("W+D")
+	else:
+		if lastinput:
+			print("last")
+			if is_equal_approx(lastinput, -0.785):
+				print("W+D")
+			elif lastinput == 0.78539818525314:
+				print("S+D")
+			elif lastinput == 2.35619449615479:
+				print("S+A")
+			elif lastinput == -2.35619449615479:
+				print("A+W")
 		
 		
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
