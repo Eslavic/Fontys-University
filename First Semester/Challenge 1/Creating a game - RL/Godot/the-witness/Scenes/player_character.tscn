@@ -1641,10 +1641,11 @@ motion_mode = 1
 script = ExtResource("1_n7cuq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1311725804]
+position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_k45x7")
-animation = &"Walking_Down_L"
+animation = &"Running_Right"
 autoplay = "Idle_Right"
-frame_progress = 0.03962732
+frame_progress = 0.97412467
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928035977]
 visible = false
