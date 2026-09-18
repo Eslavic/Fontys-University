@@ -28,20 +28,35 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_pressed("down") && Input.is_action_pressed("right"):
-		sprite.play("Walking_Down_R")
-		lastinput = "Idle_Down_R"
+		if Input.is_action_pressed("shift"):
+			sprite.play("Running_Down_R")
+		else:			
+			sprite.play("Walking_Down_R")
+			lastinput = "Idle_Down_R"
 	elif Input.is_action_pressed("up") && Input.is_action_pressed("right"):
-		sprite.play("Walking_Up_R")
-		lastinput = "Idle_Up_R"
+		if Input.is_action_pressed("shift"):
+			sprite.play("Running_Up_R")
+		else:
+			sprite.play("Walking_Up_R")
+			lastinput = "Idle_Up_R"
 	elif Input.is_action_pressed("down") && Input.is_action_pressed("left"):
-		sprite.play("Walking_Down_L")
-		lastinput = "Idle_Down_L"
+		if Input.is_action_pressed("shift"):
+			sprite.play("Running_Down_L")
+		else:
+			sprite.play("Walking_Down_L")
+			lastinput = "Idle_Down_L"
 	elif Input.is_action_pressed("up") && Input.is_action_pressed("left"):
-		sprite.play("Walking_Up_L")
-		lastinput = "Idle_Up_L"
+		if Input.is_action_pressed("shift"):
+			sprite.play("Running_Up_L")
+		else:
+			sprite.play("Walking_Up_L")
+			lastinput = "Idle_Up_L"
 	elif Input.is_action_pressed("up"):
-		sprite.play("Walking_Up")
-		lastinput = "Idle_Up"
+		if Input.is_action_pressed("shift"):
+			sprite.play("Running_Up")
+		else:
+			sprite.play("Walking_Up")
+			lastinput = "Idle_Up"
 	elif Input.is_action_pressed("down"):
 		if Input.is_action_pressed("shift"):
 			sprite.play("Running_Down")
@@ -50,11 +65,17 @@ func _physics_process(delta: float) -> void:
 			lastinput = "Idle_Down"
 		
 	elif Input.is_action_pressed("right"):
-		sprite.play("Walking_Right")
-		lastinput = "Idle_Right"
+		if Input.is_action_pressed("shift"):
+			sprite.play("Running_Right")
+		else:
+			sprite.play("Walking_Right")
+			lastinput = "Idle_Right"
 	elif Input.is_action_pressed("left"):
-		sprite.play("Walking_Left")
-		lastinput = "Idle_Left"
+		if Input.is_action_pressed("shift"):
+			sprite.play("Running_Left")
+		else:
+			sprite.play("Walking_Left")
+			lastinput = "Idle_Left"
 #	elif Input.is_action_pressed("shift") && Input.is_action_pressed("down"):
 	#	sprite.play("Running_Down")
 	#	lastinput = "Idle_Down"
