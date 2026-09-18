@@ -6,29 +6,38 @@ extends CharacterBody2D
 @export var accel: float = 1200.0
 @export var friction: float = 1400.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-var lastinput
+var lastinput = "Idle_Up"
 func _physics_process(delta: float) -> void:
-	var input := Input.get_vector("left", "right", "up", "down")
-	if input != Vector2.ZERO:
-		lastinput = input.angle()
-		print(input.angle())
-		velocity = velocity.move_toward(input * speed, accel * delta)
-		sprite.play("Walking_Up")
+	#var input := Input.get_vector("left", "right", "up", "down")
+	#if input != Vector2.ZERO:
+		#lastinput = input.angle()
+		#print(input.angle())
+		#velocity = velocity.move_toward(input * speed, accel * delta)
+		#sprite.play("Walking_Up")
+	#else:
+		#if lastinput:
+			#print("last")
+			#if is_equal_approx(lastinput, -0.785):
+				#print("W+D")
+			#elif lastinput == 0.78539818525314:
+				#print("S+D")
+			#elif lastinput == 2.35619449615479:
+				#print("S+A")
+			#elif lastinput == -2.35619449615479:
+				#print("A+W")
+		#
+	#print(Input.is_action_pressed("ui_down"))
+	
+	if Input.is_action_pressed("down") && Input.is_action_pressed("right"):
+		sprite.play("Walking_Down_R")
+		lastinput = "Idle_Down_R"
+	elif Input.is_action_pressed("up") && Input.is_action_pressed("right"):
+		sprite.play("Walking_Up_R")
+		lastinput = "Idle_Up_Right"
 	else:
-		if lastinput:
-			print("last")
-			if is_equal_approx(lastinput, -0.785):
-				print("W+D")
-			elif lastinput == 0.78539818525314:
-				print("S+D")
-			elif lastinput == 2.35619449615479:
-				print("S+A")
-			elif lastinput == -2.35619449615479:
-				print("A+W")
-		
-		
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
-		sprite.play("Idle_Right")
+		sprite.play(lastinput)
+	
+	velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	move_and_slide()
 	
 	
