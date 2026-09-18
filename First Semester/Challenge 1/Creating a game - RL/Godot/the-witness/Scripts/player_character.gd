@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	if is_crouching:
 		current_speed = base_speed * 0.5 #It walks slower if the player is crouch
 	elif Input.is_action_pressed("shift"):
-		current_speed = base_speed * 1.6 #Calculates de base speed and multiplies per 1.6 to Run
+		current_speed = base_speed * 5 #Calculates de base speed and multiplies per 1.6 to Run
 	
 	if input != Vector2.ZERO:
 		velocity = velocity.move_toward(input * current_speed, accel * delta)
