@@ -8,7 +8,12 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var lastinput = "Idle_Up"
 func _physics_process(delta: float) -> void:
-	#var input := Input.get_vector("left", "right", "up", "down")
+	var input := Input.get_vector("left", "right", "up", "down")
+	if input != Vector2.ZERO:
+		velocity = velocity.move_toward(input * speed, accel * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+
 	#if input != Vector2.ZERO:
 		#lastinput = input.angle()
 		#print(input.angle())
@@ -32,17 +37,16 @@ func _physics_process(delta: float) -> void:
 		lastinput = "Idle_Down_R"
 	elif Input.is_action_pressed("up") && Input.is_action_pressed("right"):
 		sprite.play("Walking_Up_R")
-		lastinput = "Idle_Up_Right"
+		lastinput = "Idle_Up_R"
+	elif Input.is_action_pressed("down") && Input.is_action_pressed("left"):
+		sprite.play("Walking_Down_L")
+		lastinput = "Idle_Down_L"
+	elif Input.is_action_pressed("up") && Input.is_action_pressed("left"):
+		sprite.play("Walking_Up_L")
+		lastinput = "Idle_Up_L"
 
 	else:
-			velocity = velocity.move_toward(Input * speed, accel * delta)
-
 		sprite.play(lastinput)
-		
-		
-		
-	
-	velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	move_and_slide()
 	
 	

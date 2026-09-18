@@ -1032,7 +1032,7 @@ animations = [{
 "texture": ExtResource("189_i71it")
 }],
 "loop": 1,
-"name": &"Idle_Up_Left",
+"name": &"Idle_Up_L",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1061,7 +1061,7 @@ animations = [{
 "texture": ExtResource("197_sago7")
 }],
 "loop": 1,
-"name": &"Idle_Up_Right",
+"name": &"Idle_Up_R",
 "speed": 6.0
 }, {
 "frames": [{
@@ -1639,15 +1639,12 @@ radius = 212.39821
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1487116230]
 motion_mode = 1
 script = ExtResource("1_n7cuq")
-speed = null
-accel = null
-friction = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1311725804]
 sprite_frames = SubResource("SpriteFrames_k45x7")
-animation = &"Crouch_Walking_Down_R"
+animation = &"Walking_Down_L"
 autoplay = "Idle_Right"
-frame_progress = 0.87521195
+frame_progress = 0.3273099
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928035977]
 visible = false
