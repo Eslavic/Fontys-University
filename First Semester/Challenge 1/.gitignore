@@ -1,7 +1,3 @@
-# Godot
-.godot/
-*.import
-
 # OS
 .DS_Store
 Thumbs.db
