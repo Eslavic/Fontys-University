@@ -1644,7 +1644,7 @@ script = ExtResource("1_n7cuq")
 sprite_frames = SubResource("SpriteFrames_k45x7")
 animation = &"Walking_Down_L"
 autoplay = "Idle_Right"
-frame_progress = 0.3273099
+frame_progress = 0.03962732
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928035977]
 visible = false

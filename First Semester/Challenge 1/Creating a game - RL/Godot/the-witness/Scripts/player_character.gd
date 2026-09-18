@@ -13,24 +13,6 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(input * speed, accel * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
-
-	#if input != Vector2.ZERO:
-		#lastinput = input.angle()
-		#print(input.angle())
-		#sprite.play("Walking_Up")
-	#else:
-		#if lastinput:
-			#print("last")
-			#if is_equal_approx(lastinput, -0.785):
-				#print("W+D")
-			#elif lastinput == 0.78539818525314:
-				#print("S+D")
-			#elif lastinput == 2.35619449615479:
-				#print("S+A")
-			#elif lastinput == -2.35619449615479:
-				#print("A+W")
-		#
-	#print(Input.is_action_pressed("ui_down"))
 	
 	if Input.is_action_pressed("down") && Input.is_action_pressed("right"):
 		sprite.play("Walking_Down_R")
@@ -44,6 +26,18 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("up") && Input.is_action_pressed("left"):
 		sprite.play("Walking_Up_L")
 		lastinput = "Idle_Up_L"
+	elif Input.is_action_pressed("up"):
+		sprite.play("Walking_Up")
+		lastinput = "Idle_Up"
+	elif Input.is_action_pressed("down"):
+		sprite.play("Walking_Down")
+		lastinput = "Idle_Down"
+	elif Input.is_action_pressed("right"):
+		sprite.play("Walking_Right")
+		lastinput = "Idle_Right"
+	elif Input.is_action_pressed("left"):
+		sprite.play("Walking_Left")
+		lastinput = "Idle_Left"
 
 	else:
 		sprite.play(lastinput)
