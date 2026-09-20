@@ -42,6 +42,23 @@ func _physics_process(delta: float) -> void:
 			current_speed = base_speed * 5
 			velocity = velocity.move_toward(input * current_speed, accel * delta)
 	move_and_slide()
+	# Convertimos el vector a enteros (Vector2i) con .sign() para que sea exacto (-1, 0 o 1)
+	var dir_key = Vector2i(input.sign())
+		
+	match current_state:
+		State.IDLE:
+			sprite.play(lastinput)
+		
+		State.WALKING, State.RUNNING:
+			var prefijo = "Walking_" if current_state == State.WALKING else "Running_"
+			var anim_dir = ""
+
+			
+	
+	
+	
+	
+	
 	#if is_crouching:
 		#_state = "Crouching"
 		
