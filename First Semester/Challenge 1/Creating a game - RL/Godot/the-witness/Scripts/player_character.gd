@@ -27,16 +27,30 @@ func _physics_process(delta: float) -> void:
 		current_state = State.RUNNING
 	else:
 		current_state = State.WALKING
+		
+	match current_state:
+		State.IDLE:
+			velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+		State.CROUCHING:
+			current_speed = base_speed * 0.5 #It walks slower if the player is crouch
+			velocity = velocity.move_toward(input * current_speed, accel * delta)
+		State.WALKING:
+			current_speed = base_speed
+			velocity = velocity.move_toward(input * current_speed, accel * delta)
+		State.RUNNING:
+			#Calculates de base speed and multiplies per 5 to Run
+			current_speed = base_speed * 5
+			velocity = velocity.move_toward(input * current_speed, accel * delta)
+	move_and_slide()
 	#if is_crouching:
 		#_state = "Crouching"
-		#current_speed = base_speed * 0.5 #It walks slower if the player is crouch
+		
 	#elif Input.is_action_pressed("shift"):
 		#_state = "Running"
-		#current_speed = base_speed * 5 #Calculates de base speed and multiplies per 1.6 to Run
 	#
-	if input != Vector2.ZERO:
-		velocity = velocity.move_toward(input * current_speed, accel * delta)
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
-	move_and_slide()
-	
+	#if input != Vector2.ZERO:
+		#velocity = velocity.move_toward(input * current_speed, accel * delta)
+	#else:
+		##velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+	#move_and_slide()
+	#
