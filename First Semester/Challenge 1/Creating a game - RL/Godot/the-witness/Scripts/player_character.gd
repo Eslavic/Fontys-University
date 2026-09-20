@@ -8,24 +8,32 @@ extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 # We create a list organized by states:
 enum State { IDLE, WALKING, RUNNING, CROUCHING}
-var curren_state = State.IDLE
+# We save our current_state in IDLE
+var current_state = State.IDLE
 var lastinput = "Idle_Up"
-var is_crouching = false #Saves if the character is crouch
+#var is_crouching = false #Saves if the character is crouch
 func _physics_process(delta: float) -> void:
 	# 1. Detect movement entries
 	var input := Input.get_vector("left", "right", "up", "down")
 	
 	# Modo Mantener: is_crouching sera True solo mientras mantenga pulsado el Control
-	is_crouching = Input.is_action_pressed("crouch")
+	#is_crouching = Input.is_action_pressed("crouch")
 	var current_speed = base_speed
-	var _state = "walking"
-	if is_crouching:
-		_state = "Crouching"
-		current_speed = base_speed * 0.5 #It walks slower if the player is crouch
+	if input == Vector2.ZERO:
+		current_state = State.IDLE
+	elif Input.is_action_pressed("crouch"):
+		current_state = State.CROUCHING
 	elif Input.is_action_pressed("shift"):
-		_state = "Running"
-		current_speed = base_speed * 5 #Calculates de base speed and multiplies per 1.6 to Run
-	
+		current_state = State.RUNNING
+	else:
+		current_state = State.WALKING
+	#if is_crouching:
+		#_state = "Crouching"
+		#current_speed = base_speed * 0.5 #It walks slower if the player is crouch
+	#elif Input.is_action_pressed("shift"):
+		#_state = "Running"
+		#current_speed = base_speed * 5 #Calculates de base speed and multiplies per 1.6 to Run
+	#
 	if input != Vector2.ZERO:
 		velocity = velocity.move_toward(input * current_speed, accel * delta)
 	else:
