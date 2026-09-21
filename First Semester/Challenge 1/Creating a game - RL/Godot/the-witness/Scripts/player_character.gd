@@ -20,11 +20,11 @@ func _physics_process(delta: float) -> void:
 	var state = "Walking"
 	
 	if is_crouching:
-		state = "Sneaking"
+		state = "Crouch"
 		current_speed = base_speed * 0.5 #It walks slower if the player is crouch
 	elif Input.is_action_pressed("shift"):
 		state = "Running"
-		current_speed = base_speed * 5 #Calculates de base speed and multiplies per 1.6 to Run
+		current_speed = base_speed * 5 #Calculates de base speed and multiplies per 5 to Run
 	
 	if input != Vector2.ZERO:
 		velocity = velocity.move_toward(input * current_speed, accel * delta)
@@ -37,14 +37,23 @@ func _physics_process(delta: float) -> void:
 	var dir_suffix := ""
 	
 	match dir_key:
-		Vector2i(1.0, 0.0): dir_suffix = "Right"
-		Vector2i(-1.0, 0.0): dir_suffix = "Left"
-		Vector2i(0.0, -1-0): dir_suffix = "Up"
-		Vector2i(0.0, 1.0): dir_suffix = "Down"
-		
+		Vector2i(1, 0): dir_suffix = "Right"
+		Vector2i(-1, 0): dir_suffix = "Left"
+		Vector2i(0, -1): dir_suffix = "Up"
+		Vector2i(0, 1): dir_suffix = "Down"
+		Vector2i(1, -1): dir_suffix = "Up_Right"
+		Vector2i(1, 1):  dir_suffix = "Down_Right"
+		Vector2i(-1, -1): dir_suffix = "Up_Left"
+		Vector2i(-1, 1): dir_suffix = "Down_Left"
 	if input != Vector2.ZERO:
 		if is_crouching:
-			lastinput = "Crouch_Idle_" dir_suffix
+			lastinput = "Crouch_Idle_" + dir_suffix
+		else: 
+			lastinput = "Idle_" + dir_suffix
+			
+		sprite.play(state + "_" + dir_suffix)
+	else:
+		sprite.play(lastinput)
 	
 	
 	
