@@ -1639,6 +1639,9 @@ radius = 212.39821
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1487116230]
 motion_mode = 1
 script = ExtResource("1_n7cuq")
+base_speed = null
+accel = null
+friction = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1311725804]
 position = Vector2(0, 1)

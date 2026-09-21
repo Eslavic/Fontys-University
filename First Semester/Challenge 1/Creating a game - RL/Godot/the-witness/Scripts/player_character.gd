@@ -38,10 +38,16 @@ func _physics_process(delta: float) -> void:
 	
 	match dir_key:
 		Vector2i(1.0, 0.0): dir_suffix = "Right"
-		Vector2i(-1.0, 0.0): dir_suffix = "Left" 
+		Vector2i(-1.0, 0.0): dir_suffix = "Left"
+		Vector2i(0.0, -1-0): dir_suffix = "Up"
+		Vector2i(0.0, 1.0): dir_suffix = "Down"
+		
+	if input != Vector2.ZERO:
+		if is_crouching:
+			lastinput = "Crouch_Idle_" dir_suffix
 	
-#Left = (-1.0, 0.0)
-#Up =  (0.0, -1.0)
+	
+	
 #Down = (0.0 , 1.0)
 #
 #W+A = (-1.0, -1.0)
