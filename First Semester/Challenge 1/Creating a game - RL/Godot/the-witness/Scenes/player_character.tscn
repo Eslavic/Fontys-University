@@ -383,7 +383,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Crouch_Down",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -412,7 +412,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Crouch_Down_Left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -441,7 +441,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Crouch_Down_Right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -714,7 +714,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Crouch_Left",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -743,7 +743,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Crouch_Right",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -772,7 +772,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Crouch_Up",
-"speed": 6.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -801,7 +801,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Crouch_Up_Left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -830,7 +830,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Crouch_Up_Right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -917,7 +917,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Idle_Down_Right",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1639,13 +1639,18 @@ radius = 212.39821
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1487116230]
 motion_mode = 1
 script = ExtResource("1_n7cuq")
+base_speed = 200
+accel = 1000.0
+friction = 9999999.9
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1311725804]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_k45x7")
-animation = &"Idle_Down_Right"
+animation = &"Walking_Up"
 autoplay = "Idle_Right"
+frame_progress = 0.8646844
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1928035977]
+visible = false
 position = Vector2(-3, 25)
 shape = SubResource("CircleShape2D_ok35x")

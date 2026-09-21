@@ -5,16 +5,16 @@ extends CharacterBody2D
 @export_range(0, 1000) var base_speed := 60
 @export var accel: float = 1200.0
 @export var friction: float = 1400.0
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var lastinput = "Up"
 var is_crouching = false #Saves if the character is crouch
-var current_state = "Idle_Up"
+#var current_state = "Idle_Up"
 
 func _physics_process(delta: float) -> void:
 	# 1. Detect movement entries
 	var input := Input.get_vector("left", "right", "up", "down")
-	print(input.sign())
 	
 	# Modo Mantener: is_crouching sera True solo mientras mantenga pulsado el Control
 	is_crouching = Input.is_action_pressed("crouch")
@@ -27,16 +27,18 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("shift"):
 		state = "Running"
 		current_speed = base_speed * 5 #Calculates de base speed and multiplies per 5 to Run
+	print(state, " - Speed: ", current_speed)
+	var dir_key = Vector2i(input.sign())
 	
+	# 2. SISTEMA DE MOVIMIENTO (Aquí se usa move_input corregido)
 	if input != Vector2.ZERO:
-		velocity = velocity.move_toward(input * current_speed, accel * delta)
+		var move_input = input.normalized()
+		velocity = velocity.move_toward(move_input * current_speed, accel * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	move_and_slide()
-	
-	# 2. SECCIÓN DE ANIMACIONES
+	# 3. SECCIÓN DE ANIMACIONES
 	if input != Vector2.ZERO:
-		var dir_key = Vector2i(input.sign())
 		var dir_suffix := ""
 	
 		match dir_key:
@@ -53,8 +55,8 @@ func _physics_process(delta: float) -> void:
 		lastinput = dir_suffix
 		sprite.play(state + "_" + dir_suffix)
 	
-	else: # <--- ¡ESTA ES LA PALABRA CLAVE QUE FALTABA!
-		# Si el input es igual a cero (el jugador no se mueve), maneja el Idle:
+	else:
+		# If the input is 0 the player its not gonna move, it controls de Idle:
 		if is_crouching:
 			sprite.play("Crouch_Idle_" + lastinput)
 		else: 
