@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var accel: float = 1200.0
 @export var friction: float = 1400.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 var lastinput = "Up"
 var is_crouching = false #Saves if the character is crouch
 var current_state = "Idle_Up"
@@ -14,6 +15,7 @@ func _physics_process(delta: float) -> void:
 	# 1. Detect movement entries
 	var input := Input.get_vector("left", "right", "up", "down")
 	print(input.sign())
+	
 	# Modo Mantener: is_crouching sera True solo mientras mantenga pulsado el Control
 	is_crouching = Input.is_action_pressed("crouch")
 	var current_speed = base_speed
@@ -32,98 +34,28 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	move_and_slide()
 	
-
-	var dir_key = Vector2i(input.sign())
-	var dir_suffix := ""
-	
-	match dir_key:
-		Vector2i(1, 0): dir_suffix = "Right"
-		Vector2i(-1, 0): dir_suffix = "Left"
-		Vector2i(0, -1): dir_suffix = "Up"
-		Vector2i(0, 1): dir_suffix = "Down"
-		Vector2i(1, -1): dir_suffix = "Up_Right"
-		Vector2i(1, 1):  dir_suffix = "Down_Right"
-		Vector2i(-1, -1): dir_suffix = "Up_Left"
-		Vector2i(-1, 1): dir_suffix = "Down_Left"
+	# 2. SECCIÓN DE ANIMACIONES
 	if input != Vector2.ZERO:
+		var dir_key = Vector2i(input.sign())
+		var dir_suffix := ""
+	
+		match dir_key:
+			Vector2i(1, 0): dir_suffix = "Right"
+			Vector2i(-1, 0): dir_suffix = "Left"
+			Vector2i(0, -1): dir_suffix = "Up"
+			Vector2i(0, 1): dir_suffix = "Down"
+			Vector2i(1, -1): dir_suffix = "Up_Right"
+			Vector2i(1, 1):  dir_suffix = "Down_Right"
+			Vector2i(-1, -1): dir_suffix = "Up_Left"
+			Vector2i(-1, 1): dir_suffix = "Down_Left"
+			_: dir_suffix = "Down"
+
 		lastinput = dir_suffix
-	if input != Vector2.ZERO:
-		if is_crouching:
-			lastinput = "Crouch_Idle_" + dir_suffix
-		else: 
-			lastinput = "Idle_" + dir_suffix
-			
 		sprite.play(state + "_" + dir_suffix)
-	else:
-		sprite.play(lastinput)
 	
-	
-	
-#Down = (0.0 , 1.0)
-#
-#W+A = (-1.0, -1.0)
-#A+S = (-1.0, 1.0)
-#S+D = (1.0, 1.0)
-#W+D = (1.0, -1.0f)
-	#if not lastinput.begins_with("Crouch_Idle_"):
-		#lastinput = lastinput.replace("Idle", "Crouch_Idle_")
-		#sprite.play(lastinput)
-
-	#if Input.is_action_pressed("down") && Input.is_action_pressed("right"):
-		#if Input.is_action_pressed("shift"):
-			#sprite.play("Running_Down_R")
-		#else:			
-			#sprite.play("Walking_Down_R")
-			#lastinput = "Idle_Down_R"
-	#elif Input.is_action_pressed("up") && Input.is_action_pressed("right"):
-		#if Input.is_action_pressed("shift"):
-			#sprite.play("Running_Up_R")
-		#else:
-			#sprite.play("Walking_Up_R")
-			#lastinput = "Idle_Up_R"
-	#elif Input.is_action_pressed("down") && Input.is_action_pressed("left"):
-		#if Input.is_action_pressed("shift"):
-			#sprite.play("Running_Down_L")
-		#else:
-			#sprite.play("Walking_Down_L")
-			#lastinput = "Idle_Down_L"
-	#elif Input.is_action_pressed("up") && Input.is_action_pressed("left"):
-		#if Input.is_action_pressed("shift"):
-			#sprite.play("Running_Up_L")
-		#else:
-			#sprite.play("Walking_Up_L")
-			#lastinput = "Idle_Up_L"
-	#elif Input.is_action_pressed("up"):
-		#if Input.is_action_pressed("shift"):
-			#sprite.play("Running_Up")
-		#else:
-			#sprite.play("Walking_Up")
-			#lastinput = "Idle_Up"
-	#elif Input.is_action_pressed("down"):
-		#if Input.is_action_pressed("shift"):
-			#sprite.play("Running_Down")
-		#else:
-			#sprite.play("Walking_Down")
-			#lastinput = "Idle_Down"
-		#
-	#elif Input.is_action_pressed("right"):
-		#if Input.is_action_pressed("shift"):
-			#sprite.play("Running_Right")
-		#else:
-			#sprite.play("Walking_Right")
-			#lastinput = "Idle_Right"
-	#elif Input.is_action_pressed("left"):
-		#if Input.is_action_pressed("shift"):
-			#sprite.play("Running_Left")
-		#else:
-			#sprite.play("Walking_Left")
-			#lastinput = "Idle_Left"
-##	elif Input.is_action_pressed("shift") && Input.is_action_pressed("down"):
-	##	sprite.play("Running_Down")
-	##	lastinput = "Idle_Down"
-	#elif Input.is_action_pressed("shift") && Input.is_action_pressed("up"):
-		#sprite.play("Running_Up")
-		#lastinput = "Idle_Up"
-	#
-	#else:
-		#sprite.play(lastinput)
+	else: # <--- ¡ESTA ES LA PALABRA CLAVE QUE FALTABA!
+		# Si el input es igual a cero (el jugador no se mueve), maneja el Idle:
+		if is_crouching:
+			sprite.play("Crouch_Idle_" + lastinput)
+		else: 
+			sprite.play("Idle_" + lastinput)
