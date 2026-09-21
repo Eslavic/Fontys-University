@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbg211upxqgpe"]
 
 [ext_resource type="PackedScene" uid="uid://crs4f6g573xo6" path="res://Scenes/player_character.tscn" id="1_al363"]
+[ext_resource type="PackedScene" uid="uid://qwhlgh6sps32" path="res://Scenes/area_2d.tscn" id="2_w8qi8"]
 
 [node name="Game_The_Witness" type="Node2D" unique_id=358239084]
 
@@ -10,3 +11,6 @@ position = Vector2(37, -85)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1469596414]
 position = Vector2(37, -85)
 zoom = Vector2(0.3, 0.3)
+
+[node name="Area2D" parent="." unique_id=620815293 instance=ExtResource("2_w8qi8")]
+position = Vector2(-1, 400)
