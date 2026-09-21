@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var accel: float = 1200.0
 @export var friction: float = 1400.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-var lastinput = "Idle_Up"
+var lastinput = "Up"
 var is_crouching = false #Saves if the character is crouch
 var current_state = "Idle_Up"
 
@@ -45,6 +45,8 @@ func _physics_process(delta: float) -> void:
 		Vector2i(1, 1):  dir_suffix = "Down_Right"
 		Vector2i(-1, -1): dir_suffix = "Up_Left"
 		Vector2i(-1, 1): dir_suffix = "Down_Left"
+	if input != Vector2.ZERO:
+		lastinput = dir_suffix
 	if input != Vector2.ZERO:
 		if is_crouching:
 			lastinput = "Crouch_Idle_" + dir_suffix
