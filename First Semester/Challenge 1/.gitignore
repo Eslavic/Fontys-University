@@ -1,8 +1,0 @@
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Godot build artifacts
-Creating a game - RL/Godot/*/build/
-

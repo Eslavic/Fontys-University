@@ -1,0 +1,7 @@
+# Godot build output
+Godot/*/build/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
