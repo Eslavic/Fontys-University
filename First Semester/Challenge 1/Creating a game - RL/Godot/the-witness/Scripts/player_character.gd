@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	print(state, " - Speed: ", current_speed)
 	var dir_key = Vector2i(input.sign())
 	
-	# 2. SISTEMA DE MOVIMIENTO (Aquí se usa move_input corregido)
+
 	if input != Vector2.ZERO:
 		var move_input = input.normalized()
 		velocity = velocity.move_toward(move_input * current_speed, accel * delta)
