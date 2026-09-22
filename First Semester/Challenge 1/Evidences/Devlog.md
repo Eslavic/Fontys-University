@@ -15,7 +15,7 @@
     - [Making a Game in Python with No Experience](https://www.youtube.com/watch?v=H09PmP5tsy8)
     - [Godot 4 Crash Course #1 - The Basics](https://www.youtube.com/watch?v=q7wlSvt0JIc&list=PL4cUxeGkcC9iHCXBpxbdsOByZ55Ez4bgF)
     - [How to make a Video Game - Godot Beginner Tutorial](https://www.youtube.com/watch?v=LOhfqjmasi0)
-
+	- [True Top-Down 2D](https://catlikecoding.com/godot/true-top-down-2d/)
 ### 1. What did I do this week?
 
 - **Project Conception**: Decided the core mechanics (2D Top-Down stealth and pursuit) and theme (1960's Jazz Noir )

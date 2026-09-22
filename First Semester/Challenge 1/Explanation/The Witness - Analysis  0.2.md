@@ -123,7 +123,7 @@ The game uses a high contrast noir look with a very limited colour palette, so t
 
 ## 7. Sources
 
-> Still to do. This section needs the sources I used while researching: what I read about stealth game design, about enemy detection systems, and about reinforcement learning for chasing behaviour.
+> 
 
 ---
 
