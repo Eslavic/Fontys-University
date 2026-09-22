@@ -1,6 +1,6 @@
 ## - Steps to follow:
 
-1. [[Analysis - 0.1]] → What is Analysis?
+1. [[The Witness - Analysis 0.1]] → What is Analysis?
 	1. Scope (What is in the project, what not)
 	2. What are the requirements
 	3. Which tools/framework/programming language...
