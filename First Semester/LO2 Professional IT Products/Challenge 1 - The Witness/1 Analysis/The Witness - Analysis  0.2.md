@@ -123,8 +123,33 @@ The game uses a high contrast noir look with a very limited colour palette, so t
 
 ## 7. Sources
 
-> 
+These are the sources I used during the analysis. They fall into three groups: the reinforcement learning research for The Hunter, the research into which engine to use and how to work with it, and the templates I looked at to learn how a game design document is normally written. All of them were consulted between 1 and 22 September 2026.
 
+**Reinforcement learning and AI** — to decide which algorithm would suit The Hunter
+
+- [Deep Reinforcement Learning Applied to the Snake Video Game](https://www.youtube.com/watch?v=lzd0XfBoDIw) — YouTube
+- [Q Learning Intro/Table — Reinforcement Learning p.1](https://www.youtube.com/watch?v=yMk_XtIEzH8&list=PLQVvvaa0QuDezJFIOU5wDdfy4e9vdnx-7) — YouTube, sentdex
+- [Deep Reinforcement Learning Tutorial for Python in 20 Minutes](https://www.youtube.com/watch?v=cO5g5qLrLSo&list=PLgNJO2hghbmjlE6cuKMws2ejC54BTAaWV) — YouTube
+- [The FASTEST introduction to Reinforcement Learning on the internet](https://www.youtube.com/watch?v=VnpRp7ZglfA) — YouTube
+- [A.I. Learns to Drive](https://www.youtube.com/watch?v=r428O_CMcpI) — YouTube
+- [A Beginner's Guide to Q-Learning: Understanding with a Simple Gridworld Example](https://medium.com/@goldengrisha/a-beginners-guide-to-q-learning-understanding-with-a-simple-gridworld-example-2b6736e7e2c9) — Medium
+- [General search: basic games applying reinforcement learning](https://www.youtube.com/results?search_query=basic+game+applying+reinforcement+learning) — YouTube search, used for orientation
+
+**Engine research** — choosing an engine and learning to work with Godot
+
+- [How to Make a Game in Python](https://www.youtube.com/watch?v=waY3LfJhQLY) — YouTube
+- [Making a Game in Python with No Experience](https://www.youtube.com/watch?v=H09PmP5tsy8) — YouTube
+- [Godot 4 Crash Course #1 — The Basics](https://www.youtube.com/watch?v=q7wlSvt0JIc&list=PL4cUxeGkcC9iHCXBpxbdsOByZ55Ez4bgF) — YouTube
+- [How to Make a Video Game — Godot Beginner Tutorial](https://www.youtube.com/watch?v=LOhfqjmasi0) — YouTube
+- [True Top-Down 2D](https://catlikecoding.com/godot/true-top-down-2d/) — Catlike Coding
+
+**Game design document templates** — to learn how this kind of document is normally structured
+
+- [Detailed Game Design Documentation Template](https://drive.google.com/file/d/17-51Uwxqle3DZVleir6OhDlWA_aerw5g/view) — Google Drive
+- [How to write an effective Game Design Document (GDD)?](https://www.reddit.com/r/gamedesign/comments/1iof781/how_to_write_an_effective_game_design_document/) — Reddit, r/gamedesign
+- [How to Write a Game Design Document](https://www.gamedeveloper.com/business/how-to-write-a-game-design-document) — Game Developer
+- [A GDD Template for the Indie Developer](https://www.gamedeveloper.com/design/a-gdd-template-for-the-indie-developer) — Game Developer
+- [A Template for Analyzing Game Design](https://notlaura.com/a-template-for-analyzing-game-design/) — notlaura.com
 ---
 
 The next document is [[Design]], which covers the tools, the technical choices and the diagrams. The planning with hours and dependencies is in the [[Project Plan]].
