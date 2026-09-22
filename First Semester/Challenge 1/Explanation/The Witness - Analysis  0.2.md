@@ -1,5 +1,5 @@
 
-- **Client:** Nightfall Interactive (fictional)
+- **Client:** Nightfall Interactive
 
 - **Made by:** David Eslava — Fontys ICT Student
 
@@ -20,4 +20,12 @@ This document describes the analisys phase of **The Witness**, a 2D top-down ste
 ## 2. Problem definition
 
 ### 2.1 The client's problem
-Stealth games traditionally rely on enemies driven by fixed hand-written rules.
+Stealth games traditionally rely on enemies driven by fixed hand-written rules. Once the plater understands the rules, the tension dissapears, the enemy becomes a puzzle with a known solution, and replay value drops significaly. Nightfall Interactive wants to know whether an enemy *that adapts* to the player can keep the tension alive across repeated sessions, and whether that adaptation is visible enough to the player to be worth marketing. 
+
+### 2.2 The project challenge
+> Deliver a playable prototype that demonstrates, in a single short level, the difference between a conventional patrolling enemy and an enemy that learns to pursue the player — and provide measurable evidence that the learning enemy actually improves.
+
+The challenge has two halves that must both succeed:
+1. **The game must be playable.** The stealth loop — move, hide, be seen, get caught — has to work on its own, otherwise there is nothing for the adaptive enemy to be measured against.
+
+2. **The adaptation must be demonstrable.** A claim that the enemy "learns" is worthless without evidence. The prototype must produce data that shows measurable improvement over time.
