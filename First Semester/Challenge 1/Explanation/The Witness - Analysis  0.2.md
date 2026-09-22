@@ -20,4 +20,4 @@ This document describes the analisys phase of **The Witness**, a 2D top-down ste
 ## 2. Problem definition
 
 ### 2.1 The client's problem
-Stealth games 
+Stealth games traditionally rely on enemies driven by fixed hand-written rules.
