@@ -56,6 +56,8 @@ The challenge has two halves that must both succeed:
 - Online or multiplayer.
 - Saving your progress.
 
+### 3.3 Designed, but not built in this delivery
+The Hunter's learning behaviour is fully designed in this project but is not implemented in the prototype. The available time went into the stealth loop, which has to work before any learning behaviour can be measured against it. What The Hunter perceives, the moves it can make, how it is rewarded, and the method for measuring whether it improves are all documented in the Design document. Building and measuring it is the first recommendation for the next iteration
 ## 4. Requirements (MoSCoW)
 
 The requirements are prioritised using **MoSCoW**, a method that sorts them into four groups, from "the project fails without this" down to "we are deliberately not doing this". Each requirement is written as a user story, which names who wants it, what they can do, and why it matters, so the table stays readable for someone who does not know the project.
