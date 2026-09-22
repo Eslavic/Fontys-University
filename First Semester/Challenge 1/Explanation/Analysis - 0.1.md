@@ -55,3 +55,10 @@
 | **2** | Create the base map, player movement, guard patrols, and vision-based detection.                                                        | Design the architecture of The Hunter agent (Q-table, state representation, and reward function). | **Design → Start of Implementation**  |
 | **3** | Implement the visual direction (palette, silhouettes, contrast), and polish collisions and movement.                                    | Implement and train The Hunter, iterating until measurable improvement can be observed.           | **Implementation**                    |
 | **4** | Final integration and general polishing.                                                                                                | Compare the trained Hunter with an untrained/random agent and visualize the learning curve.       | **Final Implementation + Validation** |
+|       |                                                                                                                                         |                                                                                                   |                                       |
+
+### Feedback and changes:
+- After talking with my technical couch and get feedback from him I made a new version:
+
+	- You can check the [[2026-09-14| Feedback (click here)]]
+	- And the **new** [[The Witness - Analysis  0.2|Analisys Document]] 

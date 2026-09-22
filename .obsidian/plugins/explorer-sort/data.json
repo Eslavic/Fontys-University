@@ -10,11 +10,16 @@
       "Challenge 1"
     ],
     "First Semester/Challenge 1/Explanation": [
-      "Challenge 1 - Orientation Doc.md",
-      "Analysis.md",
+      "Challenge 1 - Index.md",
+      "Orientation Doc.md",
+      "Analysis - 0.1.md",
+      "The Witness - Analysis  0.2.md",
       "Design.md",
       "Validation.md",
-      "Implementation.md"
+      "Implementation.md",
+      "Flowchart - The Witness.drawio",
+      "Assets",
+      "PDF Entregables"
     ]
   }
 }
