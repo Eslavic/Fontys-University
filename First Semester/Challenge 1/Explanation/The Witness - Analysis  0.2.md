@@ -96,13 +96,13 @@ C-01 is the client's core research question. It is designed in full in this proj
 
 _Explicitly excluded from this project, so expectations are clear_
 
-|ID|Requirement|Why it is excluded|
-|---|---|---|
-|W-01|Multiple levels or vertical floors|One level is enough to prove the concept; more levels multiply the work without adding evidence.|
-|W-02|Multiplayer|Out of scope for a single-player stealth concept and far beyond the available time.|
-|W-03|Advanced settings menu|Audio and graphics options add no value to a prototype that is demonstrated, not shipped.|
-|W-04|Crafting systems|Belongs to a different genre and does not support the research question.|
-|W-05|Adaptive jazz soundtrack|Attractive for a full title, but licensing and implementation cost cannot be justified here.|
+| ID   | Requirement                        | Why it is excluded                                                                               |
+| ---- | ---------------------------------- | ------------------------------------------------------------------------------------------------ |
+| W-01 | Multiple levels or vertical floors | One level is enough to prove the concept; more levels multiply the work without adding evidence. |
+| W-02 | Multiplayer                        | Out of scope for a single-player stealth concept and far beyond the available time.              |
+| W-03 | Advanced settings menu             | Audio and graphics options add no value to a prototype that is demonstrated, not shipped.        |
+| W-04 | Crafting systems                   | Belongs to a different genre and does not support the research question.                         |
+| W-05 | Adaptive jazz soundtrack           | Attractive for a full title, but licensing and implementation cost cannot be justified here.     |
 ## 5. Proposed solution
 
 One floor of the jazz club: a main room with tables and a bar, a back corridor, and an exit you are trying to reach. Small enough that one attempt takes a few minutes.
