@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_pressed("shift"):
 		state = "Running"
 		current_speed = base_speed * 5 #Calculates de base speed and multiplies per 5 to Run
-	print(state, " - Speed: ", current_speed)
 	var dir_key = Vector2i(input.sign())
 	
 
