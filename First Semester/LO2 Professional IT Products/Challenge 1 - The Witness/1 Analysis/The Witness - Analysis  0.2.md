@@ -8,19 +8,19 @@
 --- 
 ## 1. Introduction
 ### 1.1 Purpose of this document
-This document describes the analisys phase of **The Witness**, a 2D top-down stealth game commisioned by Nightfall Interactive. It defines the problem the client wants to solve, the scope of the project, and the requierements the delivered product must meet. It does not describe how the product will be built, the technical approach is documented separately in the [[Design]] document, and the schedule in the [[Project Plant]].
+This document describes the analysis phase of **The Witness**, a 2D top-down stealth game commissioned by Nightfall Interactive. It defines the problem the client wants to solve, the scope of the project, and the requirements the delivered product must meet. It does not describe how the product will be built, the technical approach is documented separately in the [[Design]] document, and the schedule in the [[Project Plan]].
 
 ### 1.2 The client
-**Nightfall Interactive** is a small independent game studio that publishes short, stylised games. The studio wants  to test whether a learning enemy that visibly gets better at hunting the player is a strong enough hook to biuld a real game around. Before commiting to a full production budget, the studio has asked me for a playable prototype that demonstrates the concept.
+**Nightfall Interactive** is a small independent game studio that publishes short, stylised games. The studio wants  to test whether a learning enemy that visibly gets better at hunting the player is a strong enough hook to build a real game around. Before committing to a full production budget, the studio has asked me for a playable prototype that demonstrates the concept.
 
 ### 1.3 The product in one paragraph 
-**The Witness** is a 2D top-down stealth game set in 1960's jazz club. The player charachter witnessed something they were not supposed to see, a murder, dirty deal... And must escape the building before the gangsters inside catch them. The game combines two dynamics: **stealth**, where ordinary guards patrol fixed routes and detect the player through their line of sight, and **pursuit**, where the special enemy **The Hunter**, the boss's right-hand man learns over time to intercept the player more efficiently instead of following a fixed pattern.
+**The Witness** is a 2D top-down stealth game set in 1960s jazz club. The player character witnessed something they were not supposed to see, a murder, dirty deal... And must escape the building before the gangsters inside catch them. The game combines two dynamics: **stealth**, where ordinary guards patrol fixed routes and detect the player through their line of sight, and **pursuit**, where the special enemy **The Hunter**, the boss's right-hand man learns over time to intercept the player more efficiently instead of following a fixed pattern.
 
 ---
 ## 2. Problem definition
 
 ### 2.1 The client's problem
-Stealth games traditionally rely on enemies driven by fixed hand-written rules. Once the plater understands the rules, the tension dissapears, the enemy becomes a puzzle with a known solution, and replay value drops significaly. Nightfall Interactive wants to know whether an enemy *that adapts* to the player can keep the tension alive across repeated sessions, and whether that adaptation is visible enough to the player to be worth marketing. 
+Stealth games traditionally rely on enemies driven by fixed hand-written rules. Once the player understands the rules, the tension disappears, the enemy becomes a puzzle with a known solution, and replay value drops significantly. Nightfall Interactive wants to know whether an enemy *that adapts* to the player can keep the tension alive across repeated sessions, and whether that adaptation is visible enough to the player to be worth marketing. 
 
 ### 2.2 The project challenge
 >The studio agreed to do this in two steps. A learning enemy can only be judged if there is a working stealth game around it, so the first delivery has to establish that foundation and produce a worked-out design for the enemy itself.
@@ -36,7 +36,7 @@ The challenge has two halves that must both succeed:
 
 | Aspect              | Description                                                                                   |
 | ------------------- | --------------------------------------------------------------------------------------------- |
-| Primary players     | Players aged 16+ who enjoy short, tense, single sessions stealth games.                       |
+| Primary players     | Players aged 16+ who enjoy short, tense, single-sessions stealth games.                       |
 | Familiarity assumed | Comfortable with keyboard movement controls, no prior experience with stealth games required. |
 | Session length      | 3-6 minutes per attempt; designed for repeated attempts.                                      |
 | Platform            | Desktop (Windows / Linux), keyboard input.                                                    |
@@ -46,7 +46,7 @@ The challenge has two halves that must both succeed:
 ### 3.1 In scope
 - One small playable level set inside the jazz club.
 - A player charachter that moves and cannot walk through walls.
-- Guards that patrol and see the player though a vision cone.
+- Guards that patrol and see the player through a vision cone.
 - A game over screen when the player is caught.
 - A complete design for The Hunter, the learning enemy, including how its improvement would be measured
 ### 3.2 Out of scope
