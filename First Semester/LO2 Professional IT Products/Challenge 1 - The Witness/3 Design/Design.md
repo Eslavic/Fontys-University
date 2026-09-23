@@ -1,7 +1,7 @@
 # Design — The Witness
 
 - **Client:** Nightfall Interactive
-- **Made by:** David Eslava - Fontys ICT Student
+- **Made by:** David Eslava — Fontys ICT Student
 - **Version 0.1 — 23 September 2026**
 
 ---
@@ -51,6 +51,7 @@ The player sprites are 1024 × 1024, so the player is around 400 units wide in t
 | Catch area of the guard | circle, radius 200 |
 | Space the guard keeps from walls (pathfinding) | 200 |
 | Walls | 100 units thick |
+| Corridors and doors | at least 800 units wide (2 grid squares) |
 | One square of the grid (level and The Hunter) | 400 × 400, around the size of the player |
 
 The guard chases faster than the player walks, but slower than the player runs. So the player can always escape, but they have to choose to run.
@@ -63,53 +64,37 @@ The main flowchart shows the whole game in a simple way, from the title screen t
 
 ![[Flowchart - The Witness.drawio.svg]]
 
+%% TO DO David: remove the "Continue / Load Game" branch from the flowchart. Saving is out of scope in the Analysis (3.2), so the flowchart should not show it. %%
+
 The prototype has the main part of this flow: playing, being seen by a guard, and game over with the option to try again. The title screen, the comic introduction, the alert levels and The Hunter are part of the full game, not of this delivery.
 
 ### 3.2 Level layout
 
-The level is one floor of the jazz club. It has a main room with a bar, a stage and tables, and a back corridor that goes to the exit. The player starts in the bottom left corner and has to get to the exit without being caught.
+The level is one floor of the jazz club, in two parts:
+
+- **The jazz hall.** A big open room with a bar, a stage and tables. The player starts here, in the bottom left corner.
+- **The staff area.** Behind a "Staff only" door there is a service corridor, a kitchen, a storage room, the office (where the player saw the crime) and a construction zone that is not finished yet. The exit is at the end of the staff area.
 
 ![[Level layout sketch.svg]]
 
-I put the tables and the bar there on purpose. Without things to hide behind, I cannot test the vision cone, because the player has no way to break the line of sight (requirement M-04).
+The two parts feel different on purpose. The jazz hall is open, so the player can see the guard from far away and plan. The staff area is small and tight, with short corridors and many corners, like in the game *Ape Out*. Around a corner the player cannot see what is coming, and the guard cannot see the player either. This makes the second part more tense.
 
-The guard walks in a loop around the tables with four waypoints. All the floor except the walls and the furniture is marked as a place where the guard can walk. So the guard finds its own way around the tables, when it patrols and when it chases (M-07). A second guard in the corridor is only for if I have time.
+Some choices in the plan:
+
+- **Things to hide behind.** Tables, the bar, shelves, scaffolding and boxes. Without them I cannot test the vision cone, because the player has no way to break the line of sight (M-04).
+- **More than one way.** There are two doors into the staff area: the "Staff only" door and a door from the bar into the kitchen. In the construction zone some walls are not finished, so the player can walk through the gaps. Like this the player can choose a route and does not have to wait in one place.
+- **Guards.** Guard 1 walks a loop around the tables in the jazz hall. Guard 2 walks up and down the service corridor, so the player has to use the side rooms to wait for the right moment. Guard 3, near the office and the exit, is only for if I have time.
+- **Width of corridors and doors.** All corridors and doors are at least 2 grid squares (800 units) wide. The guard is 360 units wide and pathfinding keeps 200 units away from walls, so a narrower door would be closed for the guards (M-07).
+
+The level is 24 × 14 grid squares (9600 × 5600 units), so the camera has to follow the player.
 
 ## 4. Architecture
 
 ### 4.1 Scene tree
 
-In Godot a game is made with nodes in a tree. This is the tree of the level in the prototype:
+In Godot a game is made with nodes in a tree. The level is one scene, and the guard is its own scene so I can put more than one guard in the level. Red is the guard.
 
-```
-Game_The_Witness (Node2D)            the level
-├── NavigationRegion2D                the floor where guards can walk
-│   ├── Walls (Node2D)
-│   │   └── StaticBody2D × several   each one with a CollisionShape2D and a black ColorRect
-│   └── Furniture (Node2D)
-│       └── StaticBody2D × several   bar, stage and tables, grey ColorRects
-├── Player (player_character.tscn)
-│   └── Camera2D                     zoom 0.3, child of the player so it follows them
-├── PatrolRoute (Node2D)
-│   └── Marker2D × 4                 the waypoints of the guard
-├── Enemy (enemy.tscn)
-├── Exit (Area2D)                    if the player gets here, they win (I build it last)
-└── GameOverScreen (CanvasLayer)     dark ColorRect and a Label, hidden until you are caught
-```
-
-The guard has its own scene, so I can put more than one guard in the level:
-
-```
-Enemy (CharacterBody2D)              enemy.gd
-├── ColorRect                        red square, placeholder
-├── CollisionShape2D                 its body, it collides with walls
-├── Vision (Area2D)
-│   └── CollisionPolygon2D           the vision cone
-├── CatchArea (Area2D)
-│   └── CollisionShape2D             small circle, if it touches the player, the player is caught
-├── SightLine (RayCast2D)            checks if there is a wall between the guard and the player
-└── NavigationAgent2D                finds the way to the place the guard wants to go
-```
+![[Scene tree.svg]]
 
 Some things are like this on purpose:
 
@@ -119,12 +104,12 @@ Some things are like this on purpose:
 
 ### 4.2 How the scripts work together
 
-| Script                | On which node                                             | What it does                                                                        |
-| --------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `player_character.gd` | Player                                                    | Movement, crouching, running, and the right animation for each direction            |
-| `enemy.gd`            | Enemy                                                     | Decides where the guard wants to go and moves it there with pathfinding (section 5) |
-| `game_manager.gd`     | Autoload, you can use it from everywhere as `GameManager` | Knows if the game is over, pauses the game, restarts the level                      |
-| `game_over_screen.gd` | GameOverScreen                                            | Appears when the player is caught, restarts when you press Enter                    |
+| Script | On which node | What it does |
+|---|---|---|
+| `player_character.gd` | Player | Movement, crouching, running, and the right animation for each direction |
+| `enemy.gd` | Enemy | Decides where the guard wants to go and moves it there with pathfinding (section 5) |
+| `game_manager.gd` | Autoload, you can use it from everywhere as `GameManager` | Knows if the game is over, pauses the game, restarts the level |
+| `game_over_screen.gd` | GameOverScreen | Appears when the player is caught, restarts when you press Enter |
 
 The guard does not talk directly to the game over screen. When the guard catches the player, it calls `GameManager.catch_player()`. The game manager pauses the game and sends a signal called `player_caught`. The game over screen listens to that signal and appears. Like this every part works on its own: a second guard, or The Hunter later, only has to call the same function.
 
@@ -246,6 +231,9 @@ With 384 situations and 4 moves, the table has 1,536 numbers. That is small, so 
 | He walked into a wall (and did not move) | −5 |
 
 The small minus for staying at the same distance is so he does not learn to walk sideways forever. Catching the player gives a lot more points than the rest, so catching is always better than a lot of small steps.
+
+%% TO DO David: these reward numbers are a starting point. The ratios matter more than the exact values: catching must be worth much more than one step, and hitting a wall must hurt more than moving away. %%
+
 ### 6.5 How he learns
 
 After every move, the number in the table for that situation and that move changes like this:
@@ -301,9 +289,6 @@ This is the answer to the question of the client, so I define it before I build 
 **When is it better:** the trained Hunter needs clearly fewer moves than the untrained one, he catches the player more often in 200 moves, and the learning curve goes down and not flat. If this does not happen, I write the result like it is, like I promise in the Analysis.
 
 **What the players notice:** the client also wants to know if the players can *see* that he gets better. After five tries against The Hunter, I ask the testers one question: "Did The Hunter get better at finding you?" If The Hunter gets better in the numbers but the players don't notice it, it is not useful for the client.
-
-%% TO DO David: 50 attempts, 500 training attempts and 10 starting positions are my first estimate. Check with Frank whether this is enough. %%
-
 ### 6.8 Limits of this design
 
 - The Hunter only knows the direction of the player and the walls next to him, not the whole level. He can learn "go around the wall on the left when the player is north-east", but not a route through different rooms.
