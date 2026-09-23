@@ -1,0 +1,7 @@
+Faruk told me that my analysis is already quite good. We talked about the problem I had with finding suitable sprites for my game. He said that I could include this problem and the solution in my analysis, but it is not necessary to change it now. I can apply this to my next project.  
+  
+The main problem was finding real top-down sprites. AI was not very useful for generating the type of sprites I needed. I decided to try a different approach and found Mixamo, where I could download different characters and animations. I downloaded a mannequin with walking, running and slow walking animations. I then changed the style using nodes and placed the camera directly above the character to create a real top-down perspective, similar to Ape Out. The animation was 19 seconds long, so I took approximately every fourth frame to create PNG frames that I can use as sprites in the game.  
+  
+For my next steps, I will set time limits for each section so that perfectionism does not make me spend too much time on one task. I will also stay in contact with both of my coaches and contact them proactively every week. I will also check Student+ to find more specific support for ADHD.  
+  
+Faruk will check my progress and ask me about it every week to help me stay on track.

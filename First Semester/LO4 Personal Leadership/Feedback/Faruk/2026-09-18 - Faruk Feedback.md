@@ -1,0 +1,3 @@
+The game has to be at least playable — right now I only have one character, no map, no enemies... Without a playable game I can't get validation, and without validation I won't have all the documentation I need.  
+  
+After looking at my character's script, my coach helped me identify and understand a bit better why it wasn't working and how to fix it. He also suggested using Switch Cases in Godot — called "match", to make my code cleaner, with fewer lines and fewer chances of bugs.
