@@ -21,8 +21,7 @@ Two things:
 
 Anything marked Will Not Have in the Analysis is out of scope.
 
-The adaptive Hunter is a Could Have. The Analysis treats it as the client's main question, but there are no hours for it in the schedule below. That contradiction is still open and I need to settle it before I write the Design document.
-
+The adaptive Hunter is a Could Have and is not built in this delivery. My coach agreed to this on 22 September, because it sits in Could Have in the MoSCoW table. What I deliver instead is a complete design for The Hunter, including how its improvement would be measured, which is written up in the Design document. The stealth loop has to work before a learning enemy can be measured against it.
 ## 3. Phases
 
 | Phase | When | Finished when |
@@ -114,17 +113,17 @@ gantt
 
     section Advice
     Feedback meeting                  :done, b1, 2026-09-14, 1d
-    Advice document                   :active, b2, 2026-09-22, 1d
+	Advice document :b2, 2026-09-23, 1d
 
     section Design
     High-level flowchart              :done, c1, 2026-09-15, 1d
     Learn Godot                       :done, c2, 2026-09-15, 4d
     Player character                  :done, c3, 2026-09-18, 3d
-    Design document                   :active, c4, 2026-09-22, 1d
+	Design document :c4, 2026-09-23, 1d
 
     section Realisation
-    Map, walls and collision          :d1, 2026-09-23, 1d
-    Patrolling enemy                  :d2, 2026-09-23, 1d
+	Map, walls and collision :d1, 2026-09-23, 1d
+	Patrolling enemy :d2, 2026-09-23, 1d
     Vision cone and detection         :d3, 2026-09-23, 2d
     Game over when caught             :d4, 2026-09-24, 1d
 
@@ -136,27 +135,26 @@ gantt
     section Writing
     Project plan                      :done, f1, 2026-09-21, 1d
     Analysis rewrite                  :done, f2, 2026-09-21, 1d
-    Orientation report                :f5, 2026-09-23, 1d
+    Orientation report                :f5, 2026-09-25, 1d
     Devlog finished                   :f3, 2026-09-24, 1d
     Submit                            :milestone, crit, del, 2026-09-25, 0d
 ```
 
 ## 6. The rest of the week
 
-| Day        | What I do                                                                                                                                                    | Hours   |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
-| **Mon 21** | Project plan, Analysis rewrite                                                                                                                               | 6, done |
-| **Tue 22** | Advice document (3), Design document (4), evidence descriptions (1)                                                                                          | 8       |
-| **Wed 23** | Orientation report (2), map and collision (3), patrolling enemy (2), start the vision cone (2)                                                               | 9       |
-| **Thu 24** | Finish the vision cone (1), game over (1.5), test plan (1), playtests (1.5), Validation (1.5), devlog (1), last evidence descriptions (0.5), final check (1) | 9       |
-| **Fri 25** | Nothing planned. Buffer, then submit before 16:00.                                                                                                           | —       |
-
-I put the writing before the code on purpose. None of the documents need the game to compile, so if the prototype runs late the documentation is already safe.
+| Day        | What I do                                                                                                                                                      | Hours   |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| **Mon 21** | Project plan, Analysis rewrite                                                                                                                                 | 6, done |
+| **Tue 22** | Analysis finished to version 0.2, portfolio reorganised by learning outcome                                                                                    | 8       |
+| **Wed 23** | Advice document (1.5), Design document (2.5), map and walls (2.5), patrolling enemy (1.5)                                                                      | 8       |
+| **Thu 24** | Vision cone (2.5), game over (1), test plan and playtests (2), Validation (1.5), devlog into English (1), LO2 evidence descriptions (1)                        | 9       |
+| **Fri 25** | Orientation doc (1.5), career choice and workshop log (1), core values and feedback log (1), remaining evidence descriptions (1), final check and submit (0.5) | 5       |
+I put the writing before the code on purpose. None of the documents need the game to compile, so if the prototype runs late the documentation is already safe. Friday was meant to be a buffer; losing Tuesday to the Analysis spent it.
 
 ## 7. What could go wrong
 
-- **The week has no slack.** Wednesday and Thursday are nine-hour days. If a day runs over I cut from the list below straight away instead of waiting until Friday.
-- **Detection turns out to be harder than I think.** I build the vision cone as an Area2D with one raycast for line of sight, which is the simplest thing that meets the requirement. If raycasting eats too much time I fall back to a distance check.
+- **I am a day behind.** Tuesday went on finishing the Analysis and reorganising the portfolio instead of the Advice and Design documents. That means Friday morning is now working time, not buffer. I re-cut the schedule on Wednesday morning rather than discovering it on Thursday night.
+- **Detection is the part most likely to eat the day.** I build the vision cone as a cone-shaped Area2D on the enemy that turns with it, plus one raycast so walls block sight. That is the simplest thing that still meets the Must Have. If it fights me for more than half a day I ship the Area2D on its own and say so in the Validation.
 - **My sprites are 1024×1024 and the camera is zoomed to 0.3.** That makes a normal tileset awkward. So I build the map out of plain rectangles at the player's scale. Frank already said placeholders are fine.
 - **Evidence descriptions get forgotten.** I write each one right after the thing it describes, not all of them on Thursday night.
 
