@@ -6,6 +6,8 @@
 
 [node name="Player" parent="." unique_id=1487116230 instance=ExtResource("1_al363")]
 position = Vector2(37, -85)
+accel = 1000.0
+friction = 2500.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1469596414]
 position = Vector2(37, -85)
