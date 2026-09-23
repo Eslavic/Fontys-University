@@ -8,7 +8,7 @@
 
 ## 1. Purpose of this document
 
-Before building anything, two decisions had to be made: which engine and programming language to build the game in, and how the enemies should decide where to move. This document compares the options for both, explains the trade-offs, and gives my advice to Nightfall Interactive.
+Before building anything, two decisions had to be made: which engine and programming language to build the game in, and how the enemies find their way and decide where to go. This document compares the options for both, explains the trade-offs, and gives my advice to Nightfall Interactive.
 
 The requirements these choices have to serve are in the [[The Witness - Analysis  0.2|Analysis]]. What follows from the choices, the scene structure, the diagrams and the design of The Hunter, is in the [[Design]] document.
 
@@ -48,40 +48,61 @@ The options are judged against the situation this project is actually in:
 
 **Build the game in Godot 4 with GDScript.** It is free, it has every 2D tool the game needs, and it lets me reuse what I know from Python. What we give up is direct access to Python's machine learning libraries, which only becomes a problem if The Hunter ever needs a neural network.
 
-## 4. Decision 2: how the enemies decide where to move
+## 4. Decision 2: how the enemies find their way and decide where to go
 
 There are two kinds of enemy in the game. The **guards** patrol and react when they see the player. **The Hunter** is the enemy the client's question is about: one that gets better at catching the player over time.
 
-### 4.1 The options
+Moving an enemy involves two separate questions, and it helps to keep them apart:
 
-| | **Hand-written state machine** | **Pathfinding (NavigationAgent2D)** | **Tabular Q-learning** | **Deep reinforcement learning** |
-|---|---|---|---|---|
-| **What it is** | Fixed rules: patrol, chase when you see the player, stop when caught | The engine calculates the shortest route to the player around walls | The enemy keeps a table of how good each move is in each situation and updates it after every move | A neural network learns the same thing from many examples |
-| **Learns from the player?** | No | No | Yes | Yes |
-| **Runs inside Godot without extra software** | Yes | Yes, built in | Yes, it is only a table | No, needs Python and extra libraries |
-| **Can I explain why it did something?** | Yes | Yes | Yes, you can read the table | Hard |
-| **Time to build** | Hours | Hours | Days, including training | Weeks |
+- **How does it get somewhere?** It has to walk around the bar and the tables instead of into them (requirement M-07). This is **pathfinding**.
+- **Where does it want to go?** Its next patrol point, the player, or the place it last saw the player. For the guards this is a small set of rules. For The Hunter, this is the part that should learn.
 
-### 4.2 Trade-offs
+### 4.1 How the guards get around the level
 
-A **state machine** is the simplest option and it is exactly what the guards need. They should be predictable, because the player has to be able to learn their routes. They are also the comparison: The Hunter only means something next to enemies that do not learn.
+| | **Straight line to the target** | **Pathfinding (NavigationRegion2D + NavigationAgent2D)** | **My own grid pathfinding (A\*)** |
+|---|---|---|---|
+| **What it is** | The guard walks directly at its target and slides along anything in the way | Godot calculates the shortest walkable route around walls and furniture | I write the route search myself on a grid |
+| **Walks around obstacles?** | No, gets stuck on corners | Yes | Yes |
+| **Built into Godot** | Yes | Yes | No |
+| **Time to build** | Minutes | A few hours, mostly learning the setup | Days |
 
-**Pathfinding** always finds the shortest route, so a pathfinding Hunter would be strong from the first second and never improve. That makes it useless for the client's question. It is still useful as a helper for the guards if they get stuck on walls while chasing.
+A straight line is what most beginner tutorials do, and it breaks the moment a table stands between the guard and the player. A guard that pushes against a table looks broken and ruins the tension. Writing my own A\* would teach me a lot, but Godot already has a tested version built in, and my time is better spent on the stealth itself.
+
+**Advice:** the guards use **Godot's built-in pathfinding**. I mark the walkable floor with a NavigationRegion2D, and each guard gets a NavigationAgent2D that plans its route around the furniture.
+
+### 4.2 How the guards decide where to go
+
+Pathfinding only answers *how*. The guard still has to decide *where*: patrol point, player, or the last place it saw the player. The options for that decision:
+
+| | **Fixed rules (states)** | **Tabular Q-learning** | **Deep reinforcement learning** |
+|---|---|---|---|
+| **What it is** | A few clear rules: patrol, chase when you see the player, stop when you catch them | The enemy keeps a table of how good each move is in each situation and updates it after every move | A neural network learns the same thing from many examples |
+| **Learns from the player?** | No | Yes | Yes |
+| **Runs inside Godot without extra software** | Yes | Yes, it is only a table | No, needs Python and extra libraries |
+| **Can I explain why it did something?** | Yes | Yes, you can read the table | Hard |
+| **Time to build** | Hours | Days, including training | Weeks |
+
+For the guards, fixed rules are enough and are what the game needs. The player has to be able to learn a guard's route to sneak past it, so the guards should be readable. They are also the comparison: The Hunter only means something next to enemies that do not learn. Combined with pathfinding, the guards still move naturally through the club, so they do not feel like robots on rails.
+
+### 4.3 How The Hunter decides where to go
+
+For The Hunter, pathfinding on its own is the wrong answer. It always finds the shortest route, so a pathfinding Hunter would be as good as it will ever be from the first second and never improve. That makes it useless for the client's question.
 
 **Deep reinforcement learning** is what the "AI learns to drive" and Snake videos use. It needs far more training, it runs outside Godot, and when it does something strange it is very hard to find out why. For an enemy that only chooses between four moves on a small map, that is much more than the problem needs.
 
 **Tabular Q-learning** is the smallest thing that actually learns. The Hunter looks at its situation, picks one of four moves, gets a reward or a penalty, and writes down what happened in a table. Over many attempts the good moves get higher scores. The whole "brain" is a table of about 1,500 numbers that I can open and read, which also makes the result easy to check.
 
-### 4.3 Advice
+### 4.4 Advice
 
-**Use a state machine for the guards and tabular Q-learning for The Hunter.** Build the guards in this delivery, because the stealth game has to work first. Design The Hunter in full now and build it in the next iteration, as agreed in the Analysis. If the guards get stuck on walls during testing, add Godot's built-in pathfinding to their chase state.
+**Guards: Godot's built-in pathfinding to move, and a few simple rules to decide where to go. The Hunter: tabular Q-learning.** Build the guards in this delivery, because the stealth game has to work first. Design The Hunter in full now and build it in the next iteration, as agreed in the Analysis.
 
 ## 5. Summary
 
 | Decision | Advice | Main reason | What we give up |
 |---|---|---|---|
 | Engine and language | Godot 4 with GDScript | Free, all 2D tools built in, close to Python | Python's machine learning libraries |
-| Guards | Hand-written state machine | Predictable on purpose, quick to build | They never surprise the player |
+| How guards move | Built-in pathfinding (NavigationAgent2D) | They walk around furniture instead of into it (M-07) | Setup time, and I do not write the route search myself |
+| What guards do | A few simple rules: patrol, chase, catch | Readable on purpose, so the player can learn their routes | They never surprise the player |
 | The Hunter | Tabular Q-learning, designed now, built next iteration | Smallest method that really learns, and easy to explain | It can only learn simple situations, not complex tactics |
 
 ## 6. Sources
