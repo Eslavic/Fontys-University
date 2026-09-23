@@ -246,9 +246,6 @@ With 384 situations and 4 moves, the table has 1,536 numbers. That is small, so 
 | He walked into a wall (and did not move) | −5 |
 
 The small minus for staying at the same distance is so he does not learn to walk sideways forever. Catching the player gives a lot more points than the rest, so catching is always better than a lot of small steps.
-
-%% TO DO David: these reward numbers are a starting point. The ratios matter more than the exact values: catching must be worth much more than one step, and hitting a wall must hurt more than moving away. %%
-
 ### 6.5 How he learns
 
 After every move, the number in the table for that situation and that move changes like this:
