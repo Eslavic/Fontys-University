@@ -22,6 +22,7 @@ Two things:
 Anything marked Will Not Have in the Analysis is out of scope.
 
 The adaptive Hunter is a Could Have and is not built in this delivery. My coach agreed to this on 22 September, because it sits in Could Have in the MoSCoW table. What I deliver instead is a complete design for The Hunter, including how its improvement would be measured, which is written up in the Design document. The stealth loop has to work before a learning enemy can be measured against it.
+
 ## 3. Phases
 
 | Phase | When | Finished when |
@@ -35,7 +36,7 @@ The adaptive Hunter is a Could Have and is not built in this delivery. My coach 
 
 ## 4. Activities
 
-Hours are estimates. Status is as of Tuesday 22 September.
+Hours are estimates. Status is as of Wednesday 23 September.
 
 ### Analysis
 
@@ -53,7 +54,7 @@ Hours are estimates. Status is as of Tuesday 22 September.
 | Activity | Hours | Can't start until | Status |
 |---|---|---|---|
 | Feedback meeting with Frank and write down what he said | 2 | Analysis sent | Done, 14 Sep |
-| Write the Advice document — the engine and AI comparison, the trade-offs, why I chose what I chose | 3 | the research and the feedback | Today |
+| Write the Advice document — the engine and AI comparison, the trade-offs, why I chose what I chose | 3 | the research and the feedback | Wednesday |
 
 ### Design
 
@@ -62,7 +63,7 @@ Hours are estimates. Status is as of Tuesday 22 September.
 | Draw the high-level flowchart | 3 | Analysis written | Done |
 | Learn Godot through a tutorial project — nodes, scenes, tilemaps, collisions | 12 | engine chosen | Done |
 | Build the player — eight-direction movement and the animation states | 10 | Godot basics | Done |
-| Write the Design document — technical choices, how the scenes fit together, a detailed flowchart for detection only | 4 | Advice document | Today |
+| Write the Design document — technical choices, how the scenes fit together, a detailed flowchart for detection only | 4 | Advice document | Wednesday |
 
 ### Realisation
 
@@ -89,7 +90,7 @@ Hours are estimates. Status is as of Tuesday 22 September.
 | Rewrite the Analysis for the client            | 4     | feedback meeting  | Done      |
 | Finish the devlog and put it all in English    | 1     | —                 | Thursday  |
 | Write the evidence descriptions for each piece | 1.5   | the piece exists  | As I go   |
-| Write the orientation report                   | 2     | —                 | Wednesday |
+| Write the orientation report                   | 2     | —                 | Friday    |
 | Final check and submit                         | 1     | everything else   | Thursday  |
 
 **Total: 88 hours. 62 done, 26 left.**
@@ -113,17 +114,17 @@ gantt
 
     section Advice
     Feedback meeting                  :done, b1, 2026-09-14, 1d
-	Advice document :b2, 2026-09-23, 1d
+    Advice document                   :b2, 2026-09-23, 1d
 
     section Design
     High-level flowchart              :done, c1, 2026-09-15, 1d
     Learn Godot                       :done, c2, 2026-09-15, 4d
     Player character                  :done, c3, 2026-09-18, 3d
-	Design document :c4, 2026-09-23, 1d
+    Design document                   :c4, 2026-09-23, 1d
 
     section Realisation
-	Map, walls and collision :d1, 2026-09-23, 1d
-	Patrolling enemy :d2, 2026-09-23, 1d
+    Map, walls and collision          :d1, 2026-09-23, 1d
+    Patrolling enemy                  :d2, 2026-09-23, 1d
     Vision cone and detection         :d3, 2026-09-23, 2d
     Game over when caught             :d4, 2026-09-24, 1d
 
@@ -135,20 +136,21 @@ gantt
     section Writing
     Project plan                      :done, f1, 2026-09-21, 1d
     Analysis rewrite                  :done, f2, 2026-09-21, 1d
-    Orientation report                :f5, 2026-09-25, 1d
+    LO1 doc                           :f5, 2026-09-25, 1d
     Devlog finished                   :f3, 2026-09-24, 1d
     Submit                            :milestone, crit, del, 2026-09-25, 0d
 ```
 
 ## 6. The rest of the week
 
-| Day        | What I do                                                                                                                                                      | Hours   |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| **Mon 21** | Project plan, Analysis rewrite                                                                                                                                 | 6, done |
-| **Tue 22** | Analysis finished to version 0.2, portfolio reorganised by learning outcome                                                                                    | 8       |
-| **Wed 23** | Advice document (1.5), Design document (2.5), map and walls (2.5), patrolling enemy (1.5)                                                                      | 8       |
-| **Thu 24** | Vision cone (2.5), game over (1), test plan and playtests (2), Validation (1.5), devlog into English (1), LO2 evidence descriptions (1)                        | 9       |
-| **Fri 25** | Orientation doc (1.5), career choice and workshop log (1), core values and feedback log (1), remaining evidence descriptions (1), final check and submit (0.5) | 5       |
+| Day        | What I do                                                                                                                                                    | Hours   |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| **Mon 21** | Project plan, Analysis rewrite | 6, done |
+| **Tue 22** | Analysis finished to version 0.2, portfolio reorganised by learning outcome | 8, done |
+| **Wed 23** | Advice document (1.5), Design document (2.5), map and walls (2.5), patrolling enemy (1.5) | 8 |
+| **Thu 24** | Vision cone (2.5), game over (1), test plan and playtests (2), Validation (1.5), devlog into English (1), LO2 evidence descriptions (1) | 9 |
+| **Fri 25** | Orientation doc (1.5), career choice and workshop log (1), core values and feedback log (1), remaining evidence descriptions (1), final check and submit (0.5) | 5, finish by 13:00 |
+
 I put the writing before the code on purpose. None of the documents need the game to compile, so if the prototype runs late the documentation is already safe. Friday was meant to be a buffer; losing Tuesday to the Analysis spent it.
 
 ## 7. What could go wrong
