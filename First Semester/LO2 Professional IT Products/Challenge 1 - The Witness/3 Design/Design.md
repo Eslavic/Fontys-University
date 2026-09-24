@@ -2,7 +2,7 @@
 
 **Client:** Nightfall Interactive
 **Made by:** David Eslava, Fontys ICT student
-**Version 0.2, 24 September 2026**
+**Version 0.2 - 24 September 2026**
 
 ---
 
@@ -54,10 +54,7 @@ The guard chases faster than the player walks, but slower than the player runs. 
 ### 3.1 Main flowchart
 
 The main flowchart shows the whole game in a simple way, from the title screen until you win or get a game over. I only made detailed diagrams for the two parts that are really complex, the guards (section 5) and The Hunter (section 6).
-
-![[Flowchart - The Witness.drawio.svg]]
-
-%% TO DO David: remove the "Continue / Load Game" branch from the flowchart. Saving is out of scope in the Analysis (3.2), so the flowchart should not show it. %%
+![[Flowchart - The Witness.drawio 0.2.svg]]
 
 The prototype has the main part of this flow. You play, a guard sees you, and you get a game over with the option to try again. The title screen, the comic introduction, the alert levels and The Hunter belong to the full game, not to this delivery.
 
