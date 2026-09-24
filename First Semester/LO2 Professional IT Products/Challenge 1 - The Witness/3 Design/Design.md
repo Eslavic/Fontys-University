@@ -1,8 +1,8 @@
 # Design: The Witness
 
 **Client:** Nightfall Interactive
-**Made by:** David Eslava, Fontys ICT student
-**Version 0.2 - 24 September 2026**
+**Made by:** David Eslava Fontys ICT student
+**Version 0.2, 24 September 2026**
 
 ---
 
@@ -20,7 +20,8 @@ The document has two parts. Sections 2 to 5 are about what I build in the protot
 |---|---|---|
 | Godot 4 | Game engine | Free, and the 2D tools are included |
 | GDScript | All the code of the game | It looks like Python and comes with Godot |
-| Blender | Making and animating the player in 3D, and rendering the sprites | From one 3D model I can make sprites in eight directions, so I don't have to draw every frame |
+| Mixamo | A 3D character (a mannequin) and its animations | Free, and the animations are already made |
+| Blender | Changing the style of the character and rendering the sprites from above | From one 3D model I can make sprites in eight directions, so I don't have to draw every frame |
 | draw.io | Main flowchart | Free and easy to change |
 | Obsidian with Git | Documents and version history | Everything is in one vault, with a backup on GitHub |
 
@@ -28,26 +29,30 @@ The document has two parts. Sections 2 to 5 are about what I build in the protot
 
 The game has a noir comic style, inspired by Frank Miller. It only uses black, white and red. Red means danger. So the guards and their vision cones are the only red things on the screen, and the player can see quickly where the danger is.
 
-I make the player sprites in Blender. First I made the character in 3D and animated it: idle, walking, running, crouching and sneaking. Then I rendered every animation from eight directions as images of 1024 × 1024. This way I don't need to draw frame by frame. I don't have the skills or the time for that.
+Finding real top-down sprites was a big problem at the start. AI was not useful for the type of sprites I needed. So I tried something different. I downloaded a mannequin from Mixamo with its animations: idle, walking, running, crouch walking, crouch idle and walking on tiptoes. In Blender I changed the style with nodes and put the camera directly above the character, so it is a real top-down view like in *Ape Out*. Then I rendered the animations from eight directions as images of 1024 × 1024. A Mixamo animation has a lot of frames, so I only kept around one of every four. This way I don't need to draw frame by frame. I don't have the skills or the time for that.
+
+The sneaking (tiptoe) animation only has four directions for now, and the game does not use it yet.
 
 In the prototype everything except the player is a placeholder. The walls are black rectangles and the guards are red squares, like my coach told me to do. The final art comes after the gameplay works.
 
 ### 2.3 Size of the world
 
-The player sprites are 1024 × 1024, so in the game the player is around 400 units wide. The camera has a zoom of 0.3, which makes the player look the right size on screen. I made everything else in the level with the size of the player in mind. That way the placeholders still fit when I put in the real sprites.
+The player sprites are 1024 × 1024, which is much too big for the game. So in the player scene I scale the sprite down to 0.063, and the player is around 64 units wide. The camera is a child of the player and has a zoom of 5 at the moment. I made everything else in the level with the size of the player in mind: one grid square is 64 units, about one player. That way the placeholders still fit when I put in the real sprites.
+
+%% TO DO David: with zoom 5 and the normal Godot window (1152 × 648) you only see about 230 × 130 units, so around 3.5 × 2 squares. The vision cone (288) is longer than the screen, so the player could be seen by a guard they cannot see. A zoom of around 1.5 to 2 shows about 10 × 5 squares. Try it and change the number here. %%
 
 | What | Size or speed |
 |---|---|
-| Player (collision circle) | radius 212, walks at 200, crouches at 100, runs at 1000 |
-| Guard (red square) | 360 × 360, patrols at 150, chases at 300 |
-| Vision cone of the guard | 90 degrees wide, 1800 units long (around four times the player) |
-| Catch area of the guard | circle, radius 200 |
-| Space the guard keeps from walls (pathfinding) | 200 |
+| Player | sprite around 64 wide, collision circle radius 13, walks at 200, crouches at 100, runs at 1000 |
+| Guard (red square) | 56 × 56, patrols at 150, chases at 300 |
+| Vision cone of the guard | 90 degrees wide, 288 units long (four and a half squares) |
+| Catch area of the guard | circle, radius 32 |
+| Space the guard keeps from walls (pathfinding) | 32 |
 | Walls | 100 units thick |
-| Corridors and doors | at least 800 units wide (2 grid squares) |
-| One square of the grid (level and The Hunter) | 400 × 400, around the size of the player |
+| Corridors and doors | at least 128 units wide (2 grid squares) |
+| One square of the grid (level and The Hunter) | 64 × 64, around the size of the player |
 
-The guard chases faster than the player walks, but slower than the player runs. So the player can always escape. They just have to decide to run.
+The guard chases faster than the player walks, but slower than the player runs. At the moment running has no limit, so the player can always escape. The stamina bar from S-01 will change that: then running is a choice with a cost.
 
 ## 3. Game flow
 
@@ -72,9 +77,9 @@ I also wanted more than one way through. You can enter the staff area by the "St
 
 For the guards, Guard 1 walks a loop around the tables in the jazz hall. Guard 2 walks up and down the service corridor, so the player has to use the side rooms and wait for the right moment. Guard 3 stands near the office and the exit, but only if I have time.
 
-All corridors and doors are at least 2 grid squares (800 units) wide. This is not random. The guard is 360 units wide and pathfinding keeps 200 units away from walls, so a narrower door would be closed for the guards (M-07).
+All corridors and doors are at least 2 grid squares (128 units) wide. This is not random. The guard is 56 units wide and pathfinding keeps 32 units away from walls, so a narrower door would be closed for the guards (M-07).
 
-The whole level is 24 × 14 grid squares (9600 × 5600 units). That is bigger than the screen, so the camera has to follow the player.
+The whole level is 24 × 14 grid squares (1536 × 896 units). That is bigger than the screen, so the camera has to follow the player.
 
 ## 4. Architecture
 
@@ -92,12 +97,12 @@ The camera is a child of the player. The level is bigger than the screen, so the
 
 ### 4.2 How the scripts work together
 
-| Script | On which node | What it does |
-|---|---|---|
-| `player_character.gd` | Player | Movement, crouching, running, and the right animation for each direction |
-| `enemy.gd` | Enemy | Decides where the guard wants to go and moves it there with pathfinding (section 5) |
-| `game_manager.gd` | Autoload, you can use it from everywhere as `GameManager` | Knows if the game is over, pauses the game, restarts the level |
-| `game_over_screen.gd` | GameOverScreen | Appears when the player is caught, restarts when you press Enter |
+| Script | On which node | What it does | Status |
+|---|---|---|---|
+| `player_character.gd` | Player | Movement, crouching, running, and the right animation for each direction | Done |
+| `enemy.gd` | Enemy | Decides where the guard wants to go and moves it there with pathfinding (section 5) | To build |
+| `game_manager.gd` | Autoload, you can use it from everywhere as `GameManager` | Knows if the game is over, pauses the game, restarts the level | To build |
+| `game_over_screen.gd` | GameOverScreen | Appears when the player is caught, restarts when you press Enter | To build |
 
 The guard does not talk directly to the game over screen. When it catches the player, it calls `GameManager.catch_player()`. The game manager pauses the game and sends a signal called `player_caught`. The game over screen listens to that signal and appears. I did it like this so every part works on its own. A second guard, or The Hunter later, only has to call the same function.
 
@@ -118,7 +123,13 @@ The sight line is the only one that looks at both. It has to hit the walls to kn
 
 ### 4.4 How I write the code
 
-When something has different options, like the state of the guard, I use an `enum` with a `match` instead of a lot of `if`. This was feedback from my coach. Speeds, distances and turn speed are `@export` variables, so I can change them in the editor while I test, without touching the code. Every script also starts with a short comment that explains what it is for.
+When the code has to choose between a lot of options, I use `match`. This is the switch/case of GDScript, and Faruk suggested it on 18 September.
+
+You can see why in my player script. My first version had a long list of `if` and `elif` for every direction, and inside each one another `if` for walking or running. It was around 50 lines and it did not work well. On 21 September I changed it. Now `Vector2i(input.sign())` turns the keys into a direction like `(1, -1)`, and one `match` turns that direction into the name of the animation, like `Up_Right`. Then I only put the state in front: `Walking_Up_Right`, `Running_Up_Right` or `Crouch_Up_Right`. One short `match` instead of a whole page. The state itself (Walking, Running or Crouch) I still choose with a short `if` and `elif`, because it depends on which key the player holds down.
+
+For the guard I plan the same idea. It gets its three states from 5.1 in an `enum` (a list of names), and a `match` decides what the guard does in each state.
+
+The speed, the acceleration and the friction of the player are `@export` variables, so I can change them in the editor while I test, without touching the code. `base_speed` is 60 in the script, but in the player scene I set it to 200, and that is the value the game uses.
 
 ## 5. The guards
 
@@ -152,7 +163,7 @@ If I have time, the first thing I add is a **Search** state (Should Have S-03). 
 
 The guards use Godot's navigation, like I recommend in the Advice document. It works in two steps.
 
-First, the floor. A `NavigationRegion2D` covers the level. I draw the outline of the whole floor and press *Bake*. Godot then cuts out the walls and the furniture and leaves 200 units of space around them, which is about the size of the guard. The result is a map of every place where a guard can stand.
+First, the floor. A `NavigationRegion2D` covers the level. I draw the outline of the whole floor and press *Bake*. Godot then cuts out the walls and the furniture and leaves 32 units of space around them, which is a bit more than half the guard. The result is a map of every place where a guard can stand.
 
 Second, the route. Every guard has a `NavigationAgent2D`. The script gives it a target (from the table in 5.1), and the agent gives back the next point of the shortest way around the obstacles. The guard walks to that point. When it gets there, it asks for the next one.
 
