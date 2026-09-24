@@ -1637,7 +1637,6 @@ animations = [{
 radius = 212.39821
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1487116230]
-scale = Vector2(0.24, 0.24)
 motion_mode = 1
 script = ExtResource("1_n7cuq")
 base_speed = 200
