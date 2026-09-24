@@ -1,7 +1,7 @@
 # Advice — The Witness
 
 - **Client:** Nightfall Interactive
-- **Made by:** David Eslava — Fontys ICT Student
+- **Made by:** David Eslava - Fontys ICT Student
 - **Version 0.1 - 23 September 2026**
 
 ---
