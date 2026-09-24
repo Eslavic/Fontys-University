@@ -62,7 +62,7 @@ The prototype has the main part of this flow. You play, a guard sees you, and yo
 
 The level is one floor of the jazz club, and it has two parts. The first part is the jazz hall, a big open room with a bar, a stage and tables. The player starts there, in the bottom left corner. Behind a "Staff only" door is the second part, the staff area. It has a service corridor, a kitchen, a storage room, the office where the player saw the crime, and a construction zone that is not finished yet. The exit is at the end of the staff area.
 
-![[Level layout sketch.svg]]
+
 
 The two parts feel different on purpose. The jazz hall is open, so you can see a guard from far away and make a plan. The staff area is small and tight, with short corridors and a lot of corners, a bit like the game *Ape Out*. Around a corner you cannot see what is coming. But the guard cannot see you either, and that makes the second part more tense.
 
