@@ -1639,7 +1639,7 @@ radius = 13.0
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1487116230]
 motion_mode = 1
 script = ExtResource("1_n7cuq")
-base_speed = 200
+base_speed = 100
 accel = 700.0
 friction = 2800.0
 
