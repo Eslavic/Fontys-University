@@ -1,50 +1,47 @@
- # Project Plan — The Witness
+# Project Plan: The Witness
 
 **Client:** Nightfall Interactive
-**Made by:** David Eslava, ICT Student
-**Coach:** Frank & Faruk
-**Project period:** 1 September – 25 September 2026 (4 weeks)
-**Deadline:** Friday 25 September 2026, 16:00
+**Made by:** David Eslava, ICT student
+**Coaches:** Frank and Faruk
+**Project period:** 1 September to 25 September 2026 (4 weeks)
+**Deadline:** Friday 25 September 2026 at 16:00
 
 ---
 
 ## 1. What this plan is for
 
-The Analysis says what I am building and why. This plan says when I do it, in what order, and how long each part takes. Frank asked for it as a separate document with a Gantt chart, activities, estimated hours and dependencies.
+The Analysis says what I build and why. This plan says when I do it, in what order, and how many hours each part takes. Frank asked me for a separate plan with a Gantt chart, with the activities, the hours and the dependencies in it.
 
 ## 2. What gets delivered
 
-Two things:
+I deliver two things. The first is a playable prototype. In it the player moves in a map with walls, and one enemy walks a route. The enemy can see the player with a vision cone, and when the player is caught the game is over.
 
-1. **A playable prototype** — a player moving through a walled map, an enemy patrolling a route, detection through a vision cone, and a game over when the player is caught.
-2. **The documentation** — Analysis, Advice, Design, this plan, Validation, an orientation report and the devlog.
+The second is the documentation: Analysis, Advice, Design, this plan, Validation, an orientation report and the devlog. Everything in the Will Not Have list of the Analysis is out of scope.
 
-Anything marked Will Not Have in the Analysis is out of scope.
-
-The adaptive Hunter is a Could Have and is not built in this delivery. My coach agreed to this on 22 September, because it sits in Could Have in the MoSCoW table. What I deliver instead is a complete design for The Hunter, including how its improvement would be measured, which is written up in the Design document. The stealth loop has to work before a learning enemy can be measured against it.
+The adaptive Hunter is a Could Have, and I do not build it in this delivery. My coach agreed with this on 22 September. Instead I deliver a full design of The Hunter, with an explanation of how I would measure if he improves. This is in the Design document. The stealth part has to work first. Without it there is nothing to measure the learning enemy against.
 
 ## 3. Phases
 
 | Phase | When | Finished when |
 |---|---|---|
-| Analysis | Week 1–2 | Analysis delivered to Frank |
-| Advice | Week 3–4 | Engine and AI choices written up with the reasoning |
-| Design | Week 3–4 | Architecture and flowcharts done |
+| Analysis | Week 1 to 2 | Analysis delivered to Frank |
+| Advice | Week 3 to 4 | Engine and AI choices written down with the reasons |
+| Design | Week 3 to 4 | Architecture and flowcharts are done |
 | Realisation | Week 4 | Prototype does everything in Must Have |
-| Validation | Week 4 | Tests run and written up |
-| Delivery | 25 September | Everything submitted before 16:00 |
+| Validation | Week 4 | Tests are done and written down |
+| Delivery | 25 September | Everything sent before 16:00 |
 
 ## 4. Activities
 
-Hours are estimates. Status is as of Wednesday 23 September.
+The hours are my estimates. The status is from Wednesday 23 September.
 
 ### Analysis
 
 | Activity | Hours | Can't start until | Status |
 |---|---|---|---|
-| Work out the concept, setting and core loop | 4 | — | Done |
+| Decide the concept, the setting and the core loop | 4 | - | Done |
 | Compare game engines (Godot, Unity, GameMaker, Pygame) | 6 | concept is decided | Done |
-| Research Q-learning for grid-based chasing | 8 | concept is decided | Done |
+| Research Q-learning for chasing on a grid | 8 | concept is decided | Done |
 | Write the MoSCoW table | 4 | concept is decided | Done |
 | Write the Analysis, first version | 6 | research and MoSCoW done | Done |
 | Export it and send it to Frank | 1 | Analysis written | Done |
@@ -53,53 +50,53 @@ Hours are estimates. Status is as of Wednesday 23 September.
 
 | Activity | Hours | Can't start until | Status |
 |---|---|---|---|
-| Feedback meeting with Frank and write down what he said | 2 | Analysis sent | Done, 14 Sep |
-| Write the Advice document — the engine and AI comparison, the trade-offs, why I chose what I chose | 3 | the research and the feedback | Wednesday |
+| Feedback meeting with Frank, and write down what he said | 2 | Analysis sent | Done, 14 Sep |
+| Write the Advice document with the engine and AI comparison and why I chose them | 3 | the research and the feedback | Wednesday |
 
 ### Design
 
 | Activity | Hours | Can't start until | Status |
 |---|---|---|---|
-| Draw the high-level flowchart | 3 | Analysis written | Done |
-| Learn Godot through a tutorial project — nodes, scenes, tilemaps, collisions | 12 | engine chosen | Done |
-| Build the player — eight-direction movement and the animation states | 10 | Godot basics | Done |
-| Write the Design document — technical choices, how the scenes fit together, a detailed flowchart for detection only | 4 | Advice document | Wednesday |
+| Draw the high level flowchart | 3 | Analysis written | Done |
+| Learn Godot with a tutorial project (nodes, scenes, tilemaps, collisions) | 12 | engine chosen | Done |
+| Build the player with 8 direction movement and the animations | 10 | Godot basics | Done |
+| Write the Design document with the technical choices, the scenes and a flowchart for the detection | 4 | Advice document | Wednesday |
 
 ### Realisation
 
 | Activity | Hours | Can't start until | Status |
 |---|---|---|---|
-| Build the map — tilemap, walls, collision | 3 | Design written | Wednesday |
-| One enemy patrolling a fixed route | 2 | map exists | Wednesday |
-| Vision cone and line-of-sight detection | 3 | enemy patrols | Wed–Thu |
-| Game over and restart when caught | 1.5 | detection works | Thursday |
+| Build the map with tilemap, walls and collision | 3 | Design written | Wednesday |
+| One enemy that walks a fixed route | 2 | map exists | Wednesday |
+| Vision cone and line of sight detection | 3 | enemy patrols | Wed to Thu |
+| Game over and restart when the player is caught | 1.5 | detection works | Thursday |
 
 ### Validation
 
 | Activity | Hours | Can't start until | Status |
 |---|---|---|---|
 | Write the test plan | 1 | prototype playable | Thursday |
-| Playtest with two or three people | 1.5 | test plan | Thursday |
-| Write the Validation document | 1.5 | tests run | Thursday |
+| Test the game with two or three people | 1.5 | test plan | Thursday |
+| Write the Validation document | 1.5 | tests are done | Thursday |
 
 ### Documentation and portfolio
 
-| Activity                                       | Hours | Can't start until | Status    |
-| ---------------------------------------------- | ----- | ----------------- | --------- |
-| Write this plan                                | 2     | feedback meeting  | Done      |
-| Rewrite the Analysis for the client            | 4     | feedback meeting  | Done      |
-| Finish the devlog and put it all in English    | 1     | —                 | Thursday  |
-| Write the evidence descriptions for each piece | 1.5   | the piece exists  | As I go   |
-| Write the orientation report                   | 2     | —                 | Friday    |
-| Final check and submit                         | 1     | everything else   | Thursday  |
+| Activity | Hours | Can't start until | Status |
+|---|---|---|---|
+| Write this plan | 2 | feedback meeting | Done |
+| Rewrite the Analysis for the client | 4 | feedback meeting | Done |
+| Finish the devlog and put everything in English | 1 | - | Thursday |
+| Write the evidence descriptions for every piece | 1.5 | the piece exists | As I go |
+| Write the orientation report | 2 | - | Friday |
+| Last check and send everything | 1 | everything else | Thursday |
 
-**Total: 88 hours. 62 done, 26 left.**
+**Total: 88 hours. 62 are done and 26 are left.**
 
 ## 5. Gantt chart
 
 ```mermaid
 gantt
-    title The Witness — project schedule
+    title The Witness, project schedule
     dateFormat YYYY-MM-DD
     axisFormat %d %b
     excludes weekends
@@ -143,28 +140,30 @@ gantt
 
 ## 6. The rest of the week
 
-| Day        | What I do                                                                                                                                                    | Hours   |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
+| Day | What I do | Hours |
+|---|---|---|
 | **Mon 21** | Project plan, Analysis rewrite | 6, done |
-| **Tue 22** | Analysis finished to version 0.2, portfolio reorganised by learning outcome | 8, done |
+| **Tue 22** | Finish the Analysis version 0.2, reorganise the portfolio by learning outcome | 8, done |
 | **Wed 23** | Advice document (1.5), Design document (2.5), map and walls (2.5), patrolling enemy (1.5) | 8 |
-| **Thu 24** | Vision cone (2.5), game over (1), test plan and playtests (2), Validation (1.5), devlog into English (1), LO2 evidence descriptions (1) | 9 |
-| **Fri 25** | Orientation doc (1.5), career choice and workshop log (1), core values and feedback log (1), remaining evidence descriptions (1), final check and submit (0.5) | 5, finish by 13:00 |
+| **Thu 24** | Vision cone (2.5), game over (1), test plan and tests (2), Validation (1.5), devlog in English (1), LO2 evidence descriptions (1) | 9 |
+| **Fri 25** | Orientation doc (1.5), career choice and workshop log (1), core values and feedback log (1), last evidence descriptions (1), last check and send (0.5) | 5, finish at 13:00 |
 
-I put the writing before the code on purpose. None of the documents need the game to compile, so if the prototype runs late the documentation is already safe. Friday was meant to be a buffer; losing Tuesday to the Analysis spent it.
+I do the writing before the code on purpose. The documents don't need the game to work, so if the game is late, at least the documents are finished. Friday was supposed to be my extra time. Now I need it, because Tuesday went to the Analysis.
 
-## 7. What could go wrong
+## 7. What can go wrong
 
-- **I am a day behind.** Tuesday went on finishing the Analysis and reorganising the portfolio instead of the Advice and Design documents. That means Friday morning is now working time, not buffer. I re-cut the schedule on Wednesday morning rather than discovering it on Thursday night.
-- **Detection is the part most likely to eat the day.** I build the vision cone as a cone-shaped Area2D on the enemy that turns with it, plus one raycast so walls block sight. That is the simplest thing that still meets the Must Have. If it fights me for more than half a day I ship the Area2D on its own and say so in the Validation.
-- **My sprites are 1024×1024 and the camera is zoomed to 0.3.** That makes a normal tileset awkward. So I build the map out of plain rectangles at the player's scale. Frank already said placeholders are fine.
-- **Evidence descriptions get forgotten.** I write each one right after the thing it describes, not all of them on Thursday night.
+The biggest problem right now is that I am one day late. On Tuesday I finished the Analysis and reorganised the portfolio, but I did not write the Advice and Design documents. So Friday morning is now work time, not extra time. I made a new plan on Wednesday morning instead of finding out on Thursday night.
 
-**If I fall behind, I cut in this order:** the title and game over screens first, then the alert gauge, then the visual polish. The Must Haves and the documents don't get cut.
+The detection can also take more time than I think. I make the vision cone with an Area2D in the shape of a cone that turns with the enemy, plus one raycast so walls block the view. This is the simplest way that still gives me the Must Have. If it takes more than half a day, I only use the Area2D and I explain this in the Validation.
 
-## 8. How I know I'm finished
+Then there is the size of my sprites. They are 1024 × 1024 and the camera zoom is 0.3, and a normal tileset is difficult with this size. So I build the map with simple rectangles at the same scale as the player. Frank said placeholders are fine.
 
-- The prototype runs, and you can walk around a walled map, get spotted by a patrolling enemy, and get caught.
-- All seven of Frank's points from 14 September are dealt with.
-- Analysis, Advice, Design, this plan, Validation, the orientation report and the devlog are all there, finished, in English.
-- Every piece has an evidence description saying why it's in the portfolio, what I learned, and what I'd do differently.
+And I know myself: I can forget the evidence descriptions. That's why I write each description right after I finish the piece, not all of them on Thursday night.
+
+**If I am late, I cut in this order:** first the title screen and the game over screen, then the alert gauge, then the visual polish. I do not cut the Must Haves, and I do not cut the documents.
+
+## 8. How I know I am finished
+
+I am finished when the game works. That means you can walk in a map with walls, a patrolling enemy can see you, and you can be caught. The seven points Frank gave me on 14 September also have to be done.
+
+On the documentation side, the Analysis, Advice, Design, this plan, the Validation, the orientation report and the devlog must be finished and in English. And every piece in my portfolio needs its evidence description: why it is there, what I learned, and what I would do differently next time.
