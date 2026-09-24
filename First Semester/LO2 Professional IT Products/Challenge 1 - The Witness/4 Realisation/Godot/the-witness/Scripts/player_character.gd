@@ -32,10 +32,11 @@ func _physics_process(delta: float) -> void:
 
 	if input != Vector2.ZERO:
 		var move_input = input.normalized()
-		velocity = velocity.move_toward(move_input * current_speed, accel * delta)
+		velocity = move_input * current_speed
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+		velocity = Vector2.ZERO
 	move_and_slide()
+	
 	# 3. SECCIÓN DE ANIMACIONES
 	if input != Vector2.ZERO:
 		var dir_suffix := ""

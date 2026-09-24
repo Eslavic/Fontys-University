@@ -2,71 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://crs4f6g573xo6" path="res://Scenes/player_character.tscn" id="1_al363"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_al363"]
-size = Vector2(20, 266)
-
 [node name="Game_The_Witness" type="Node2D" unique_id=358239084]
-
-[node name="Walls" type="Node2D" parent="." unique_id=1941363532]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Walls" unique_id=861640075]
-position = Vector2(-312, -56)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D" unique_id=278518752]
-position = Vector2(0, -123)
-shape = SubResource("RectangleShape2D_al363")
-
-[node name="ColorRect" type="ColorRect" parent="Walls/StaticBody2D" unique_id=738992613]
-offset_left = -64.0
-offset_top = -256.0
-offset_right = 56.0
-offset_bottom = 376.0
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Walls" unique_id=238517402]
-position = Vector2(-96, -96)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2" unique_id=1384075884]
-
-[node name="ColorRect" type="ColorRect" parent="Walls/StaticBody2D2" unique_id=1224074996]
-offset_left = -32.0
-offset_top = -208.0
-offset_right = 128.0
-offset_bottom = 536.0
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Walls" unique_id=582042561]
-position = Vector2(-40, 64)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3" unique_id=633676194]
-
-[node name="ColorRect" type="ColorRect" parent="Walls/StaticBody2D3" unique_id=1952374469]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Walls" unique_id=1649830016]
-position = Vector2(144, -528)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4" unique_id=1229667898]
-
-[node name="ColorRect" type="ColorRect" parent="Walls/StaticBody2D4" unique_id=1111701979]
-offset_left = -200.0
-offset_top = -112.0
-offset_right = -24.0
-offset_bottom = 168.0
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Walls" unique_id=1042607147]
-position = Vector2(304, -640)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D5" unique_id=1804685824]
-
-[node name="ColorRect" type="ColorRect" parent="Walls/StaticBody2D5" unique_id=1903220015]
-offset_right = 160.0
-offset_bottom = 168.0
 
 [node name="Player" parent="." unique_id=1487116230 instance=ExtResource("1_al363")]
 position = Vector2(37, -85)
 accel = 1000.0
-friction = 2500.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1469596414]
 position = Vector2(37, -85)
 zoom = Vector2(0.3, 0.3)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1941363532]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=118685826]
+position = Vector2(-1880, 8)
+scale = Vector2(2, 2)
