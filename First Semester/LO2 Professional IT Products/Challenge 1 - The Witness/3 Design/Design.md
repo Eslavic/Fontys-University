@@ -1,8 +1,8 @@
 # Design: The Witness
 
 **Client:** Nightfall Interactive
-**Made by:** David Eslava Fontys ICT student
-**Version 0.2, 24 September 2026**
+**Made by:** David Eslava, Fontys ICT student
+**Version 0.1 , 24 September 2026**
 
 ---
 
@@ -214,9 +214,9 @@ In my first version The Hunter only knew the direction and the distance. Then I 
 
 ### 6.3 What The Hunter can do (the actions)
 
-He has four moves, one square each time: **up, down, left, right**.
+The Hunter can only move one square at a time: **up, down, left or right**. No diagonals. I kept it like this on purpose, because every extra move makes the table bigger. With eight moves it would be twice as big.
 
-With 384 situations and 4 moves, the table has 1,536 numbers. That is small. He can learn fast, and I can open the table and read it when something looks wrong.
+So how big is it? 384 situations × 4 moves = 1,536 numbers. For a computer that is nothing, so he can learn fast. It also means I can open the table and look at it myself. If The Hunter keeps walking into the same wall, I can find that row and see which number is wrong.
 
 ### 6.4 Points (rewards)
 
@@ -231,11 +231,19 @@ With 384 situations and 4 moves, the table has 1,536 numbers. That is small. He 
 The small minus for staying at the same distance is there so he does not learn to walk sideways forever. Catching the player gives a lot more points than anything else, so catching is always better than many small steps.
 ### 6.5 How he learns
 
-After every move, the number in the table for that situation and that move changes like this:
+### 6.5 How he learns
+
+This was the part I found hardest to understand, so I explain it the way it finally made sense to me.
+
+The Hunter learns with the Q-learning update rule. I did not invent this formula. I learned it from the sentdex videos and the Medium guide in my sources:
 
 *new value = old value + learning rate × (points + discount × best value in the new situation − old value)*
 
-In simple words, the score of the move goes a little bit in the direction of "the points I just got, plus how good my new situation is". These are the values I would start with:
+The first time I saw it, it looked very complicated. So I tried it with an example from my own game. The Hunter is far from the player, the player is north-east, and there are no walls around him. The score for "up" is still 0, because he never tried it. He goes up and gets 1 point, because now he is closer. From his new square, the best move has a score of 2. So the new score for "up" is 0 + 0.1 × (1 + 0.9 × 2 − 0) = 0.28.
+
+That is a small step. But if "up" keeps working in that situation, the score keeps going up. After many tries The Hunter almost always chooses it.
+
+These are the values I would start with:
 
 | Setting | Value | What it means |
 |---|---|---|
