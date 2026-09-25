@@ -74,14 +74,14 @@ Most beginner tutorials use a straight line. That works until there is a table b
 
 Pathfinding only tells the guard *how* to get somewhere. The guard still needs to decide *where* to go. Here are the options for that:
 
-| Column 1 | Column 2 | Column 3 | Column 4 |
-| --- | --- | --- | --- |
-|  | **Simple rules (states)** | **Q-learning with a table** | **Deep reinforcement learning** |
-| **What is it** | A few rules: patrol, chase the player when you see them, stop when you catch them | The enemy has a table that says how good every move is in every situation, and it updates the table after every move | A neural network learns the same thing from a lot of examples |
-| **Learns from the player?** | No | Yes | Yes |
-| **Works inside Godot without other programs** | Yes | Yes, it is only a table | No, it needs Python and extra libraries |
-| **Can I explain why it did something?** | Yes | Yes, I can read the table | Very difficult |
-| **Time to build** | Hours | Days, with the training | Weeks |
+| Column 1                                      | Column 2                                                                          | Column 3                                                                                                             | Column 4                                                      |
+| --------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+|                                               | **Simple rules (states)**                                                         | **Q-learning with a table**                                                                                          | **Deep reinforcement learning**                               |
+| **What is it**                                | A few rules: patrol, chase the player when you see them, stop when you catch them | The enemy has a table that says how good every move is in every situation, and it updates the table after every move | A neural network learns the same thing from a lot of examples |
+| **Learns from the player?**                   | No                                                                                | Yes                                                                                                                  | Yes                                                           |
+| **Works inside Godot without other programs** | Yes                                                                               | Yes, it is only a table                                                                                              | No, it needs Python and extra libraries                       |
+| **Can I explain why it did something?**       | Yes                                                                               | Yes, I can read the table                                                                                            | Very difficult                                                |
+| **Time to build**                             | Hours                                                                             | Days, with the training                                                                                              | Weeks                                                         |
 
 
 Simple rules are enough for the guards, which is also what the game needs. The player should be able to learn the guards’ routes to sneak past them, so the guards need to be predictable. They also serve as a comparison, since The Hunter is only interesting next to enemies that do not learn. With pathfinding, the guards will still move naturally through the club.
