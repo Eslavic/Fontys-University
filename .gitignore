@@ -15,3 +15,7 @@ desktop.ini
 # Editor junk
 *.swp
 *~
+
+# Backup files made by draw.io and Blender
+*.bkp
+*.blend1

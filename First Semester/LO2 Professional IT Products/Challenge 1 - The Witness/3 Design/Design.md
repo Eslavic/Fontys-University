@@ -8,7 +8,7 @@
 
 ## 1. Introduction
 
-In this document, I explain how I build The Witness. It is based on the requirements in the [[The Witness - Analysis  0.2|Analysis]] and the decisions in the [[Advice - engine and AI choice|Advice]] document. In short: the game uses Godot 4 with GDScript, guards use Godot’s pathfinding with some simple rules, and The Hunter uses Q-learning with a table.
+In this document, I explain how I build The Witness. It is based on the requirements in the [[The Witness - Analysis 0.2|Analysis]] and the decisions in the [[Advice - engine and AI choice|Advice]] document. In short: the game uses Godot 4 with GDScript, guards use Godot’s pathfinding with some simple rules, and The Hunter uses Q-learning with a table.
 
 This document has two parts. Sections 2 to 5 cover what I build in the prototype: the tools, the level, the nodes, and the guards. Section 6 is about The Hunter, which I designed but have not built yet. I also explain how to measure if he improves. The reason I did not build him for this delivery is explained in the Analysis.
 

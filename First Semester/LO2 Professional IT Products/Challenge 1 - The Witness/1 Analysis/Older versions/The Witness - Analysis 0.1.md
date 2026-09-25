@@ -61,4 +61,4 @@
 - After talking with my technical couch and get feedback from him I made a new version:
 
 	- You can check the [[2026-09-14| Feedback (click here)]]
-	- And the **new** [[The Witness - Analysis  0.2|Analisys Document]] 
+	- And the **new** [[The Witness - Analysis 0.2|Analisys Document]] 

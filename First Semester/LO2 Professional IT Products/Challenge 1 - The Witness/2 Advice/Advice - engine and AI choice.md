@@ -12,7 +12,7 @@
 
 Before I start building, I need to make two decisions. First, I have to choose which engine and programming language to use for the game. Second, I need to decide how the enemies will move and choose their paths.
 
-In this document, I compare the options for both decisions and share my advice with **Nightfall Interactive**. The requirements are listed in the [[The Witness - Analysis  0.2|Analysis]]. Details about how I will build the game are in the [[Design]] document.
+In this document, I compare the options for both decisions and share my advice with **Nightfall Interactive**. The requirements are listed in the [[The Witness - Analysis 0.2|Analysis]]. Details about how I will build the game are in the [[Design]] document.
 
 ## 2. What is important for this project
 
