@@ -10,7 +10,9 @@
 
 ## 1. How I planned the project
 
-When the challenge began, I did not make a real plan. I jumped in with my game idea and started using Godot because that interested me most. I did not understand how the portfolio or learning outcomes worked. I thought the challenge was just about making some documents and a devlog. So, in the first weeks, I worked without much organization.
+The first week I was very confused. There were a lot of workshops and new things, and I did not understand how the portfolio and the learning outcomes work. I thought the challenge was just some documents and a devlog. I did not make a real plan.
+
+In the first two weeks I only worked on the Analysis. I chose the idea of the game, the theme and the core mechanics. I also did research to choose the engine and to learn about Q-learning for the enemy. On 14 September I showed the Analysis to Frank. After that, on 15 September, I started to learn Godot with a beginner tutorial, and on 18 September I worked on the animations of my player.
 
 After Frank told me I needed a Project Plan with a Gantt chart, I created one. It covered the last four working days, from Monday 21 to Thursday 24 September. For each activity, I listed the hours and what it depended on. I put documentation first and the prototype second. The order was: Analysis, then Advice and Design, then the Project Plan, followed by the map, one enemy with a vision cone, and a game over screen. Validation was the final step on Thursday.
 
@@ -18,11 +20,15 @@ I chose this order for a reason. Most of what I was missing was the writing, and
 
 ## 2. How the plan worked
 
-The documentation took much longer than I expected. The Analysis went through three versions. Frank rejected version 0.1 because it was not professional. Version 0.2 was better, but I thought it was too polished and did not sound like me. I am happy with version 0.3. After that, I wrote the Advice and the Design, and I rewrote parts of them more than once because I found things in the Design that did not match my actual code.
+The documentation took much longer than I expected. Frank rejected version 0.1 of the Analysis because it was not professional. I rewrote it as version 0.2, for a fictional client and with the MoSCoW as user stories. I also rewrote parts of it more than once because it did not sound like me. After that, I wrote the Advice and the Design, and I changed parts of the Design more than once because I found things in it that did not match my actual code.
 
-Because Because of this, the prototype is behind schedule. Right now, the player can move, crouch, and run, with animations in eight directions, and there is a test wall. The map is designed but not built yet, and the enemy with the vision cone is not in the game yet. I am being honest about this. It is the real result of my plan. I adjusted
+Because of this, the prototype is behind schedule. Right now, the player can move, crouch, and run, with animations in eight directions, and I am working on the map, some walls and a first enemy as a simple square. The enemy with the vision cone is not in the game yet. I am being honest about this. It is the real result of my plan.
 
-ThThe biggest change was The Hunter. My first idea was to make an enemy that learns with Q-learning. When I checked how much time I had left, I realized this was not realistic. I talked to my coach, and he said it was okay to leave it out because it was a Could Have in my MoSCoW table. So now The Hunter is only designed, not built. The Design document explains how it would work and how I would measure if it improves. I think this was the right choice. It is better to deliver something smaller and honest than something big that does not work.I also changed the level map. I lost my first wireframe, so I made a new one. Now it is a maze with four guards and a back door as the exit. The Design document now matches this map.
+## 3. How I adjusted
+
+The biggest change was The Hunter. My first idea was to make an enemy that learns with Q-learning. When I checked how much time I had left, I realized this was not realistic. I talked to Faruk, my student coach, and he said it was okay to leave it out because it was a Could Have in my MoSCoW table. So now The Hunter is only designed, not built. The Design document explains how it would work and how I would measure if it improves. I think this was the right choice. It is better to deliver something smaller and honest than something big that does not work.
+
+I also changed the level map. I lost my first wireframe, so I made a new one. Now it is a maze with four guards and a back door as the exit. The Design document now matches this map.
 
 ## 4. Professional standards I used
 
@@ -34,7 +40,9 @@ I use Git for version control. My notes are in Obsidian, and the Obsidian Git pl
 
 ## 5. What I would do differently
 
-I  would start the prototype earlier, even with simple placeholders, instead of waiting until the documents were finished. I would also ask for help sooner. I spent the first weeks confused about the portfolio and did not mention it. I would also write my own commit messages so my Git history shows what I did and when.idence description
+I would start the prototype earlier, even with simple placeholders, instead of waiting until the documents were finished. I would also ask for help sooner. I spent the first week confused about the portfolio and did not mention it. I would also write my own commit messages so my Git history shows what I did and when.
+
+## Evidence description
 
 **A. Why did I add this to my portfolio?**  
 This shows how I organized Challenge 1. The Project Plan and Gantt chart show my plan, and this document explains how the plan worked in reality and what I changed.

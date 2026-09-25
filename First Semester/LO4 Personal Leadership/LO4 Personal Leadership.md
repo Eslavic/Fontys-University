@@ -1,45 +1,52 @@
-# LO4 Personal Leadership
+# LO3 Professional Standard
 
 **Student:** David Eslava  
-**Programme:** Associate Degree HBO-ICT, Fontys ICT, Eindhoven  
-**Learning outcome:** LO4 Personal Leadership  
+**Programme:** Associate Degree HBO-ICT, Fontys ICT, Eindhoven
+**Learning outcome:** LO3 Professional Standard  
 **Challenge:** Challenge 1, The Witness  
 **Period:** 1 to 25 September 2026
 
-*I used AI (Claude) to help organize my thoughts and improve the English in this document. Everything I describe here comes from my own experiences and reflections.*
+*I used AI (Claude) to help with the structure and English in this document. All the planning, decisions, and reflections are my own.*
 
-## 1. Feedback I received and what I did with it
+## 1. How I planned the project
 
-I have two coaches. Frank is my technical coach and reviews the product, including the analysis, design, plan, and game. Faruk is my student coach and focuses on my portfolio and development. Both gave me feedback that helped me improve my work. On 14 September, Frank reviewed my Analysis and said it was not professional. He gave me four points to work on. The Analysis needed to be written for a fictional client, with the client shown on the cover page. My personal learning goals should be clear. The tool and technical choices should be in the Design, not the Analysis. I also needed a separate Project Plan with a Gantt chart. He mentioned that my MoSCoW table was hard to understand for someone who did not know the terms.
+When the challenge began, I did not make a real plan. I jumped in with my game idea and started using Godot because that interested me most. I did not understand how the portfolio or learning outcomes worked. I thought the challenge was just about making some documents and a devlog. So, in the first weeks, I worked without much organization.
 
-At first, this feedback was hard to hear because I had put a lot of effort into that document. But Frank was right. I rewrote the Analysis for a fictional studio called Nightfall Interactive and put the client on the cover. I took out my learning goals and moved the technical choices to a separate Advice document, where I compared engines and AI methods. I also created a Project Plan with a Gantt chart. Faruk gave me two tips. For the MoSCoW table, he suggested using user stories, like “As a player I can hide in the shadows so that the guards do not see me.” This also helped with Frank’s feedback about the table. On 18 September, Faruk told me to use `match` instead of a long list of `if` and `elif` statements in GDScript. My first player script had about fifty lines of `if` statements for directions, but I replaced them with one `match` that same day. My first value is learning things properly. I do not want to copy something without understanding it. I learn best by doing, so I try things, break them, figure out why, and then fix them.
+After Frank told me I needed a Project Plan with a Gantt chart, I created one. It covered the last four working days, from Monday 21 to Thursday 24 September. For each activity, I listed the hours and what it depended on. I put documentation first and the prototype second. The order was: Analysis, then Advice and Design, then the Project Plan, followed by the map, one enemy with a vision cone, and a game over screen. Validation was the final step on Thursday.
 
-My second value is being honest about what I do not know. My background is broad but not deep. I have done bootcamps in e-commerce and data science and studied some things on my own, but The Witness is my first game. In my documents, I try to be truthful. For example, my sprites are Mixamo models that I restyled in Blender, not characters I made from scratch, and I say that clearly. When the Design said something about my code that was not true, I asked for it to be changed.
+I chose this order for a reason. Most of what I was missing was the writing, and writing does not depend on the game working. If the code failed, I would still have the documents.
 
-My third value is asking for help, which is still hard for me. In the first weeks, I did not understand how the portfolio worked, and I did not say anything for a long time. When I finally asked, many things became clear.
+## 2. How the plan worked
 
-## 3. Initiative and ownership
+The documentation took much longer than I expected. The Analysis went through three versions. Frank rejected version 0.1 because it was not professional. Version 0.2 was better, but I thought it was too polished and did not sound like me. I am happy with version 0.3. After that, I wrote the Advice and the Design, and I rewrote parts of them more than once because I found things in the Design that did not match my actual code.
 
-When Frank said the Analysis was not professional, I did more than just fix the small points. I decided to restructure all my documentation because I realized the problem was bigger than just one document.
+Because of this, the prototype is behind schedule. Right now, the player can move, crouch, and run, with animations in eight directions, and there is a test wall. The map is designed but not built yet, and the enemy with the vision cone is not in the game yet. I am being honest about this. It is the real result of my plan.
 
-Another decision I am proud of is related to The Hunter. My idea was to create an enemy that learns with Q-learning. When I realized I did not have enough time, I did not want to submit code that did not work. I talked with my coach, who confirmed it was fine since it was a Could Have. I updated my documents to show it is designed but not built. For me, this is what taking ownership means. I decide the scope, and I need to be honest about it.
+## 3. How I adjusted
 
-## 4. My development in this challenge
+The biggest change was The Hunter. My first idea was to make an enemy that learns with Q-learning. When I checked how much time I had left, I realized this was not realistic. I talked to Faruk, my student coach, and he said it was okay to leave it out because it was a Could Have in my MoSCoW table. So now The Hunter is only designed, not built. The Design document explains how it would work and how I would measure if it improves. I think this was the right choice. It is better to deliver something smaller and honest than something big that does not work.
 
-At the start of September, I did not know what a learning outcome was. I thought a challenge was just four documents and a devlog, and I did not know about the Advice phase. Now I understand the structure. The challenge is about making products, the portfolio is where I show them, and the four learning outcomes are the four parts I need to complete.
+I also changed the level map. I lost my first wireframe, so I made a new one. Now it is a maze with four guards and a back door as the exit. The Design document now matches this map.
 
-My documents changed a lot too. The first Analysis was rejected. Now I have an Analysis, an Advice, a Design, and a Project Plan, and each one has versions that show how it developed. My game is still small, but I understand much better how Godot works, including nodes, scenes, and scripts.
+## 4. Professional standards I used
 
-I am not finished yet. I still need to complete the prototype, and I want to get better at planning and asking for help sooner. But I can see my own progress, and that motivates me for the next challenge.
+I tried to make my documents look and read like real project documents. The Analysis is written for a fictional client, Nightfall Interactive, and the client is listed on the cover page. The requirements are in a MoSCoW table, and each one is written as a user story so that someone who does not know games can still understand it. Faruk suggested this format. The Analysis also includes a list of sources.
+
+I divided my work into separate documents for each phase. The Advice compares four engines (Godot, Unity, GameMaker, and Pygame) and different ways to make the enemy AI, and explains why I chose Godot and GDScript. The Design includes the architecture, scene tree, flowcharts, level map, and wireframes for the screens. The Project Plan contains the Gantt chart.
+
+I use Git for version control. My notes are in Obsidian, and the Obsidian Git plugin pushes them to GitHub. My game code is in the same repository. To be honest, most of my commits are automatic “vault backup” messages, so the history is hard for someone else to follow.
+
+## 5. What I would do differently
+
+I would start the prototype earlier, even with simple placeholders, instead of waiting until the documents were finished. I would also ask for help sooner. I spent the first weeks confused about the portfolio and did not mention it. I would also write my own commit messages so my Git history shows what I did and when.
 
 ## Evidence description
 
 **A. Why did I add this to my portfolio?**  
-This shows the feedback I received from Frank and Faruk and what I did with each point. It also shows my values and how I made decisions about my project.
+This shows how I organized Challenge 1. The Project Plan and Gantt chart show my plan, and this document explains how the plan worked in reality and what I changed.
 
 **B. What did I learn while creating it?**  
-I learned that feedback is not an attack on my work. It is the fastest way to improve. I also learned that cutting scope can be the professional choice, if I explain it and talk about it with my coach first.
+I learned that a plan is more than just a table at the start. The important part is looking back and seeing where things went wrong. I also learned that documentation takes much more time than I expected, so I need to plan extra time for it.
 
 **C. What will I do differently next time?**  
-Next time, I will ask questions in the first week if something is not clear, instead of waiting. I will also write down every feedback moment right after the meeting, with the coach’s name and the date, so I always know who said what.
-
+Next time, I will make a plan in the first week instead of at the end. I will build a simple version of the product early and work on the documents alongside it. I will also write clear commit messages from the start.
