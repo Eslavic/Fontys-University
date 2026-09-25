@@ -19,7 +19,7 @@
 - [[Plan retrospective]]
 - [[Research - sources and conclusions]]
 - [[Meetings and presentations]]
-- [[LO3 Evidence descriptions]]
+- [[LO3 Professional Standard]]
 
 ## LO4 Personal Leadership
 - [[Feedback log]]
