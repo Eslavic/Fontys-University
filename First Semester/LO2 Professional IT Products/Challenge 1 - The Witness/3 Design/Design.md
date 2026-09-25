@@ -1,43 +1,43 @@
 # Design: The Witness
 
-**Client:** Nightfall Interactive
-**Made by:** David Eslava, Fontys ICT student
+**Client:** Nightfall Interactive  
+**Made by:** David Eslava, Fontys ICT student  
 **Version 0.1, 25 September 2026**
 
 ---
 
 ## 1. Introduction
 
-In this document I explain how I build The Witness. It is based on the requirements in the [[The Witness - Analysis  0.2|Analysis]] and on the decisions in the [[Advice - engine and AI choice|Advice]] document. Short version of those decisions: the game is made in Godot 4 with GDScript, the guards use Godot's pathfinding plus a few simple rules, and The Hunter uses Q-learning with a table.
+In this document, I explain how I build The Witness. It is based on the requirements in the [[The Witness - Analysis  0.2|Analysis]] and the decisions in the [[Advice - engine and AI choice|Advice]] document. In short: the game uses Godot 4 with GDScript, guards use Godot’s pathfinding with some simple rules, and The Hunter uses Q-learning with a table.
 
-The document has two parts. Sections 2 to 5 are about what I build in the prototype: the tools, the level, the nodes and the guards. Section 6 is about something I design but do not build yet. That is The Hunter, together with how to measure if he gets better. Why I do not build him in this delivery is explained in the Analysis.
+This document has two parts. Sections 2 to 5 cover what I build in the prototype: the tools, the level, the nodes, and the guards. Section 6 is about The Hunter, which I designed but have not built yet. I also explain how to measure if he improves. The reason I did not build him for this delivery is explained in the Analysis.
 
 ## 2. Technical choices
 
 ### 2.1 Tools
 
 | Tool | What I use it for | Why (more in the Advice document) |
-|---|---|---|
+| --- | --- | --- |
 | Godot 4 | Game engine | Free, and the 2D tools are included |
 | GDScript | All the code of the game | It looks like Python and comes with Godot |
 | Mixamo | A 3D character (a mannequin) and its animations | Free, and the animations are already made |
-| Blender | Changing the style of the character and rendering the sprites from above | From one 3D model I can make sprites in eight directions, so I don't have to draw every frame |
+| Blender | Changing the style of the character and rendering the sprites from above | From one 3D model I can make sprites in eight directions, so I don’t have to draw every frame |
 | draw.io | Main flowchart | Free and easy to change |
 | Obsidian with Git | Documents and version history | Everything is in one vault, with a backup on GitHub |
 
 ### 2.2 Art style
 
-The game has a noir comic style, inspired by Frank Miller. It only uses black, white and red. Red means danger. So the guards and their vision cones are the only red things on the screen, and the player can see quickly where the danger is.
+The game has a noir comic style, inspired by Frank Miller. It only uses black, white and red. Red means danger, so only the guards and their vision cones are red. This helps the player to see quickly where the danger is.
 
-Finding real top-down sprites was a big problem at the start. AI was not useful for the type of sprites I needed. So I tried something different. I downloaded a mannequin from Mixamo with its animations: idle, walking, running, crouch walking, crouch idle and walking on tiptoes. In Blender I changed the style with nodes and put the camera directly above the character, so it is a real top-down view like in *Ape Out*. Then I rendered the animations from eight directions as images of 1024 × 1024. A Mixamo animation has a lot of frames, so I only kept around one of every four. This way I don't need to draw frame by frame. I don't have the skills or the time for that.
+Finding real top-down sprites was a big problem at the start. AI was not useful for the type of sprites I needed. So I tried something different. I downloaded a mannequin from Mixamo with its animations: idle, walking, running, crouch walking, crouch idle and walking on tiptoes. In Blender I changed the style with nodes and put the camera directly above the character, so it is a real top-down view like in *Ape Out*. Then I rendered the animations from eight directions as images of 1024 × 1024. A Mixamo animation has a lot of frames, so I only kept around one of every four. This way I don’t need to draw frame by frame. I don’t have the skills or the time for that.
 
-The sneaking (tiptoe) animation only has four directions for now, and the game does not use it yet.
+Right now, the sneaking (tiptoe) animation only has four directions, and the game does not use it yet.
 
-In the prototype everything except the player is a placeholder. The walls are black rectangles and the guards are red squares, like my coach told me to do. The final art comes after the gameplay works.
+In the prototype, everything except the player is a placeholder. The walls are black rectangles and the guards are red squares, as my coach suggested. I will add the final art after the gameplay is working.
 
 ### 2.3 Size of the world
 
-The player sprites are 1024 × 1024, which is much too big for the game. So in the player scene I scale the sprite down to 0.063, and the player is around 64 units wide. The camera is a child of the player and has a zoom of 5 at the moment. I made everything else in the level with the size of the player in mind: one grid square is 64 units, about one player. That way the placeholders still fit when I put in the real sprites.
+The player sprites are 1024 × 1024, which is too large for the game. In the player scene, I scale the sprite down to 0.063, making the player about 64 units wide. The camera is attached to the player and currently has a zoom of 5. I designed everything else in the level based on the player's size: one grid square is 64 units, about the size of the player. This way, the placeholders will still fit when I add the real sprites.
 
 | What | Size or speed |
 |---|---|
@@ -50,98 +50,109 @@ The player sprites are 1024 × 1024, which is much too big for the game. So in t
 | Corridors and doors | at least 128 units wide (2 grid squares) |
 | One square of the grid (level and The Hunter) | 64 × 64, around the size of the player |
 
-The guard chases faster than the player walks, but slower than the player runs. At the moment running has no limit, so the player can always escape. The stamina bar from S-01 will change that: then running is a choice with a cost.
+The guard chases faster than the player walks, but slower than the player runs. Right now, running has no limit, so the player can always escape. The stamina bar from S-01 will fix this, making running a choice that comes with a cost.
 
 ## 3. Game flow
 
 ### 3.1 Main flowchart
 
-The main flowchart shows the whole game in a simple way, from the title screen until you win or get a game over. I only made detailed diagrams for the two parts that are really complex, the guards (section 5) and The Hunter (section 6).
+The main flowchart gives a simple overview of the whole game, from the title screen to winning or getting a game over. I made detailed diagrams only for the two most complex parts: the guards (section 5) and The Hunter (section 6).  
 ![[Flowchart - The Witness.drawio 0.2.svg]]
 
-The prototype has the main part of this flow. You play, a guard sees you, and you get a game over with the option to try again. The title screen, the comic introduction, the alert levels and The Hunter belong to the full game, not to this delivery.
+The prototype includes the main part of this flow. You play, a guard sees you, and you get a game over with the option to try again. The title screen, comic introduction, alert levels, and The Hunter are part of the full game, not this delivery.
 
 ### 3.2 Level layout
 
-The level is one floor of the jazz club. I drew it by hand first, and then I changed it to make it more tense.
+The level is set on one floor of the jazz club. I first drew it by hand, then changed it to make the game feel more tense.
 
 ![[Level map - maze version.png]]
 
-The level has two parts that feel very different. The first part is the jazz hall, a big open room with the bar, the stage and the tables. The player starts there. Because it is open, you can see the guard from far away and make a plan.
+The level has two very different areas. The first is the jazz hall, a large open room with the bar, stage, and tables. The player starts here. Since it is open, you can see the guard from far away and plan your moves.
 
-Behind the double door everything gets tight. My first drawing had big rooms, but for a stealth game that was boring. I like narrow places more, like in *Ape Out*, or the stealth parts of *Resident Evil*, where you never know what is behind the next corner. So behind the jazz hall I made a small maze. A real jazz club does not look like this, but it is a game, so I can invent it.
+Behind the double door, the space becomes much tighter. My first drawing had big rooms, but that felt boring for a stealth game. I prefer narrow spaces, like in *Ape Out* or the stealth parts of *Resident Evil*, where you never know what is around the corner. So, behind the jazz hall, I created a small maze. A real jazz club might not look like this, but since it is a game, I can design it how I want.
 
-The office, where the player saw the crime, is in the middle of the maze. A service corridor in the shape of a U goes all around it. Around the corridor there is a kitchen, a staff toilet, a small closet, a storage room and a construction zone that is not finished yet.
+The office, where the player witnessed the crime, is in the center of the maze. A U-shaped service corridor wraps around it. Along the corridor are a kitchen, staff toilet, small closet, storage room, and an unfinished construction area.
 
-Where is the exit? Not at the front. The main entrance is in the lobby, but a gangster stands there and watches the door. The real way out is a back door to the alley, at the top of the construction zone. So the player has to go through the whole maze to escape.
+The exit is not at the front. The main entrance is in the lobby, but a gangster guards the door. The real way out is a back door to the alley, located at the top of the construction zone. This means the player must go through the entire maze to escape.
 
-I also wanted more than one way through. You can follow the service corridor, or you can go into the kitchen, walk through a broken wall into the construction zone and come out in the middle of the corridor. The storage has two doors, so it works as a shortcut too. Because of this the player can choose a route and does not have to wait in one place.
+I wanted to offer more than one path. You can follow the service corridor, or go through the kitchen, pass a broken wall into the construction zone, and come out in the middle of the corridor. The storage room has two doors, so it can be used as a shortcut. This way, the player can choose their route and does not have to wait in one spot.
 
-There are things to hide behind everywhere: tables, the bar, shelves, scaffolding, boxes. I need them. Without cover I cannot even test the vision cone, because the player has no way to break the line of sight (M-04). There are also three places to hide: the staff toilet, the closet at the end of a dead end, and a gap between the shelves in the storage. Hiding is a Could Have (C-02), so in the prototype they are only good places to wait.
+There are many objects to hide behind, like tables, the bar, shelves, scaffolding, and boxes. These are necessary; without cover, I cannot test the vision cone because the player would have no way to break the line of sight (M-04). There are also three hiding spots: the staff toilet, the closet at the end of a dead end, and a gap between shelves in the storage room. Hiding is a Could Have (C-02), so in the prototype, these are just good places to wait.
 
-The red dashed lines on the map are the routes of the guards:
+The red dashed lines on the map show the guards' routes:
 
 | Guard | Where | What it does | In the prototype? |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | G1 | Jazz hall | Walks a loop around the tables | Yes, this is the first one I build |
 | G2 | Service corridor | Walks the U around the office, and back | Next. It is the same guard scene with another route |
 | G3 | Construction zone | Walks around the zone, right before the exit | Only if I have time |
 | G4 | Lobby | Stands still and watches the main entrance | Only if I have time |
 
-G4 is a different kind of guard, because he does not walk. In the code this is easy: he is a normal guard with a patrol route of only one point.
+G4 is a different kind of guard because he does not walk. In the code, this is simple: he is a normal guard with a patrol route that has only one point.
 
-All corridors and doors are at least 2 grid squares (128 units) wide. This is not random. The guard is 56 units wide and pathfinding keeps 32 units away from walls, so a narrower door would be closed for the guards (M-07).
+All corridors and doors are at least 2 grid squares (128 units) wide. This is on purpose. The guard is 56 units wide, and pathfinding keeps 32 units away from walls, so a narrower door would block the guards (M-07).
 
-The whole level is around 24 × 14 grid squares (1536 × 896 units). That is bigger than the screen, so the camera has to follow the player.
+The entire level is about 24 × 14 grid squares (1536 × 896 units). This is larger than the screen, so the camera needs to follow the player.
 
 ### 3.3 Screens (wireframes)
 
-Before I build the screens, I draw them as wireframes. A wireframe is a simple drawing that only shows what is on a screen and where. It has no final art. This way I can check if a screen makes sense before I spend time on it in Godot.
+Before building the screens, I draw them as wireframes. A wireframe is a simple drawing that shows what is on a screen and where, without any final art. This helps me check if a screen makes sense before spending time on it in Godot.
 
 | Screen | What is on it | Requirement |
-|---|---|---|
+| --- | --- | --- |
 | Main menu | The title, New Game, Controls and Quit. In the background, the entrance of the jazz club at night | S-04 |
 | Gameplay HUD | Almost nothing. A small stamina bar that only shows when you run, and a meter above a guard when he starts to see you | S-01, S-02 |
 | Caught | The word CAUGHT in red, Try again (Enter) and Main menu | M-08, S-04 |
 | Escaped | The word ESCAPED, the time you needed, Play again and Main menu | M-09 |
 | Controls | WASD to move, Shift to run, Ctrl to crouch, Enter to choose, Esc for the menu | M-02 |
 
-I keep the HUD very small on purpose. This is a noir game about tension. If the screen is full of bars and icons, you look at them and not at the guards. There is also no minimap, because then the maze would not be scary anymore.
+I intentionally keep the HUD very small. This is a noir game focused on tension. If the screen is crowded with bars and icons, players will look at those instead of the guards. There is also no minimap, because that would make the maze less scary.
 
-For this delivery only the Caught screen has to work, because it is a Must Have (M-08). The other screens are designed now and built later.
+For this delivery, only the Caught screen needs to work, since it is a Must Have (M-08). The other screens are designed now and will be built later.
+
+I drew the main menu wireframe myself. The other four screens were made in the same sketch style as the level map, with help from AI, based on my descriptions. I did this to meet the deadline.
 
 ![[Main Menu Wireframe.jpg]]
+
+![[Wireframe 2 - Gameplay HUD.png]]
+
+![[Wireframe 3 - Caught.png]]
+
+![[Wireframe 4 - Escaped.png]]
+
+![[Wireframe 5 - Controls.png]]
+
 ## 4. Architecture
 
 ### 4.1 Scene tree
 
-In Godot a game is made of nodes in a tree. The level is one scene. The guard is its own scene, so I can put more than one guard in the level. In the picture, red is the guard.
+In Godot, a game is made up of nodes arranged in a tree. The level is one scene, and the guard is its own scene, so I can add more than one guard to the level. In the diagram, red represents the guard.
 
 ![[Scene tree.svg]]
 
-A few things in the tree are like this on purpose. The walls and the furniture are inside the `NavigationRegion2D`, because Godot only cuts out the obstacles that are inside the region. If they are outside, the guard does not know they exist.
+Some things in the tree are set up this way on purpose. The walls and furniture are inside the `NavigationRegion2D` because Godot only recognizes obstacles that are inside the region. If they are outside, the guard does not know they exist.
 
-The camera is a child of the player. The level is bigger than the screen, so the camera has to follow the player around.
+The camera is attached to the player. Since the level is bigger than the screen, the camera needs to follow the player around.
 
-`PatrolRoute` is not a child of the enemy. A child always moves together with its parent. If the waypoints were children of the guard, they would move with it and the guard would never reach them.
+`PatrolRoute` is not a child of the enemy. If it were, the waypoints would move with the guard, and the guard would never reach them.
 
 ### 4.2 How the scripts work together
 
 | Script | On which node | What it does | Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `player_character.gd` | Player | Movement, crouching, running, and the right animation for each direction | Done |
 | `enemy.gd` | Enemy | Decides where the guard wants to go and moves it there with pathfinding (section 5) | To build |
 | `game_manager.gd` | Autoload, you can use it from everywhere as `GameManager` | Knows if the game is over, pauses the game, restarts the level | To build |
 | `game_over_screen.gd` | GameOverScreen | Appears when the player is caught, restarts when you press Enter | To build |
 
-The guard does not talk directly to the game over screen. When it catches the player, it calls `GameManager.catch_player()`. The game manager pauses the game and sends a signal called `player_caught`. The game over screen listens to that signal and appears. I did it like this so every part works on its own. A second guard, or The Hunter later, only has to call the same function.
+The guard does not interact directly with the game over screen. When it catches the player, it calls `GameManager.catch_player()`. The game manager pauses the game and sends a signal called `player_caught`. The game over screen listens for that signal and then appears. I set it up this way so each part works independently. A second guard or The Hunter can just call the same function.
 
 ### 4.3 Collision layers
 
 In Godot, collision layers decide what can touch what. Every object is *on* a layer, and it *looks at* other layers (this is called the mask).
 
 | Object | On layer | Looks at |
-|---|---|---|
+| --- | --- | --- |
 | Walls and furniture | world | nothing |
 | Player | player | world |
 | Body of the guard | enemy | world |
@@ -149,25 +160,25 @@ In Godot, collision layers decide what can touch what. Every object is *on* a la
 | Catch area of the guard | nothing | player |
 | Sight line of the guard | nothing | world and player |
 
-The sight line is the only one that looks at both. It has to hit the walls to know that a wall is in the way. And it has to hit the player to know that nothing is in the way.
+The sight line is the only one that checks both. It needs to detect walls to know if something is blocking the view, and it needs to detect the player to confirm there is a clear line of sight.
 
 ### 4.4 How I write the code
 
-When the code has to choose between a lot of options, I use `match`. This is the switch/case of GDScript, and Faruk suggested it on 18 September.
+When the code needs to choose between many options, I use `match`, which is the GDScript version of switch/case. Faruk suggested this on 18 September.
 
-You can see why in my player script. My first version had a long list of `if` and `elif` for every direction, and inside each one another `if` for walking or running. It was around 50 lines and it did not work well. On 21 September I changed it. Now `Vector2i(input.sign())` turns the keys into a direction like `(1, -1)`, and one `match` turns that direction into the name of the animation, like `Up_Right`. Then I only put the state in front: `Walking_Up_Right`, `Running_Up_Right` or `Crouch_Up_Right`. One short `match` instead of a whole page. The state itself (Walking, Running or Crouch) I still choose with a short `if` and `elif`, because it depends on which key the player holds down.
+You can see why in my player script. My first version used a long list of `if` and `elif` statements for every direction, and inside each one another `if` for walking or running. It was around 50 lines and did not work well. On 21 September I changed it. Now `Vector2i(input.sign())` turns the keys into a direction like `(1, -1)`, and a single `match` turns that direction into the animation name, like `Up_Right`. Then I just add the state in front: `Walking_Up_Right`, `Running_Up_Right` or `Crouch_Up_Right`. This way, one short `match` replaces a whole page of code. I still use a short `if` and `elif` to choose the state (Walking, Running or Crouch), depending on which key the player holds down.
 
-For the guard I plan the same idea. It gets its three states from 5.1 in an `enum` (a list of names), and a `match` decides what the guard does in each state.
+I plan to use the same idea for the guard. It gets its three states from 5.1 as an `enum` (a list of names), and a `match` statement decides what the guard does in each state.
 
-The speed, the acceleration and the friction of the player are `@export` variables, so I can change them in the editor while I test, without touching the code. `base_speed` is 60 in the script, but in the player scene I set it to 200, and that is the value the game uses.
+The player's speed, acceleration, and friction are `@export` variables, so I can change them in the editor while testing, without editing the code. `base_speed` is set to 60 in the script, but in the player scene, I set it to 200, which is the value the game uses.
 
 ## 5. The guards
 
-A guard does two different things. It decides where to go, the next patrol point or the player, and for that I use a few simple rules (5.1). Then it has to actually get there, around the bar, the stage and the tables. For that I use pathfinding (5.2).
+A guard does two main things. First, it decides where to go next, a patrol point or the player. For this it uses a few simple rules (5.1). Then, it needs to actually get there, moving around the bar, stage, and tables. For this, I use pathfinding (5.2).
 
 ### 5.1 Deciding where to go
 
-A guard is always in one of three states, and every state gives the guard a target.
+A guard is always in one of three states, and each state gives the guard a target.
 
 ```mermaid
 stateDiagram-v2
@@ -185,17 +196,17 @@ stateDiagram-v2
 | **Chase** | Where the player is now, updated every frame | 300 |
 | **Caught** | No target. The guard stops and the game manager does the rest | 0 |
 
-The guard always turns to the direction it walks, and the vision cone turns with it.
+The guard always turns to the direction it is walking, and the vision cone turns with it.
 
-If I have time, the first thing I add is a **Search** state (Should Have S-03). When the guard loses the player, it goes to the last place where it saw them and looks around for a few seconds. After that it goes back to its patrol. The pathfinding is already there, so this is only a new target. No new movement code.
+If I have time, the first thing I will add is a **Search** state (Should Have S-03). When the guard loses the player, it will go to the last place it saw them and look around for a few seconds. After that, it returns to its patrol. The pathfinding is already set up, so this just means giving it a new target. No new movement code is needed.
 
 ### 5.2 Getting there: pathfinding
 
-The guards use Godot's navigation, like I recommend in the Advice document. It works in two steps.
+The guards use Godot’s navigation system, as I recommended in the Advice document. It works in two steps.
 
-First, the floor. A `NavigationRegion2D` covers the level. I draw the outline of the whole floor and press *Bake*. Godot then cuts out the walls and the furniture and leaves 32 units of space around them, which is a bit more than half the guard. The result is a map of every place where a guard can stand.
+First, the floor: a `NavigationRegion2D` covers the level. I draw the outline of the whole floor and press *Bake*. Godot then removes the walls and furniture from the navigation area, leaving 32 units of space around them, which is a bit more than half the guard's width. The result is a map showing every place a guard can stand.
 
-Second, the route. Every guard has a `NavigationAgent2D`. The script gives it a target (from the table in 5.1), and the agent gives back the next point of the shortest way around the obstacles. The guard walks to that point. When it gets there, it asks for the next one.
+Second, the route: each guard has a `NavigationAgent2D`. The script gives it a target (from the table in 5.1), and the agent returns the next point on the shortest path around obstacles. The guard walks to that point, and when it arrives, it asks for the next one.
 
 ```mermaid
 flowchart LR
@@ -210,71 +221,72 @@ Because of this I can put the waypoints anywhere on the floor. And a guard that 
 
 ### 5.3 How the guard sees the player
 
-One check is not enough for the guard to see the player. It needs two.
+One check is not enough for the guard to see the player. It needs two checks.
 
-The first check is if the player is inside the cone. The `Vision` area tells the script when the player goes in or out of the cone, so this covers the distance and the angle. The problem is that an area in Godot does not know about walls. With only this check, the guard could see through the bar.
+The first check is whether the player is inside the vision cone. The `Vision` area tells the script when the player enters or leaves the cone, covering both distance and angle. The problem is that an area in Godot does not detect walls. With only this check, the guard could see through the bar.
 
-That is why there is a second check: is there something in the way? When the player is inside the cone, the `SightLine` raycast points at the player every frame. If the first thing it hits is the player, the guard sees them. If it hits a wall or furniture first, it doesn't.
+That is why there is a second check: is something in the way? When the player is inside the cone, the `SightLine` raycast points at the player every frame. If the first thing it hits is the player, the guard sees them. If it hits a wall or furniture first, the guard does not see the player.
 
 The guard only starts to chase when both checks are true. This is what makes hiding behind things work (M-06).
 
 ## 6. The Hunter (designed, not built in this delivery)
 
-The Hunter is the right-hand man of the boss, and he is the enemy the client wants to test. He is different from the guards because he has no route. He decides every move himself, and after many tries he gets better. In this section I describe him with enough detail to build him in the next iteration.
+The Hunter is the boss’s right-hand man and the enemy the client wants to test. He is different from the guards because he does not follow a set route. He decides every move himself and gets better after many tries. In this section, I describe him in enough detail to build him in the next iteration.
 
 ### 6.1 How Q-learning works
 
-The Hunter has a table. Every row is a situation and every column is a move. In every cell there is a number that says how good that move was in that situation until now.
+The Hunter uses a table where each row is a situation and each column is a move. Every cell contains a number showing how good that move has been in that situation so far.
 
-At the start all the numbers are zero, so he moves more or less at random. After every move he gets or loses points, and he changes the number of the move he just did. After many tries, the moves that bring him closer to the player have higher numbers, and he chooses them more often.
+At first, all the numbers are zero, so The Hunter moves more or less at random. After each move, he gains or loses points and updates the number for the move he just made. After many tries, the moves that bring him closer to the player have higher numbers, so he chooses them more often.
 
 ### 6.2 What The Hunter knows (the state)
 
 The Hunter does not see the whole map. He moves on the grid from section 2.3 and he only knows this:
 
 | What he knows | Options | How many |
-|---|---|---|
+| --- | --- | --- |
 | Direction to the player | N, NE, E, SE, S, SW, W, NW | 8 |
 | Distance to the player | close (1 to 2 squares), medium (3 to 5), far (6 or more) | 3 |
 | Is there a wall up, down, left, right, next to him? | yes or no, for each one | 16 |
 
 So there are 8 × 3 × 16 = **384 situations**.
 
-In my first version The Hunter only knew the direction and the distance. Then I saw a problem. In 6.4 he loses points when he walks into a wall, but he cannot learn to avoid a wall if he does not know it is there. Without the walls in the state, the same situation sometimes has a wall and sometimes not, and the table never gets stable. So I added them.
+In my first version, The Hunter only knew the direction and distance. Then I noticed a problem. In 6.4, he loses points when he walks into a wall, but he cannot learn to avoid a wall if he does not know it is there. Without including walls in the state, the same situation sometimes has a wall and sometimes does not, so the table never becomes stable. That is why I added walls to the state.
 
 ### 6.3 What The Hunter can do (the actions)
 
-The Hunter can only move one square at a time: **up, down, left or right**. No diagonals. I kept it like this on purpose, because every extra move makes the table bigger. With eight moves it would be twice as big.
+The Hunter can only move one square at a time: **up, down, left or right**. No diagonals. I kept it this way on purpose, because each extra move would make the table larger. With eight moves, it would be twice as big.
 
-So how big is it? 384 situations × 4 moves = 1,536 numbers. For a computer that is nothing, so he can learn fast. It also means I can open the table and look at it myself. If The Hunter keeps walking into the same wall, I can find that row and see which number is wrong.
+So how big is the table? 384 situations × 4 moves = 1,536 numbers. For a computer, this is very small, so The Hunter can learn quickly. It also means I can open the table and check it myself. If The Hunter keeps walking into the same wall, I can find that row and see which number is off.
 
 ### 6.4 Points (rewards)
 
-| What happened after the move             | Points                |
-| ---------------------------------------- | --------------------- |
-| He caught the player                     | +50, and the try ends |
-| He got closer to the player              | +1                    |
-| He stayed at the same distance           | −0.1                  |
-| He got further from the player           | −1                    |
-| He walked into a wall (and did not move) | −5                    |
+| What happened after the move | Points |
+| --- | --- |
+| He caught the player | +50, and the try ends |
+| He got closer to the player | +1 |
+| He stayed at the same distance | −0.1 |
+| He got further from the player | −1 |
+| He walked into a wall (and did not move) | −5 |
 
 The small minus for staying at the same distance is there so he does not learn to walk sideways forever. Catching the player gives a lot more points than anything else, so catching is always better than many small steps.
+
 ### 6.5 How he learns
 
-This was the part I found hardest to understand, so I explain it the way it finally made sense to me.
+This was the part I found hardest to understand, so I will explain it in the way that finally made sense to me.
 
 The Hunter learns with the Q-learning update rule. I did not invent this formula. I learned it from the sentdex videos and the Medium guide in my sources:
 
 *new value = old value + learning rate × (points + discount × best value in the new situation − old value)*
 
-The first time I saw it, it looked very complicated. So I tried it with an example from my own game. The Hunter is far from the player, the player is north-east, and there are no walls around him. The score for "up" is still 0, because he never tried it. He goes up and gets 1 point, because now he is closer. From his new square, the best move has a score of 2. So the new score for "up" is 0 + 0.1 × (1 + 0.9 × 2 − 0) = 0.28.
+The first time I saw it, it looked very complicated. So I tried it with an example from my own game. The Hunter is far from the player, the player is north-east, and there are no walls around him. The score for “up” is still 0, because he never tried it. He goes up and gets 1 point, because now he is closer. From his new square, the best move has a score of 2. So the new score for “up” is 0 + 0.1 × (1 + 0.9 × 2 − 0) = 0.28.
 
-That is a small step. But if "up" keeps working in that situation, the score keeps going up. After many tries The Hunter almost always chooses it.
+That is a small step. But if “up” keeps working in that situation, the score keeps increasing. After many tries, The Hunter almost always chooses it.
 
-These are the values I would start with:
+Here are the values I would start with:
 
 | Setting | Value | What it means |
-|---|---|---|
+| --- | --- | --- |
 | Learning rate | 0.1 | Every new try only changes the score by 10%, so one lucky move does not change the whole table |
 | Discount | 0.9 | Catching the player in a few moves still counts, so he learns to think a little bit ahead |
 | Exploration | starts at 1.0, goes down to 0.05 during training | At the start he tries random moves to find what works. Later he mostly uses what he learned, but sometimes he still tries something new |
@@ -294,33 +306,34 @@ flowchart TD
     I --> A
 ```
 
-A try ends when The Hunter catches the player, or after 200 moves. Otherwise a Hunter that never finds the player would go on forever.
+A try ends when The Hunter catches the player or after 200 moves. Otherwise, a Hunter that never finds the player would keep going forever.
 
 ### 6.6 Training
 
-Training against a real person would need hundreds of tries, and nobody wants to play that long. So first The Hunter trains against a simple fake player in a copy of the level. The fake player runs away from him on random routes, and Godot can run this much faster than normal time. After the training the table is saved in a file. Then I load the trained Hunter in the real game, where he keeps learning from the real player.
+Training against a real person would take hundreds of tries, and nobody wants to play that long. So first, The Hunter trains against a simple fake player in a copy of the level. The fake player runs away from him on random routes, and Godot can run this much faster than real time. After training, the table is saved in a file. Then I load the trained Hunter into the real game, where he continues learning from the real player.
 
 ### 6.7 How to measure if he gets better
 
-This is the answer to the question of the client. That's why I define it before I build anything.
+This answers the client’s question, which is why I define it before building anything.
 
-In every try I save how many moves The Hunter needed to catch the player (200 if he did not catch them), if he caught the player within 200 moves or not, and how many times he walked into a wall.
+In every try, I record how many moves The Hunter needed to catch the player (200 if he did not catch them), whether he caught the player within 200 moves, and how many times he walked into a wall.
 
 Then I do the comparison. I start with 50 tries with a Hunter **without training**, where the whole table is zero and he moves at random. These start from 10 fixed positions. After that I train him for 500 tries against the fake player. Then I do the same 50 tries again with the **trained** Hunter, with exploration turned off, so he only uses what he learned. At the end I compare the averages and make a graph of the moves he needed during the 500 training tries. This graph is the learning curve.
 
 He is better when the trained Hunter needs clearly fewer moves than the untrained one, catches the player more often within 200 moves, and the learning curve goes down instead of staying flat. If this does not happen, I write down the result as it is, like I promise in the Analysis.
 
-The numbers are not everything, though. The client also wants to know if players can *see* that he gets better. So after five tries against The Hunter, I ask the testers one question: "Did The Hunter get better at finding you?" If he improves in the numbers but players don't notice it, it is not useful for the client.
+The numbers are not everything, though. The client also wants to know if players can *see* that he gets better. So after five tries against The Hunter, I ask the testers one question: “Did The Hunter get better at finding you?” If he improves in the numbers but players don’t notice it, it is not useful for the client.
+
 ### 6.8 Limits of this design
 
-The Hunter only knows the direction of the player and the walls next to him. He does not know the whole level. So he can learn "go around the wall on the left when the player is north-east", but he cannot learn a route through different rooms. He also trains against only one type of fake player. If real players play very differently, he needs time to adapt.
+The Hunter only knows the direction of the player and the walls next to him. He does not know the whole level. So he can learn “go around the wall on the left when the player is north-east”, but he cannot learn a route through different rooms. He also trains against only one type of fake player. If real players play very differently, he needs time to adapt.
 
 For a first enemy that learns, I think this is OK. These two limits are also the first things I would improve in a next version.
 
 ## 7. Requirements and where they are in this design
 
 | Requirement | Where in this document |
-|---|---|
+| --- | --- |
 | M-01 Play the game | 3.1 Main flowchart, 4.1 Scene tree |
 | M-02 Move in eight directions | 4.2 `player_character.gd` |
 | M-03 Cannot walk through walls | 4.3 Collision layers |
