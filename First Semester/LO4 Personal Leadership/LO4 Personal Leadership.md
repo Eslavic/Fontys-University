@@ -1,52 +1,75 @@
-# LO3 Professional Standard
+# LO4 Personal Leadership
 
 **Student:** David Eslava  
-**Programme:** Associate Degree HBO-ICT, Fontys ICT, Eindhoven
-**Learning outcome:** LO3 Professional Standard  
+**Programme:** Associate Degree HBO-ICT, Fontys ICT, Eindhoven  
+**Learning outcome:** LO4 Personal Leadership  
 **Challenge:** Challenge 1, The Witness  
 **Period:** 1 to 25 September 2026
 
-*I used AI (Claude) to help with the structure and English in this document. All the planning, decisions, and reflections are my own.*
+*I used AI (Claude) to help with the structure and English in this document. The feedback, the choices and the reflections are my own.*
 
-## 1. How I planned the project
+## 1. Where I started
 
-When the challenge began, I did not make a real plan. I jumped in with my game idea and started using Godot because that interested me most. I did not understand how the portfolio or learning outcomes worked. I thought the challenge was just about making some documents and a devlog. So, in the first weeks, I worked without much organization.
+At the start of the semester I did not really understand how the portfolio works. I thought a challenge was some documents and a devlog. So in the first weeks I worked mostly on what I liked most, the game idea and Godot, and I did not ask many questions.
 
-After Frank told me I needed a Project Plan with a Gantt chart, I created one. It covered the last four working days, from Monday 21 to Thursday 24 September. For each activity, I listed the hours and what it depended on. I put documentation first and the prototype second. The order was: Analysis, then Advice and Design, then the Project Plan, followed by the map, one enemy with a vision cone, and a game over screen. Validation was the final step on Thursday.
+I also know I have a problem with perfectionism. I can spend hours on one small part, like the sprites of the player, while other parts are not started. This came back a lot in this challenge, and my coaches noticed it too.
 
-I chose this order for a reason. Most of what I was missing was the writing, and writing does not depend on the game working. If the code failed, I would still have the documents.
+## 2. Feedback I got and what I did with it
 
-## 2. How the plan worked
+I had meetings with both of my coaches. I wrote down what they said after every meeting. The notes are in my Feedback folder.
 
-The documentation took much longer than I expected. The Analysis went through three versions. Frank rejected version 0.1 because it was not professional. Version 0.2 was better, but I thought it was too polished and did not sound like me. I am happy with version 0.3. After that, I wrote the Advice and the Design, and I rewrote parts of them more than once because I found things in the Design that did not match my actual code.
+| Date | From | What they said | What I did with it | Where you can see it |
+|---|---|---|---|---|
+| 11 Sep | Faruk | My analysis was already quite good. I could write about my sprite problem and how I solved it | I wrote about the Mixamo and Blender solution | Design 2.2 |
+| 11 Sep | Faruk | Set time limits so perfectionism does not eat my time, and contact both coaches every week | I made a Project Plan with hours for every task. I did not always keep the limits, see section 5 | Project Plan |
+| 14 Sep | Frank | The Analysis was not professional. Write it for a fictional client, remove my personal learning goals | I rewrote it for Nightfall Interactive, with the client on the cover | Analysis 0.2 and 0.3 |
+| 14 Sep | Frank | Make a separate Project Plan with a Gantt chart | I made it, with activities, hours and dependencies | Project Plan |
+| 14 Sep | Frank | Move the tools and technical choices to the Design | I moved them, and I wrote a separate Advice document for the comparison | Advice, Design 2 |
+| 14 Sep | Frank | Start the core mechanics now, with placeholders | I started, but too late. The guard is the last part | Section 5 of this document |
+| 15 Sep | Faruk | Write the MoSCoW as user stories: "As a ... I can ... so that ..." | I rewrote every requirement like this | Analysis, MoSCoW table |
+| 15 Sep | Faruk | Put all the workshops in the Orientation document, short | I did this | LO1 Orientation |
+| 18 Sep | Faruk | The game has to be playable, or there is no validation. Use `match` to make my code cleaner | I changed my player script from about 50 lines of `if` and `elif` to one short `match` | `player_character.gd`, Design 4.4 |
 
-Because of this, the prototype is behind schedule. Right now, the player can move, crouch, and run, with animations in eight directions, and there is a test wall. The map is designed but not built yet, and the enemy with the vision cone is not in the game yet. I am being honest about this. It is the real result of my plan.
+## 3. How I developed
 
-## 3. How I adjusted
+The clearest example is the Analysis. Version 0.1 was rejected because it was not professional. Version 0.2 was better, but I felt it did not sound like me anymore. Version 0.3 is professional and still in my own words. I learned that professional does not mean complicated.
 
-The biggest change was The Hunter. My first idea was to make an enemy that learns with Q-learning. When I checked how much time I had left, I realized this was not realistic. I talked to Faruk, my student coach, and he said it was okay to leave it out because it was a Could Have in my MoSCoW table. So now The Hunter is only designed, not built. The Design document explains how it would work and how I would measure if it improves. I think this was the right choice. It is better to deliver something smaller and honest than something big that does not work.
+My code also changed. My first player script had a long list of `if` and `elif` for every direction and it did not work well. After Faruk's feedback I rewrote it with one `match`. It is shorter and I understand it better.
 
-I also changed the level map. I lost my first wireframe, so I made a new one. Now it is a maze with four guards and a back door as the exit. The Design document now matches this map.
+I also had to make hard choices. The Hunter, the enemy that learns, was my favourite idea. When I looked at the time I had left, I saw I could not build it. I asked my coach, and because it was a Could Have, I decided to only design it. That was difficult for me, but I think it was the right choice. For the sprites, AI could not make real top-down images, so I found my own way with Mixamo and Blender. And when I lost my first level map, I made a new one that is better for a stealth game.
 
-## 4. Professional standards I used
+## 4. My core values
 
-I tried to make my documents look and read like real project documents. The Analysis is written for a fictional client, Nightfall Interactive, and the client is listed on the cover page. The requirements are in a MoSCoW table, and each one is written as a user story so that someone who does not know games can still understand it. Faruk suggested this format. The Analysis also includes a list of sources.
+%% TO DO David: check these. They come from what you told me about yourself. Change or delete anything that is not true for you. %%
 
-I divided my work into separate documents for each phase. The Advice compares four engines (Godot, Unity, GameMaker, and Pygame) and different ways to make the enemy AI, and explains why I chose Godot and GDScript. The Design includes the architecture, scene tree, flowcharts, level map, and wireframes for the screens. The Project Plan contains the Gantt chart.
+**Autonomy.** I like to find my own solution. The sprite problem is a good example: nobody told me to use Mixamo and Blender, I found it myself.
 
-I use Git for version control. My notes are in Obsidian, and the Obsidian Git plugin pushes them to GitHub. My game code is in the same repository. To be honest, most of my commits are automatic “vault backup” messages, so the history is hard for someone else to follow.
+**Creativity.** I like the place where code and creative work meet. That is why I chose a game with its own style, and not only a technical project.
 
-## 5. What I would do differently
+**Honesty.** I prefer to deliver something smaller that is true, than something big that does not work. This is why The Hunter is "designed, not built", and why I say in my documents when I used AI.
 
-I would start the prototype earlier, even with simple placeholders, instead of waiting until the documents were finished. I would also ask for help sooner. I spent the first weeks confused about the portfolio and did not mention it. I would also write my own commit messages so my Git history shows what I did and when.
+## 5. How I used AI, and what I learned from it
+
+Fontys allows AI as a tool, not to do the work for you. I used Claude to help with structure, English and checking my documents. Sometimes it made mistakes too: the Design once said I use an `enum`, but my code does not. I found this because I compared the document with my real script. Since then I check every document against my code.
+
+On the last day I used Grammarly Humanizer on my documents. It changed my sentences, but it also broke things: it deleted tables, glued paragraphs together and removed images. I learned that I have to read everything after a tool changes it. A tool can help, but I am the one responsible for what I hand in.
+
+## 6. What I will do differently next time
+
+My plan for the next challenge:
+
+- Start the prototype in the first or second week, with placeholders, and write the documents next to it.
+- Put a time limit on every task and stop when the time is over, also when it is not perfect.
+- Talk to my coaches every week, and ask as soon as I do not understand something, not after two weeks.
+- Write my devlog every day for five minutes, in English.
 
 ## Evidence description
 
 **A. Why did I add this to my portfolio?**  
-This shows how I organized Challenge 1. The Project Plan and Gantt chart show my plan, and this document explains how the plan worked in reality and what I changed.
+This document shows how I used the feedback of my coaches, how my work changed because of it, and what I learned about myself during Challenge 1.
 
 **B. What did I learn while creating it?**  
-I learned that a plan is more than just a table at the start. The important part is looking back and seeing where things went wrong. I also learned that documentation takes much more time than I expected, so I need to plan extra time for it.
+When I put all the feedback in one table, I saw that I used almost all of it. But I also saw that the most important point, "start the game early", came from both coaches and I was too late with it.
 
 **C. What will I do differently next time?**  
-Next time, I will make a plan in the first week instead of at the end. I will build a simple version of the product early and work on the documents alongside it. I will also write clear commit messages from the start.
+I will keep this feedback table from the first week, and update it after every meeting, not at the end.
