@@ -65,7 +65,7 @@ The prototype includes the main part of this flow. You play, a guard sees you, a
 
 The level is set on one floor of the jazz club. I first drew it by hand, then changed it to make the game feel more tense.
 
-![[Level map - maze version.png]]
+![[Map.png]]
 
 The level has two very different areas. The first is the jazz hall, a large open room with the bar, stage, and tables. The player starts here. Since it is open, you can see the guard from far away and plan your moves.
 
@@ -113,6 +113,10 @@ For this delivery, only the Caught screen needs to work, since it is a Must Have
 I drew the main menu wireframe myself. The other four screens were made in the same sketch style as the level map, with help from AI, based on my descriptions. I did this to meet the deadline.
 
 ![[Main Menu Wireframe.jpg]]
+
+After the wireframe I made a mockup of the main menu. A mockup shows how the screen should look in the real game, with the final style: black and white, rain, and red only for the selected button. I create it with generative AI(Gemini).
+
+![[Main Menu UX.jpg]]
 
 ![[Wireframe 2 - Gameplay HUD.png]]
 
