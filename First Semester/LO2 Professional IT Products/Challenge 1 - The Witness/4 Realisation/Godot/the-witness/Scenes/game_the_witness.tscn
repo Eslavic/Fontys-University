@@ -12,7 +12,7 @@ accel = 1000.0
 friction = 1400.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1469596414]
-zoom = Vector2(5, 5)
+zoom = Vector2(3, 3)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1941363532]
 
