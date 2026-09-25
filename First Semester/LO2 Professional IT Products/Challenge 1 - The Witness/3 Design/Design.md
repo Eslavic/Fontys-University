@@ -2,7 +2,7 @@
 
 **Client:** Nightfall Interactive
 **Made by:** David Eslava, Fontys ICT student
-**Version 0.1 , 24 September 2026**
+**Version 0.1, 25 September 2026**
 
 ---
 
@@ -39,8 +39,6 @@ In the prototype everything except the player is a placeholder. The walls are bl
 
 The player sprites are 1024 × 1024, which is much too big for the game. So in the player scene I scale the sprite down to 0.063, and the player is around 64 units wide. The camera is a child of the player and has a zoom of 5 at the moment. I made everything else in the level with the size of the player in mind: one grid square is 64 units, about one player. That way the placeholders still fit when I put in the real sprites.
 
-%% TO DO David: with zoom 5 and the normal Godot window (1152 × 648) you only see about 230 × 130 units, so around 3.5 × 2 squares. The vision cone (288) is longer than the screen, so the player could be seen by a guard they cannot see. A zoom of around 1.5 to 2 shows about 10 × 5 squares. Try it and change the number here. %%
-
 | What | Size or speed |
 |---|---|
 | Player | sprite around 64 wide, collision circle radius 13, walks at 200, crouches at 100, runs at 1000 |
@@ -65,22 +63,54 @@ The prototype has the main part of this flow. You play, a guard sees you, and yo
 
 ### 3.2 Level layout
 
-The level is one floor of the jazz club, and it has two parts. The first part is the jazz hall, a big open room with a bar, a stage and tables. The player starts there, in the bottom left corner. Behind a "Staff only" door is the second part, the staff area. It has a service corridor, a kitchen, a storage room, the office where the player saw the crime, and a construction zone that is not finished yet. The exit is at the end of the staff area.
+The level is one floor of the jazz club. I drew it by hand first, and then I changed it to make it more tense.
 
+![[Level map - maze version.png]]
 
+The level has two parts that feel very different. The first part is the jazz hall, a big open room with the bar, the stage and the tables. The player starts there. Because it is open, you can see the guard from far away and make a plan.
 
-The two parts feel different on purpose. The jazz hall is open, so you can see a guard from far away and make a plan. The staff area is small and tight, with short corridors and a lot of corners, a bit like the game *Ape Out*. Around a corner you cannot see what is coming. But the guard cannot see you either, and that makes the second part more tense.
+Behind the double door everything gets tight. My first drawing had big rooms, but for a stealth game that was boring. I like narrow places more, like in *Ape Out*, or the stealth parts of *Resident Evil*, where you never know what is behind the next corner. So behind the jazz hall I made a small maze. A real jazz club does not look like this, but it is a game, so I can invent it.
 
-There are things to hide behind everywhere: tables, the bar, shelves, scaffolding, boxes. I need them. Without cover I cannot even test the vision cone, because the player has no way to break the line of sight (M-04).
+The office, where the player saw the crime, is in the middle of the maze. A service corridor in the shape of a U goes all around it. Around the corridor there is a kitchen, a staff toilet, a small closet, a storage room and a construction zone that is not finished yet.
 
-I also wanted more than one way through. You can enter the staff area by the "Staff only" door or by a door from the bar into the kitchen. In the construction zone some walls are not finished, so the player can walk through the gaps. Because of this the player can choose a route and does not have to wait in one place.
+Where is the exit? Not at the front. The main entrance is in the lobby, but a gangster stands there and watches the door. The real way out is a back door to the alley, at the top of the construction zone. So the player has to go through the whole maze to escape.
 
-For the guards, Guard 1 walks a loop around the tables in the jazz hall. Guard 2 walks up and down the service corridor, so the player has to use the side rooms and wait for the right moment. Guard 3 stands near the office and the exit, but only if I have time.
+I also wanted more than one way through. You can follow the service corridor, or you can go into the kitchen, walk through a broken wall into the construction zone and come out in the middle of the corridor. The storage has two doors, so it works as a shortcut too. Because of this the player can choose a route and does not have to wait in one place.
+
+There are things to hide behind everywhere: tables, the bar, shelves, scaffolding, boxes. I need them. Without cover I cannot even test the vision cone, because the player has no way to break the line of sight (M-04). There are also three places to hide: the staff toilet, the closet at the end of a dead end, and a gap between the shelves in the storage. Hiding is a Could Have (C-02), so in the prototype they are only good places to wait.
+
+The red dashed lines on the map are the routes of the guards:
+
+| Guard | Where | What it does | In the prototype? |
+|---|---|---|---|
+| G1 | Jazz hall | Walks a loop around the tables | Yes, this is the first one I build |
+| G2 | Service corridor | Walks the U around the office, and back | Next. It is the same guard scene with another route |
+| G3 | Construction zone | Walks around the zone, right before the exit | Only if I have time |
+| G4 | Lobby | Stands still and watches the main entrance | Only if I have time |
+
+G4 is a different kind of guard, because he does not walk. In the code this is easy: he is a normal guard with a patrol route of only one point.
 
 All corridors and doors are at least 2 grid squares (128 units) wide. This is not random. The guard is 56 units wide and pathfinding keeps 32 units away from walls, so a narrower door would be closed for the guards (M-07).
 
-The whole level is 24 × 14 grid squares (1536 × 896 units). That is bigger than the screen, so the camera has to follow the player.
+The whole level is around 24 × 14 grid squares (1536 × 896 units). That is bigger than the screen, so the camera has to follow the player.
 
+### 3.3 Screens (wireframes)
+
+Before I build the screens, I draw them as wireframes. A wireframe is a simple drawing that only shows what is on a screen and where. It has no final art. This way I can check if a screen makes sense before I spend time on it in Godot.
+
+| Screen | What is on it | Requirement |
+|---|---|---|
+| Main menu | The title, New Game, Controls and Quit. In the background, the entrance of the jazz club at night | S-04 |
+| Gameplay HUD | Almost nothing. A small stamina bar that only shows when you run, and a meter above a guard when he starts to see you | S-01, S-02 |
+| Caught | The word CAUGHT in red, Try again (Enter) and Main menu | M-08, S-04 |
+| Escaped | The word ESCAPED, the time you needed, Play again and Main menu | M-09 |
+| Controls | WASD to move, Shift to run, Ctrl to crouch, Enter to choose, Esc for the menu | M-02 |
+
+I keep the HUD very small on purpose. This is a noir game about tension. If the screen is full of bars and icons, you look at them and not at the guards. There is also no minimap, because then the maze would not be scary anymore.
+
+For this delivery only the Caught screen has to work, because it is a Must Have (M-08). The other screens are designed now and built later.
+
+![[Main Menu Wireframe.jpg]]
 ## 4. Architecture
 
 ### 4.1 Scene tree
@@ -231,8 +261,6 @@ So how big is it? 384 situations × 4 moves = 1,536 numbers. For a computer that
 The small minus for staying at the same distance is there so he does not learn to walk sideways forever. Catching the player gives a lot more points than anything else, so catching is always better than many small steps.
 ### 6.5 How he learns
 
-### 6.5 How he learns
-
 This was the part I found hardest to understand, so I explain it the way it finally made sense to me.
 
 The Hunter learns with the Q-learning update rule. I did not invent this formula. I learned it from the sentdex videos and the Medium guide in my sources:
@@ -301,6 +329,10 @@ For a first enemy that learns, I think this is OK. These two limits are also the
 | M-06 Only seen inside the cone | 5.3 How the guard sees the player |
 | M-07 Enemies walk around walls | 5.2 Pathfinding |
 | M-08 Told when caught | 4.2 Game manager and game over screen |
+| M-09 Escape through the exit | 3.2 Level layout, 3.3 Escaped screen |
+| S-01 Stamina, S-02 Detection meter | 3.3 Gameplay HUD |
+| S-04 Menu and try again | 3.3 Main menu and Caught screen |
+| C-02 Hiding spots | 3.2 Level layout |
 | C-01 Enemy that gets better | 6 The Hunter |
 
 In the [[Validation]] document I test every Must Have with this design.
