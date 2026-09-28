@@ -1,9 +1,9 @@
-# Portfolio - Start here
+# Portfolio - Challenge 1
 
 This is the index of my portfolio for the first semester at Fontys ICT. Every Learning Outcome has its own folder. The PDFs are the versions I uploaded to Canvas.
 
 ## LO1 Orientation
-- [[Orientation Doc]] (PDF: LO1 Orientation.pdf)
+- [[Orientation Doc]] 
 - [[Career choice]]
 - [[LO1 Evidence descriptions]]
 
