@@ -1,10 +1,15 @@
-# Analysis - Greenhouse managment
+ - **Client:** VerdeTrópico V.B
+ - **Made by:** David Eslava, Fontys ICT Student
+ - **Version 0.1 - 28 September 2026**
 
+## 1. Introduction
+### 1.1 Purpose of this document
+This document is the analysis phase of the **TropiCare**. It is a App that 
 Germinating tropical plants in the Netherlands is highly challenging due to the climate, especially without precise control over humidity, light, and temperature.
 
-One of the biggest causes of failure has been the lack of control over watering and humidity. Often, the plants are watered too much or too little. Additionally, high humidity occasionally led to mold growth, which killed the seeds.  Find the perfect balance of water, humidity, and temperature withouth any tool it leads to a lot of 
+One of the biggest causes of failure has been the lack of control over watering and humidity. Often, the plants are watered too much or too little. Additionally, high humidity occasionally led to mold growth, which killed the seeds.  Find the perfect balance of water, humidity, and temperature withouth any tool it leads to a lot of  dead seeds.
 
-Looking ahead, light will also become a major issue because the Netherlands gets quite dark, and these plants require a lot of sunlight. I would love for my app or project challenge to eventually automate and control all of these factors. However, to start, I think the best approach is to "measure and alert," implementing automated control later on. Since I have my own garden and plants, I can use my setup as a testing ground while framing the project around a fictional company or client.
+Looking ahead, light will also become a major issue because the Netherlands gets quite dark, and these plants require a lot of sunlight. The  app will eventually automate and control all of these factors. However, to start,  the best approach is to "measure and alert," implementing automated control later on. Since I have my own garden and plants, I can use my setup as a testing ground while framing the project around a fictional company or client.
 
 - Comapny: **VerdeTrópico B.V.**
 - **Company Type:** A **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic _Monstera_, _Philodendron_, and _Anthurium_ varieties, _Passiflora ligularis_, etc.), germinating them locally, and selling them to premium plant collectors across Europe.
