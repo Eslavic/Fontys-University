@@ -3,7 +3,7 @@
 This is the index of my portfolio for the first semester at Fontys ICT. Every Learning Outcome has its own folder. The PDFs are the versions I uploaded to Canvas.
 
 ## LO1 Orientation
-- [[Orientation Doc]] 
+- [[First Semester/Challenge 1 - The Witness/LO1 Orientation/Orientation Doc]] 
 - [[Career choice]]
 - [[LO1 Evidence descriptions]]
 
