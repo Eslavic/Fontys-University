@@ -1,0 +1,5 @@
+Germinating tropical plants in the Netherlands is really hard because of the environment, if you don't have control over humidity, the light, and temperature. One of the things that it made me fail the most with this was that I didn't have control over the water, and humidity, a lot of times I water the plants to much and sometimes too little, then i though the humidity made a few times that mold grouwth and kill the seed, I can't seem to find a perfect point of water or humidity and even temperature. And one of the problems in a near future is the Light because Holland is pretty dark and this plants need a lot of light.
+
+I would love that my app or challenge was capable to control all this factors but for starting i thing the best es ''medir y avisar'' , and maybe after if its possible we can implement the control.
+
+I have my own garden and plants, I can apply all this to my own garden I am thinking just to make a fictional company or client and just use my garden as a test set.
