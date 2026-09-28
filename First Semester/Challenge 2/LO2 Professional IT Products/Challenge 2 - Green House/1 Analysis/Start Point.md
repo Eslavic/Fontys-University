@@ -5,8 +5,10 @@ One of my biggest causes of failure was the lack of control over watering and hu
 Looking ahead, light will also become a major issue because the Netherlands is quite dark, and these plants require a lot of sunlight. I would love for my app or project challenge to eventually automate and control all of these factors. However, to start, I think the best approach is to "measure and alert," implementing automated c ontrol later on. Since I have my own garden and plants, I can use my setup as a testing ground while framing the project around a fictional company or client.
 
 ¿Quién es el cliente ficticio? ¿Qué tipo de empresa, y por qué le importaría este problema?
+- VerdeTrópico B.V 
+- **Company Tipe:** A **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic Montsera, Philodendron, and Anthurium varieties), germinating them locally, and selling them to premium plant collectors across Europe.
+- **Current Infrastructure:**  They operate out of a medium-sized urban greenhouse/warehouse facility. They are currently trying to scale up their production but still rely on manual setups—making your personal garden the perfect testing environment for their scale.
 
-	- VerdeTrópico B.V
 **Lo que falta** (preguntas):
 
 - ¿Quién es el cliente ficticio? ¿Qué tipo de empresa, y por qué le importaría este problema?
