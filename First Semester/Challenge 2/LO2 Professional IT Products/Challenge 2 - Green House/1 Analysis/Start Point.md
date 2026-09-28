@@ -16,14 +16,7 @@ Looking ahead, light will also become a major issue because the Netherlands is q
 
 "Measure and warn": ¿medir **qué** exactamente? ¿Y avisar **cómo**: en la web, con un email, en el móvil?
 
-**The idea is to create an app** that **measures soil moisture, moisture enviroment** and **watering needs** in your plant **while tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save you time and effort. You just have to set everything up and choose your plant, **or you can just customize every value. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X." 
+**The idea is to create an app** that **measures soil moisture, moisture enviroment** (to avoid mold) and **watering needs** in your plant **while tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save you time and effort. You just have to set everything up and choose your plant, **or you can just customize every value. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X." 
 Light **is not an issue during the germination stage**. However, as the tropical plants grow, they will need a larger and higher-quality light source, **so this feature is out for version 0.1**.
 
 
-**Lo que falta** (preguntas):
-
-
-- "Measure and warn": ¿medir **qué** exactamente? ¿Y avisar **cómo**: en la web, con un email, en el móvil?
-- La luz: dices que es un problema "in a near future". ¿Eso significa que queda fuera de la 0.1? Dilo claro.
-
-**Tu acción:** contesta la primera pregunta (el cliente). Con eso ya puedes empezar la portada y el problema del Analysis.
