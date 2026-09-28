@@ -6,12 +6,23 @@ Looking ahead, light will also become a major issue because the Netherlands is q
 
 ¿Quién es el cliente ficticio? ¿Qué tipo de empresa, y por qué le importaría este problema?
 - VerdeTrópico B.V 
-- **Company Tipe:** A **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic Montsera, Philodendron, and Anthurium varieties), germinating them locally, and selling them to premium plant collectors across Europe.
-- **Current Infrastructure:**  They operate out of a medium-sized urban greenhouse/warehouse facility. They are currently trying to scale up their production but still rely on manual setups—making your personal garden the perfect testing environment for their scale.
+- **Company Tipe:** A **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic Montsera, Philodendron, and Anthurium varieties, Passiflora Ligularis...), germinating them locally, and selling them to premium plant collectors across Europe.
+
+- Why do they care about this problem?
+	- **VerdeTrópico B.V** urgently need to solve these enviromental challenges for three critical business reasons:
+		- **High Financial Losses from Dead Seeds:** Rare tropical seeds are extremely expensive and difficult to source. Every seed lost to root rot (overwatering), or mold growth directly damages their profit margins and reduces avaible stock.
+		- **Lack of 24/7 Expert Staff:** As a growing boutique business, they cannot afford a horticultural team to constantly check soil and moisture and room temperature. They need the enviroment itself to "alert" them before a disaster happens.
+		- **The Dutch Winter Halts Scalability:** The severe lack of natural sunlight and the cold  temperatures during the Dutch autumn and winter completly paralyzes their growth cycle. Without precise monitoring of temperature climate, their business stalls for six months of the year.
+
+"Measure and warn": ¿medir **qué** exactamente? ¿Y avisar **cómo**: en la web, con un email, en el móvil?
+
+**The idea is to create an app** that **measures soil moisture, moisture enviroment** and **watering needs** in your plant **while tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save you time and effort. You just have to set everything up and choose your plant, **or you can just customize every value. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X." 
+Light **is not an issue during the germination stage**. However, as the tropical plants grow, they will need a larger and higher-quality light source, **so this feature is out for version 0.1**.
+
 
 **Lo que falta** (preguntas):
 
-- ¿Quién es el cliente ficticio? ¿Qué tipo de empresa, y por qué le importaría este problema?
+
 - "Measure and warn": ¿medir **qué** exactamente? ¿Y avisar **cómo**: en la web, con un email, en el móvil?
 - La luz: dices que es un problema "in a near future". ¿Eso significa que queda fuera de la 0.1? Dilo claro.
 
