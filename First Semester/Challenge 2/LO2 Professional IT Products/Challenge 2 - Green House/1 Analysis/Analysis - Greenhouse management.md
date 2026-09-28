@@ -4,8 +4,12 @@
 
 ## 1. Introduction
 ### 1.1 Purpose of this document
-This document is the analysis phase of the **TropiCare**. It is a App that 
-Germinating tropical plants in the Netherlands is highly challenging due to the climate, especially without precise control over humidity, light, and temperature.
+This document is the analysis phase of the **TropiCare**. It is a App that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. Here I explain the problem of the client, the scope of the project, and the requirements that the product musth have.I do not explain here how I build it. The technical part is in the [[Design]] document, and the planning is in the [[Project Plan]].
+### 1.2 The client
+**VerdeTrópico B.V.** is a **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings
+
+
+Germinating tropical plants in the Netherlands is highly challenging due to the climate, especially without precise control over humidity, light, and temperature. 
 
 One of the biggest causes of failure has been the lack of control over watering and humidity. Often, the plants are watered too much or too little. Additionally, high humidity occasionally led to mold growth, which killed the seeds.  Find the perfect balance of water, humidity, and temperature withouth any tool it leads to a lot of  dead seeds.
 
