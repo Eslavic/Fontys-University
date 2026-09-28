@@ -6,7 +6,7 @@
 ### 1.1 Purpose of this document
 This document is the analysis phase of the **TropiCare**. It is a App that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. Here I explain the problem of the client, the scope of the project, and the requirements that the product musth have.I do not explain here how I build it. The technical part is in the [[Design]] document, and the planning is in the [[Project Plan]].
 ### 1.2 The client
-**VerdeTrópico B.V.** is a **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic _Monstera_, _Philodendron_, and _Anthurium_ varieties, _Passiflora ligularis_, etc.), germinating them locally, and selling them to premium plant collectors across Europe.
+**VerdeTrópico B.V.** is a **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic _Monstera_, _Philodendron_, and _Anthurium_ varieties, _Passiflora ligularis_, etc.), germinating them locally, and selling them to premium plant collectors across Europe. 
 
 Germinating tropical plants in the Netherlands is highly challenging due to the climate, especially without precise control over humidity, light, and temperature. 
 
