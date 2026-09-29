@@ -9,6 +9,7 @@
 
 ## 2. Workshops I followed
 
-| Date     | Workshop | What I took from it |
-| -------- | -------- | ------------------- |
-| 28/09/26 |          |                     |
+| Date     | Workshop                          | What I took from it |
+| -------- | --------------------------------- | ------------------- |
+| 28/09/26 | The Universe is made of Triangles |                     |
+|          |                                   |                     |
