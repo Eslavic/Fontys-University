@@ -24,6 +24,6 @@ This is the index of my portfolio for the first semester at Fontys ICT. Every Le
 ## LO4 Personal Leadership
 - [[LO4 Personal Leadership]]
 - [[Feedback log]] (and the PDF "Feedback from my coaches")
-- [[Devlog]]
+- [[First Semester/Challenge 1 - The Witness/LO4 Personal Leadership/Devlog]]
 - [[Core values and learning goals]]
 - [[LO4 Evidence descriptions]]
