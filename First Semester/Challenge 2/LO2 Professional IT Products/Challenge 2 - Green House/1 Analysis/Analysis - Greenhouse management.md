@@ -12,6 +12,8 @@ This document covers the analysis phase of **TropiCare**. It describes an app th
 ### 1.3 The product in one paragraph
 **TropiCare** app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save time and effort. You just have to set up the hardware, choose your plant type, **or fully customize every value**. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
 
+---
+## 2. Problem definition
 
 Germinating tropical plants in the Netherlands is highly challenging due to the climate, especially without precise control over humidity, light, and temperature. 
 
