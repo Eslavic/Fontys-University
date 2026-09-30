@@ -7,7 +7,7 @@
 ## 1. Introduction
 ### 1.1 Purpose of this document
 This document covers the analysis phase of **TropiCare**. It describes an app that measures **soil moisture**, **ambient humidity to help prevent mould**, **watering needs**, and surrounding **temperature**. Here, I explain the client's problem, the project scope, and the product requirements. Details about how the app was built are not included here; you can find technical information in the [[Design]] document and planning details in the [[Project Plan]].
-### **1.2 The client**
+### 1.2 The client
 **VerdeTrópico B.V.** is a small **tropical plant nursery** and online shop in the Netherlands. The company brings in rare and valuable tropical seeds and cuttings, like special types of *Monstera, Philodendron, Anthurium, and Passiflora ligularis.* They grow these plants locally and sell them to plant collectors throughout Europe.
 ### 1.3 The product in one paragraph
 **TropiCare** app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save time and effort. You just have to set up the hardware, choose your plant type, **or fully customize every value**. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
@@ -30,7 +30,9 @@ A major reason for failure is not being able to control watering and humidity. P
 	  - **The Dutch Winter Halts Scalability:** Cold weather in the Dutch autumn and winter stops their plants from growing. Without accurate climate monitoring, their business cannot move forward for half the year.
 
 ### 2.2 The project challenge
+The client need's an App Web that help them to control every parameter that affects the germination and grouwth of the  tropical plants, as soil moisture, enviromental humidity, ambient temperature and watering needs.
 
+Deliver a first version 0.1 that 
 
 
 
