@@ -1,12 +1,17 @@
+
+ 
  - **Client:** VerdeTrópico V.B
  - **Made by:** David Eslava, Fontys ICT Student
  - **Version 0.1 - 28 September 2026**
 
 ## 1. Introduction
 ### 1.1 Purpose of this document
-This document is the analysis phase of the **TropiCare**. It is a App that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. Here I explain the problem of the client, the scope of the project, and the requirements that the product musth have.I do not explain here how I build it. The technical part is in the [[Design]] document, and the planning is in the [[Project Plan]].
-### 1.2 The client
-**VerdeTrópico B.V.** is a **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic _Monstera_, _Philodendron_, and _Anthurium_ varieties, _Passiflora ligularis_, etc.), germinating them locally, and selling them to premium plant collectors across Europe. 
+This document covers the analysis phase of **TropiCare**. It describes an app that measures **soil moisture**, **ambient humidity to help prevent mould**, **watering needs**, and surrounding **temperature**. Here, I explain the client's problem, the project scope, and the product requirements. Details about how the app was built are not included here; you can find technical information in the [[Design]] document and planning details in the [[Project Plan]].
+### **1.2 The client**
+**VerdeTrópico B.V.** is a small **tropical plant nursery** and online shop in the Netherlands. The company brings in rare and valuable tropical seeds and cuttings, like special types of *Monstera, Philodendron, Anthurium, and Passiflora ligularis.* They grow these plants locally and sell them to plant collectors throughout Europe.
+### 1.3 The product in one paragraph
+**TropiCare** app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save time and effort. You just have to set up the hardware, choose your plant type, **or fully customize every value**. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
+
 
 Germinating tropical plants in the Netherlands is highly challenging due to the climate, especially without precise control over humidity, light, and temperature. 
 
