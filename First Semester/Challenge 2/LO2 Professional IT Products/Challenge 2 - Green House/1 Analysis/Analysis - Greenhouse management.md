@@ -14,10 +14,26 @@ This document covers the analysis phase of **TropiCare**. It describes an app th
 
 ---
 ## 2. Problem definition
-
+### 2.1 The client's problem
 Germinating tropical plants in the Netherlands is highly challenging due to the climate, especially without precise control over humidity, light, and temperature. 
 
 One of the biggest causes of failure has been the lack of control over watering and humidity. Often, the plants are watered too much or too little. Additionally, high humidity occasionally led to mold growth, which killed the seeds.  Find the perfect balance of water, humidity, and temperature withouth any tool it leads to a lot of  dead seeds.
+
+Growing tropical plants in the Netherlands is difficult because of the climate. Without careful control of humidity, light, and temperature, it becomes even harder.
+
+A major reason for failure is not being able to control watering and humidity. Plants often get too much or too little water. High humidity sometimes causes mold, which kills the seeds. Without any tools to help, it is hard to find the right balance, and many seeds die.
+
+-  **Why is this problem important to them?**
+	- **VerdeTrópico B.V.** needs to solve these environmental problems quickly for three important business reasons:
+	  - **High Financial Losses from Dead Seeds:** Rare tropical seeds cost a lot and are hard to find. Each seed lost to root rot from overwatering or to mold hurts their profits and lowers their stock.
+	  - **Lack of 24/7 Expert Staff:** As a small but growing business, they cannot hire a full-time team to always check soil moisture and temperature. They need a way for the environment to warn them before problems occur.
+	  - **The Dutch Winter Halts Scalability:** Cold weather in the Dutch autumn and winter stops their plants from growing. Without accurate climate monitoring, their business cannot move forward for half the year.
+
+### 2.2 The project challenge
+
+
+
+
 
 Looking ahead, light will also become a major issue because the Netherlands gets quite dark, and these plants require a lot of sunlight. The  app will eventually automate and control all of these factors. However, to start,  the best approach is to "measure and alert," implementing automated control later on. Since I have my own garden and plants, I can use my setup as a testing ground while framing the project around a fictional company or client.
 
@@ -28,6 +44,7 @@ Looking ahead, light will also become a major issue because the Netherlands gets
     - **High Financial Losses from Dead Seeds:** Rare tropical seeds are extremely expensive and difficult to source. Every seed lost to root rot (overwatering) or mold growth directly damages their profit margins and reduces available stock.
     - **Lack of 24/7 Expert Staff:** As a growing boutique business, they cannot afford a full-time horticultural team to constantly check soil moisture and room temperature. They need the environment itself to "alert" them before a disaster happens.
     - **The Dutch Winter Halts Scalability:** The severe lack of natural sunlight and cold temperatures during the Dutch autumn and winter completely paralyze their growth cycle. Without precise climate monitoring, their business stalls for six months of the year.
+### 2.2 The project challenge
 
 **The Project Idea**  
 	The goal is to create an app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save time and effort. You just have to set up the hardware, choose your plant type, **or fully customize every value**. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
