@@ -33,12 +33,12 @@ The challenge has two halves and both of them have to work:
 2. **The design must be specific enough to build from**. It is not enough to say that the enemy "learns". The design has to say what the enemy sees. It has to say which moves the enemy can make. And it has to say how I measure if the enemy improves.
 ### 2.3 Target audience
 
-| Aspect              | Description                                                                          |
-| ------------------- | -------------------------------------------------------------------------------------- |
-| Primary players     | Players from 16 years old who like short stealth games with tension.                 |
-| Familiarity assumed | They can use the keyboard to move. They do not need experience with stealth games.   |
-| Session length      | 3 to 6 minutes per attempt. The game is made to play many attempts.                  |
-| Platform            | Desktop (Windows / Linux), with keyboard.                                            |
+| Aspect              | Description                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------- |
+| Primary players     | Players from 16 years old who like short stealth games with tension.               |
+| Familiarity assumed | They can use the keyboard to move. They do not need experience with stealth games. |
+| Session length      | 3 to 6 minutes per attempt. The game is made to play many attempts.                |
+| Platform            | Desktop (Windows / Linux), with keyboard.                                          |
 
 ---
 ## 3. Scope
