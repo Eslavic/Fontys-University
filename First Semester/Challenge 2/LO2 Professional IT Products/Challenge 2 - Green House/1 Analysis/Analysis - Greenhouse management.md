@@ -47,7 +47,7 @@ The client needs a web app to help control all the factors that affect the germi
 - All sensor data will be sent to a secure website with login access and a database.
 - Clients will receive phone notifications.
 ### 3.2 Out of scope
--  **The app comes preloaded** with the ideal values for each tropical plant to save time and effort.
+-  **The app will not come preloaded** with the ideal values for each tropical plant to save time and effort.
 - 
 
 
