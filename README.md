@@ -6,7 +6,7 @@ The main project is **The Witness**, a 2D top-down noir stealth game made in God
 
 ## Where to find what
 
-Start with [Portfolio - Start here](First%20Semester/Portfolio%20-%20Start%20here.md).
+Start with [Portfolio - Start here](First%20Semester/Portfolio%20-%20Start%20here%20C1.md).
 
 ```
 First Semester/
