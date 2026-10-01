@@ -32,21 +32,23 @@ A major reason for failure is not being able to control watering and humidity. P
 ### 2.2 The project challenge
 The client needs a web app to help control all the factors that affect the germination and growth of tropical plants, such as soil moisture, environmental humidity, ambient temperature, and watering needs.
 
-**The first version, 0.1, will measure soil moisture, environmental humidity to help prevent mold, watering needs, and track ambient temperature**. You only need to set up the hardware, **and  customize each value as needed. All sensor data will be sent to a website with login and a datab**ase. **You will get phone notifications** if any value falls below or goes above your set parameters.
+**The first version, 0.1, will measure soil moisture, environmental humidity to help prevent mold, watering needs, and track ambient temperature**. You only need to set up the hardware, **and  customize each value as needed. **All sensor data will be sent to a website with login and a database**. **You will get phone notifications** if any value falls below or goes above your set parameters.
 
 ---
 ## 3. Scope
 ### 3.1 In scope
-- A App Web with Login and Data Base
-- The parameters that is gonna measure are:
-	- Oil Moisture
-	- Enviromental himidity
-	- Watering needs
-	- Ambient temperature
-- The client will be able to customize each value as needed.
-- 
-
-
+- A web app with login and a database
+- The app will measure the following parameters:
+  - Oil Moisture
+  - Enviromental himidity
+  - Watering requirements
+  - Ambient temperature
+- Clients can adjust each value as needed.
+- All sensor data will be sent to a secure website with login access and a database.
+- Clients will receive phone notifications.
+### 3.2 Out of scope
+- pp
+- oo
 
 
 
