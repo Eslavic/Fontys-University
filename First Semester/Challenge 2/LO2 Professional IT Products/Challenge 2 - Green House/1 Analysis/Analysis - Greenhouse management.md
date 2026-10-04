@@ -34,6 +34,11 @@ The client needs a web app to help control all the factors that affect the germi
 
 **The first version, 0.1, will measure soil moisture, environmental humidity to help prevent mold, watering needs, and track ambient temperature**. You only need to set up the hardware, **and  customize each value as needed. **All sensor data will be sent to a website with login and a database**. **You will get phone notifications** if any value falls below or goes above your set parameters.
 
+### 2.3 Risks
+TropiCare stores all sensor data and alarm settings on a website with a login and a database. If someone without permission gets access, they could change the alarm ranges so the notifications never go off. The plants would then die without anyone noticing, which is exactly the problem TropiCare is meant to solve. An attacker could also see or steal data about VerdeTrópico and its customers.
+
+One of the most common ways to break into a web login is **injection** (for example SQL injection), which is part of the **OWASP Top 10**, the standard list of the most important web security risks. Because of this, the login and database of TropiCare must be protected against these common attacks.
+
 ---
 ## 3. Scope
 ### 3.1 In scope
@@ -46,10 +51,12 @@ The client needs a web app to help control all the factors that affect the germi
 - Clients can adjust each value as needed.
 - All sensor data will be sent to a secure website with login access and a database.
 - Clients will receive phone notifications.
+- The login and database are protected against common web attacks from the OWASP Top 10, such as SQL injection.
+- The security of the website is tested in an isolated test network (Netlab) before it is delivered to the client.
 ### 3.2 Out of scope
 -  **The app will not come preloaded** with the ideal values for each tropical plant to save time and effort.
 - The version 0.1 will not control and change the values automatically.
-- 
+- Security tests will not be done on the client's real system or live data, only in the isolated test network.
 
 
 
