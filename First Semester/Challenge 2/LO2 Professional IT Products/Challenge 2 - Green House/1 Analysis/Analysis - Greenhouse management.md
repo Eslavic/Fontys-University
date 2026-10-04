@@ -62,7 +62,7 @@ The client needs a web app to help control all the factors that affect the germi
 
 
 
-
+## Just some extra test dont count is just the history of the client and some extra stuff ( i am gonna deleted it)
 Looking ahead, light will also become a major issue because the Netherlands gets quite dark, and these plants require a lot of sunlight. The  app will eventually automate and control all of these factors. However, to start,  the best approach is to "measure and alert," implementing automated control later on. Since I have my own garden and plants, I can use my setup as a testing ground while framing the project around a fictional company or client.
 
 - Comapny: **VerdeTrópico B.V.**
