@@ -1,23 +1,23 @@
 
  
- - **Client:** VerdeTrópico V.B
+ - **Client:** VerdeTrópico B.V
  - **Made by:** David Eslava, Fontys ICT Student
  - **Version 0.1 - 28 September 2026**
 
 ## 1. Introduction
 ### 1.1 Purpose of this document
-This document covers the analysis phase of **TropiCare**. It describes an app that measures **soil moisture**, **ambient humidity to help prevent mould**, **watering needs**, and surrounding **temperature**. Here, I explain the client's problem, the project scope, and the product requirements. Details about how the app was built are not included here; you can find technical information in the [[Design]] document and planning details in the [[Project Plan]].
+This document covers the analysis phase of **TropiCare**. It describes an web with push notifications that measures **soil moisture**, **ambient humidity to help prevent mold**, **watering needs**, and surrounding **temperature**. Here, I explain the client's problem, the project scope, and the product requirements. Details about how the app was built are not included here; you can find technical information in the [[Design]] document and planning details in the [[Project Plan]].
 ### 1.2 The client
 **VerdeTrópico B.V.** is a small **tropical plant nursery** and online shop in the Netherlands. The company brings in rare and valuable tropical seeds and cuttings, like special types of *Monstera, Philodendron, Anthurium, and Passiflora ligularis.* They grow these plants locally and sell them to plant collectors throughout Europe.
 ### 1.3 The product in one paragraph
-**TropiCare** app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save time and effort. You just have to set up the hardware, choose your plant type, **or fully customize every value**. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
+**TropiCare** app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. You just have to set up the hardware, choose your plant type and fully customize every value. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
 
 ---
 ## 2. Problem definition
 ### 2.1 The client's problem
 Germinating tropical plants in the Netherlands is highly challenging due to the climate, especially without precise control over humidity, light, and temperature. 
 
-One of the biggest causes of failure has been the lack of control over watering and humidity. Often, the plants are watered too much or too little. Additionally, high humidity occasionally led to mold growth, which killed the seeds.  Find the perfect balance of water, humidity, and temperature withouth any tool it leads to a lot of  dead seeds.
+One of the biggest causes of failure has been the lack of control over watering and humidity. Often, the plants are watered too much or too little. Additionally, high humidity occasionally led to mold growth, which killed the seeds.  Finding the perfect balance of water, humidity, and temperature **without any tools** often **leads** to a lot of dead seeds.
 
 Growing tropical plants in the Netherlands is difficult because of the climate. Without careful control of humidity, light, and temperature, it becomes even harder.
 
@@ -39,15 +39,16 @@ The client needs a web app to help control all the factors that affect the germi
 ### 3.1 In scope
 - A web app with login and a database
 - The app will measure the following parameters:
-  - Oil Moisture
-  - Enviromental himidity
-  - Watering requirements
+  - Soil Moisture
+  - Enviromental humidity
+  - Watering needs.
   - Ambient temperature
 - Clients can adjust each value as needed.
 - All sensor data will be sent to a secure website with login access and a database.
 - Clients will receive phone notifications.
 ### 3.2 Out of scope
 -  **The app will not come preloaded** with the ideal values for each tropical plant to save time and effort.
+- The version 0.1 will not control and change the values automatically.
 - 
 
 
@@ -65,7 +66,7 @@ The client needs a web app to help control all the factors that affect the germi
 ## Just some extra test dont count is just the history of the client and some extra stuff ( i am gonna deleted it)
 Looking ahead, light will also become a major issue because the Netherlands gets quite dark, and these plants require a lot of sunlight. The  app will eventually automate and control all of these factors. However, to start,  the best approach is to "measure and alert," implementing automated control later on. Since I have my own garden and plants, I can use my setup as a testing ground while framing the project around a fictional company or client.
 
-- Comapny: **VerdeTrópico B.V.**
+- Company: **VerdeTrópico B.V.**
 - **Company Type:** A **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic _Monstera_, _Philodendron_, and _Anthurium_ varieties, _Passiflora ligularis_, etc.), germinating them locally, and selling them to premium plant collectors across Europe.
 - **Why do they care about this problem?**  
     **VerdeTrópico B.V.** urgently needs to solve these environmental challenges for three critical business reasons:
