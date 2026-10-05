@@ -10,7 +10,7 @@ This document covers the analysis phase of **TropiCare**. It describes an web wi
 ### 1.2 The client
 **VerdeTrópico B.V.** is a small **tropical plant nursery** and online shop in the Netherlands. The company brings in rare and valuable tropical seeds and cuttings, like special types of *Monstera, Philodendron, Anthurium, and Passiflora ligularis.* They grow these plants locally and sell them to plant collectors throughout Europe.
 ### 1.3 The product in one paragraph
-**TropiCare** app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. You just have to set up the hardware, choose your plant type and fully customize every value. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
+**TropiCare** app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. You just have to set up the hardware, and  fully customize every value. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
 
 ---
 ## 2. Problem definition
