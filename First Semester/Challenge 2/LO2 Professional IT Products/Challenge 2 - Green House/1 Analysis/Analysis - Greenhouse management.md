@@ -34,6 +34,25 @@ The client needs a web monitors  all the factors that affect the germination and
 
 **The first version, 0.1, will measure soil moisture, environmental humidity to help prevent mold, watering needs, and track ambient temperature**. You only need to set up the hardware, **and  customize each value as needed. **All sensor data will be sent to a website with login and a database**. **You will get phone notifications** if any value falls below or goes above your set parameters.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 2.3 Risks
 TropiCare stores all sensor data and alarm settings on a website with a login and a database. If someone without permission gets access, they could change the alarm ranges so the notifications never go off. The plants would then die without anyone noticing, which is exactly the problem TropiCare is meant to solve. An attacker could also see or steal data about VerdeTrópico and its customers.
 
