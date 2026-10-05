@@ -58,12 +58,4 @@ One of the most common ways to break into a web login is **injection** (for exam
 - Security tests will not be done on the client's real system or live data, only in the isolated test network.
 
 
-
-
-
-
-
-
-
-
 ---
