@@ -6,7 +6,7 @@
 
 ## 1. Introduction
 ### 1.1 Purpose of this document
-This document covers the analysis phase of **TropiCare**. It describes an web with push notifications that measures **soil moisture**, **ambient humidity to help prevent mold**, **watering needs**, and surrounding **temperature**. Here, I explain the client's problem, the project scope, and the product requirements. Details about how the web was built are not included here; you can find technical information in the [[Design]] document and planning details in the [[Project Plan]].
+This document covers the analysis phase of **TropiCare**. It describes an web with push notifications that measures **soil moisture**, **ambient humidity to help prevent mold**, **watering needs**, and surrounding **temperature**. Here ''the clients explain the problem, the project scope, and the product requirements. Details about how the web was built are not included here; you can find technical information in the [[Design]] document and planning details in the [[Project Plan]].
 ### 1.2 The client
 **VerdeTrópico B.V.** is a small **tropical plant nursery** and online shop in the Netherlands. The company brings in rare and valuable tropical seeds and cuttings, like special types of *Monstera, Philodendron, Anthurium, and Passiflora ligularis.* They grow these plants locally and sell them to plant collectors throughout Europe.
 ### 1.3 The product in one paragraph
@@ -29,7 +29,7 @@ A major reason for failure is not being able to control watering and humidity. P
 	  - **Lack of 24/7 Expert Staff:** As a small but growing business, they cannot hire a full-time team to always check soil moisture and temperature. They need a way for the environment to warn them before problems occur.
 	  - **The Dutch Winter Halts Scalability:** Cold weather in the Dutch autumn and winter stops their plants from growing. Without accurate climate monitoring, their business cannot move forward for half the year.
 
-### 2.2 The project challenge
+### 2.2 The project idea
 The client needs a web monitors  all the factors that affect the germination and growth of tropical plants, such as soil moisture, environmental humidity, ambient temperature, and watering needs.
 
 **The first version, 0.1, will measure soil moisture, environmental humidity to help prevent mold, watering needs, and track ambient temperature**. You only need to set up the hardware, **and  customize each value as needed. **All sensor data will be sent to a website with login and a database**. **You will get phone notifications** if any value falls below or goes above your set parameters.
