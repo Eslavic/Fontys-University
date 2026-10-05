@@ -6,11 +6,11 @@
 
 ## 1. Introduction
 ### 1.1 Purpose of this document
-This document covers the analysis phase of **TropiCare**. It describes an web with push notifications that measures **soil moisture**, **ambient humidity to help prevent mold**, **watering needs**, and surrounding **temperature**. Here, I explain the client's problem, the project scope, and the product requirements. Details about how the app was built are not included here; you can find technical information in the [[Design]] document and planning details in the [[Project Plan]].
+This document covers the analysis phase of **TropiCare**. It describes an web with push notifications that measures **soil moisture**, **ambient humidity to help prevent mold**, **watering needs**, and surrounding **temperature**. Here, I explain the client's problem, the project scope, and the product requirements. Details about how the web was built are not included here; you can find technical information in the [[Design]] document and planning details in the [[Project Plan]].
 ### 1.2 The client
 **VerdeTrópico B.V.** is a small **tropical plant nursery** and online shop in the Netherlands. The company brings in rare and valuable tropical seeds and cuttings, like special types of *Monstera, Philodendron, Anthurium, and Passiflora ligularis.* They grow these plants locally and sell them to plant collectors throughout Europe.
 ### 1.3 The product in one paragraph
-**TropiCare** app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. You just have to set up the hardware, and  fully customize every value. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
+**TropiCare** web that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. You just have to set up the hardware, and  fully customize every value. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
 
 ---
 ## 2. Problem definition
@@ -30,7 +30,7 @@ A major reason for failure is not being able to control watering and humidity. P
 	  - **The Dutch Winter Halts Scalability:** Cold weather in the Dutch autumn and winter stops their plants from growing. Without accurate climate monitoring, their business cannot move forward for half the year.
 
 ### 2.2 The project challenge
-The client needs a web app to help control all the factors that affect the germination and growth of tropical plants, such as soil moisture, environmental humidity, ambient temperature, and watering needs.
+The client needs a web monitors  all the factors that affect the germination and growth of tropical plants, such as soil moisture, environmental humidity, ambient temperature, and watering needs.
 
 **The first version, 0.1, will measure soil moisture, environmental humidity to help prevent mold, watering needs, and track ambient temperature**. You only need to set up the hardware, **and  customize each value as needed. **All sensor data will be sent to a website with login and a database**. **You will get phone notifications** if any value falls below or goes above your set parameters.
 
@@ -42,8 +42,7 @@ One of the most common ways to break into a web login is **injection** (for exam
 ---
 ## 3. Scope
 ### 3.1 In scope
-- A web app with login and a database
-- The app will measure the following parameters:
+- The web will measure the following parameters:
   - Soil Moisture
   - Enviromental humidity
   - Watering needs.
@@ -54,7 +53,7 @@ One of the most common ways to break into a web login is **injection** (for exam
 - The login and database are protected against common web attacks from the OWASP Top 10, such as SQL injection.
 - The security of the website is tested in an isolated test network (Netlab) before it is delivered to the client.
 ### 3.2 Out of scope
--  **The app will not come preloaded** with the ideal values for each tropical plant to save time and effort.
+-  **The web will not come preloaded** with the ideal values for each tropical plant to save time and effort.
 - The version 0.1 will not control and change the values automatically.
 - Security tests will not be done on the client's real system or live data, only in the isolated test network.
 
@@ -66,25 +65,5 @@ One of the most common ways to break into a web login is **injection** (for exam
 
 
 
-
-
-
-
-## Just some extra test dont count is just the history of the client and some extra stuff ( i am gonna deleted it)
-Looking ahead, light will also become a major issue because the Netherlands gets quite dark, and these plants require a lot of sunlight. The  app will eventually automate and control all of these factors. However, to start,  the best approach is to "measure and alert," implementing automated control later on. Since I have my own garden and plants, I can use my setup as a testing ground while framing the project around a fictional company or client.
-
-- Company: **VerdeTrópico B.V.**
-- **Company Type:** A **boutique tropical plant nursery and e-commerce business** based in the Netherlands. They specialize in importing rare, high-value tropical seeds and cuttings (such as exotic _Monstera_, _Philodendron_, and _Anthurium_ varieties, _Passiflora ligularis_, etc.), germinating them locally, and selling them to premium plant collectors across Europe.
-- **Why do they care about this problem?**  
-    **VerdeTrópico B.V.** urgently needs to solve these environmental challenges for three critical business reasons:
-    - **High Financial Losses from Dead Seeds:** Rare tropical seeds are extremely expensive and difficult to source. Every seed lost to root rot (overwatering) or mold growth directly damages their profit margins and reduces available stock.
-    - **Lack of 24/7 Expert Staff:** As a growing boutique business, they cannot afford a full-time horticultural team to constantly check soil moisture and room temperature. They need the environment itself to "alert" them before a disaster happens.
-    - **The Dutch Winter Halts Scalability:** The severe lack of natural sunlight and cold temperatures during the Dutch autumn and winter completely paralyze their growth cycle. Without precise climate monitoring, their business stalls for six months of the year.
-### 2.2 The project challenge
-
-**The Project Idea**  
-	The goal is to create an app that **measures soil moisture, environmental humidity** (to avoid mold), and **watering needs** while **tracking ambient temperature**. **The app comes preloaded** with the ideal values for each tropical plant to save time and effort. You just have to set up the hardware, choose your plant type, **or fully customize every value**. **You will receive phone notifications** if, for example, "the temperature surpasses 30°C or the humidity drops below X%."
-
-Light **is not an issue during the germination stage**. However, as the tropical plants grow, they will need a larger and higher-quality light source, **so this feature is out of scope for version 0.1**.
 
 ---
