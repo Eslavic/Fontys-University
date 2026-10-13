@@ -9,7 +9,7 @@
 
 ## 2. Workshops I followed
 
-| Date     | Workshop                          | What I took from it                                                                                                                                                                        |
-| -------- | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 28/09/26 | The Universe is made of Triangles Is something that i never heard before, and it was really interesting, the information and the presentation was really nice and it made me look more into the role of Graphics Programmer f  |
-|          |                                                                                                                                                                                                                                |
+| Date     | Workshop                          | What I took from it                                                                                                                                                                         |
+| -------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 28/09/26 | The Universe is made of Triangles | Is something that i never heard before, and it was really interesting, the information and the presentation was really nice and it made me look more into the role of Graphics Programmer f |
+| 13/10/26 | Development Modern Web Design     |                                                                                                                                                                                             |
