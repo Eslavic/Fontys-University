@@ -20,3 +20,4 @@
 | --------- | ------- | --------- |
 | Structure | Styling | Behaviour |
 |           |         |           |
+In this workshop we had a introduction to HTML, some of their functions and expalanation of some attributes. I already have a bit of experience in HTML but its always nice to remember 
