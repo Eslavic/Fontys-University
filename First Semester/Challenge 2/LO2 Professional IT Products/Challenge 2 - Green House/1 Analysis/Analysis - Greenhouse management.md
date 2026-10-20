@@ -30,7 +30,7 @@ A major reason for failure is not being able to control watering and humidity. P
 	  - **The Dutch Winter Halts Scalability:** Cold weather in the Dutch autumn and winter stops their plants from growing. Without accurate climate monitoring, their business cannot move forward for half the year.
 
 ### 2.2 The project idea
-The client needs a web monitors  all the factors that affect the germination and growth of tropical plants, such as soil moisture, environmental humidity, ambient temperature, and watering needs.
+The client needs a web that monitors  all the factors that affect the germination and growth of tropical plants, such as soil moisture, environmental humidity, ambient temperature, and watering needs.
 
 **The first version, 0.1, will measure soil moisture, environmental humidity to help prevent mold, watering needs, and track ambient temperature**. You only need to set up the hardware, **and  customize each value as needed. **All sensor data will be sent to a website with login and a database**. **You will get phone notifications** if any value falls below or goes above your set parameters.
 
