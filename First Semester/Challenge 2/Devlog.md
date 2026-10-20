@@ -35,3 +35,20 @@
 **Oct 20**
 
 - Finally got the laptop to recognize the ESP32 (running on COM6 with the CP210x chip). Trying to install MicroPython was a bit annoying at first because I accidentally selected the wrong version (M5Stack). Once I switched it to the correct **Espressif WROOM** firmware, everything clicked. Got my first script up and running!
+
+```
+import dht
+import machine
+import time
+
+d = dht.DHT22(machine.Pin(5))
+time.sleep(2)
+d.measure()
+print(d.temperature())# eg. 23.6 (°C)
+print(d.humidity())# eg. 41.3 (% RH)
+
+```
+>Output: 
+>MPY: soft reboot
+	23.0
+	72.4
