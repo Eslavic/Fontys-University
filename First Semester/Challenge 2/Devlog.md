@@ -52,3 +52,5 @@ print(d.humidity())# eg. 41.3 (% RH)
 >MPY: soft reboot
 	23.0
 	72.4
+
+**Oct 21**

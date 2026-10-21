@@ -10,3 +10,6 @@ time.sleep(2)
 d.measure()
 print(d.temperature())# eg. 23.6 (°C)
 print(d.humidity())# eg. 41.3 (% RH)bb
+
+moisture_value = moisture.read_u16()  # Read the analog value from the moisture sensor
+print(moisture_value)  # Print the moisture value
