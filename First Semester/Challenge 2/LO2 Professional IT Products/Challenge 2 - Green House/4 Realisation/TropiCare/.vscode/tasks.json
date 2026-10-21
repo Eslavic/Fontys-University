@@ -1,0 +1,51 @@
+{
+  // Tareas para el ESP32 con mpremote.
+  // Ctrl+Shift+B -> ejecuta el archivo abierto en la placa (sin guardarlo en ella).
+  // Ctrl+Shift+P -> "Tasks: Run Task" para las demás.
+  // "type": "process" evita problemas con los espacios de la ruta.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ESP32: Ejecutar archivo actual",
+      "type": "process",
+      "command": "C:/Users/slava/AppData/Local/Programs/Python/Python313/python.exe",
+      "args": ["-m", "mpremote", "connect", "auto", "run", "${file}"],
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP32: Subir proyecto y reiniciar",
+      "type": "process",
+      "command": "C:/Users/slava/AppData/Local/Programs/Python/Python313/python.exe",
+      "args": ["-m", "mpremote", "connect", "auto", "fs", "cp", "main.py", "boot.py", ":", "+", "reset"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP32: Consola (REPL)",
+      "type": "process",
+      "command": "C:/Users/slava/AppData/Local/Programs/Python/Python313/python.exe",
+      "args": ["-m", "mpremote", "connect", "auto", "repl"],
+      "presentation": { "reveal": "always", "panel": "dedicated", "focus": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP32: Ver archivos de la placa",
+      "type": "process",
+      "command": "C:/Users/slava/AppData/Local/Programs/Python/Python313/python.exe",
+      "args": ["-m", "mpremote", "connect", "auto", "fs", "ls"],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "ESP32: Reiniciar placa",
+      "type": "process",
+      "command": "C:/Users/slava/AppData/Local/Programs/Python/Python313/python.exe",
+      "args": ["-m", "mpremote", "connect", "auto", "reset"],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    }
+  ]
+}

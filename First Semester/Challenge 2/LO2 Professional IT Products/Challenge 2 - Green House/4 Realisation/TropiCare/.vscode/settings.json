@@ -1,0 +1,10 @@
+{
+  // Autocompletado de MicroPython (machine, dht, network...) sin errores rojos falsos.
+  "python.analysis.extraPaths": ["typings"],
+  "python.analysis.stubPath": "typings",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingModuleSource": "none"
+  },
+  "files.exclude": { "typings": true }
+}
