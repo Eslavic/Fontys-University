@@ -54,10 +54,11 @@ print(d.humidity())# eg. 41.3 (% RH)
 	72.4
 
 **Oct 21**
-- **Today, I started using VS Code with `mpremote`** instead of Thonny. **I made this decision** because I can **have everything in the same environment** (web, ESP32...), and the DHT22 is still working.
-- I had a lot of problems figuring out the best way to connect everything on the breadboard because the ESP32 is too big to fit on a standard protoboard. The solution was to keep the ESP32 off the breadboard: each row on the board acts as a specific rail (e.g., Row 1 for 3V3, Row 5 for GND), while the other rows connect to the pins where data is received.
+- Today, I started using VS Code with `mpremote` instead of Thonny. I made this decision because I can have everything in the same environment (web, ESP32...). Also, the DHT22 is still working fine.
 
-- For the **soil moisture sensor**, I realized that **the blue wire carries the signal**, not the middle one. **That was my mistake and my learning.** I also noted that **VIN provides 5V, which is why the sensor must be powered via the 3V3 pin**. After correcting the wiring, **I successfully set up a loop that reads data every second**, yielding the following calibration values: **Air: 0, Plant: 34,984, and Water: 36,889**.
+- I had a lot of problems figuring out the best way to connect everything on the breadboard because the ESP32 is too big to fit. The solution was to keep the ESP32 off the board: each row connects to a pin. Row 1 is 3V3, Row 5 is GND, and the other rows are for the data pins.
 
-	- **Learned:** Always double-check the sensor's pinout and specific wire colors instead of assuming the middle pin is the signal. Also, ensure the correct operating voltage (3V3) when VIN delivers 5V to protect the sensor logic.
-	- **Next:** Integrate **WiFi connectivity** to transmit the real-time data. 
+- For the soil sensor, I found out that the blue wire is the signal, not the middle one. That was a good lesson. Also, VIN gives 5V, so I connected the sensor to 3V3 to protect the ESP32 pins. Now the loop reads every second, and these are the values: air 0, plant 34984, and water 36889.
+
+	- **Learned:** Don't assume the middle wire is the signal—always check the colors. Also, check the voltages so you don't fry the ESP32 pins.
+	- **Next:** Connect to WiFi.
